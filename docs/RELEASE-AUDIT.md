@@ -8,6 +8,8 @@
 - **Three real-browser full-game runs** at the production fixed timestep: startup 7,805, midcap 6,236, enterprise 7,351. All reached midnight. These are automated QA policies, not a claim that first-time players will obtain these scores.
 - The same three journals were submitted to the live staging verifier; **all server-calculated scores matched exactly**.
 - Desktop and mobile scoreboard/layout checks; opening, purchases, placement, results and leaderboard navigation. Browser audit recorded no uncaught runtime errors.
+- A real-browser opt-in form submission published a verified score, disabled repeat submission and appeared in run history. The temporary test entry was removed afterward.
+- Native-GPU performance retest: about **60.2 FPS during live enterprise combat**, starting with 212 threats, at 1600×1000 on an Apple M4 Max. This is hardware-specific, not a universal frame-rate guarantee.
 - Dependency audit: **zero reported vulnerabilities** after updating the development toolchain.
 
 ## Fixed during this pass
