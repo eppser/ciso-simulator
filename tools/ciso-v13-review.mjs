@@ -1,0 +1,41 @@
+import puppeteer from 'puppeteer-core';
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const out='artifacts/v7/qa';fs.mkdirSync(out,{recursive:true});
+const browser=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+try{
+ const p=await browser.newPage();await p.setViewport({width:1440,height:900});const errors=[],failed=[];
+ p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)failed.push(r.url());});
+ await p.goto('http://127.0.0.1:5178/',{waitUntil:'networkidle0'});await p.waitForSelector('.zdc-wordmark');
+ assert.equal(await p.$eval('.zdc-wordmark',e=>e.textContent),'ZeroDayClock');
+ assert.ok((await p.$eval('.supported',e=>e.textContent)).includes('24h Observation data from Shadowserver'));
+ await p.screenshot({path:out+'/01-opening.png'});
+ await p.click('[data-action=start][data-id=startup]');await p.waitForFunction(()=>__app.running);
+ await p.evaluate(()=>{__app.audio.enabled=false;__app.ui.closeCall();__app.ui.callQueue=[];__app.paused=true;});
+ const initial=await p.evaluate(()=>({labels:__app.labels,zoom:__app.rig.dist,remaining:document.querySelector('#time-left').textContent,mouseIcons:document.querySelectorAll('.mouse-guide svg').length}));
+ assert.equal(initial.labels,true);assert.equal(initial.remaining,'24h 00m left');assert.equal(initial.mouseIcons,5);
+ await p.click('.team-hire');await p.waitForFunction(()=>__app.game.concurrency()===3);
+ await p.click('[data-action=tab][data-id=programs]');await p.click('[data-action=track][data-id=Identity]');await p.click('[data-action=buy][data-id=mfa]');
+ await p.click('[data-action=track][data-id=Recover]');await p.click('[data-action=buy][data-id=backups]');
+ await p.waitForFunction(()=>document.querySelectorAll('#jobs .rollout').length===2);
+ const bounds=await p.evaluate(()=>{const t=document.querySelector('.team').getBoundingClientRect(),h=document.querySelector('.team-hire').getBoundingClientRect(),c=document.querySelector('.command-panel').getBoundingClientRect();return{teamTop:t.top,teamBottom:t.bottom,hireBottom:h.bottom,panelBottom:c.bottom};});
+ assert.ok(bounds.hireBottom<=bounds.teamBottom);assert.ok(bounds.panelBottom<bounds.teamTop);
+ await p.screenshot({path:out+'/02-work-ledger.png'});
+ // Controlled incident fixture: verify urgent sorting and the new incoming character.
+ await p.evaluate(()=>{const g=__app.game;g.asset('web').state='compromised';g.asset('web').crit=1;__app.ui.tab='assets';__app.ui.showCall('head_capacity');__app.ui.update();});
+ assert.equal(await p.$eval('.asset-row',e=>e.dataset.id),'web');
+ assert.ok(!/AI.generated|not real|portrait/i.test(await p.$eval('#call',e=>e.textContent)));
+ assert.ok(await p.$eval('#call .portrait',e=>getComputedStyle(e).backgroundImage.includes('head-engineering')));
+ await p.screenshot({path:out+'/03-head-engineering.png'});
+ await p.setViewport({width:1440,height:800});await new Promise(r=>setTimeout(r,300));
+ assert.ok(await p.evaluate(()=>document.querySelector('.command-panel').getBoundingClientRect().bottom<document.querySelector('.team').getBoundingClientRect().top));
+ await p.screenshot({path:out+'/04-short-desktop.png'});
+ await p.evaluate(()=>{__app.ui.closeCall();__app.ui.callQueue=[];__app.ui.startScreen();});await p.setViewport({width:390,height:844});await p.screenshot({path:out+'/05-mobile-opening.png'});
+ assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ await p.click('[data-action=start][data-id=startup]');await p.evaluate(()=>{__app.paused=true;__app.audio.enabled=false;__app.ui.closeCall();__app.ui.callQueue=[];});await p.click('[data-action=tab][data-id=team]');
+ assert.ok((await p.$eval('#panel',e=>e.textContent)).includes('0 / 2 WORKING'));await p.screenshot({path:out+'/06-mobile-team.png'});
+ assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ assert.deepEqual(errors,[]);assert.deepEqual(failed,[]);
+ const report={at:new Date().toISOString(),initial,bounds,errors,failed,checks:['wordmark and daily attribution','default roof labels','five accessible mouse diagrams','remaining hours','real paid engineer hire','two concurrent program rollouts','queue and hire button fit without overlapping build panel','infected asset sorts before healthy crown jewels','Head of Engineering portrait and clean call captions','short desktop and mobile Team status']};
+ fs.writeFileSync(out+'/report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+}finally{await browser.close();}

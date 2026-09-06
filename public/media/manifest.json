@@ -1,0 +1,2288 @@
+{
+  "provider": "ElevenLabs",
+  "voices": {
+    "patch": {
+      "file": "media/voices-patch.mp3",
+      "bytes": 85725,
+      "speaker": "engineer",
+      "text": "On my way. A patch, a reboot, and a very optimistic change ticket.",
+      "request": {
+        "text": "On my way. A patch, a reboot, and a very optimistic change ticket.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "welcome": {
+      "file": "media/voices-welcome.mp3",
+      "bytes": 116236,
+      "speaker": "engineer",
+      "text": "Your first shift. Three ways in. One company to keep alive. Start with the exposed system.",
+      "request": {
+        "text": "Your first shift. Three ways in. One company to keep alive. Start with the exposed system.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "isolate": {
+      "file": "media/voices-isolate.mp3",
+      "bytes": 100772,
+      "speaker": "business",
+      "text": "You unplugged production? Fine. But sales is already composing a strongly worded spreadsheet.",
+      "request": {
+        "text": "You unplugged production? Fine. But sales is already composing a strongly worded spreadsheet.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "patched": {
+      "file": "media/voices-patched.mp3",
+      "bytes": 95756,
+      "speaker": "engineer",
+      "text": "Patch verified. One less open door. Please do not call it a digital transformation.",
+      "request": {
+        "text": "Patch verified. One less open door. Please do not call it a digital transformation.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "restore": {
+      "file": "media/voices-restore.mp3",
+      "bytes": 121252,
+      "speaker": "engineer",
+      "text": "Restoring the system. This is why we test backups, instead of just admiring the backup dashboard.",
+      "request": {
+        "text": "Restoring the system. This is why we test backups, instead of just admiring the backup dashboard.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "compromise": {
+      "file": "media/voices-compromise.mp3",
+      "bytes": 112475,
+      "speaker": "board",
+      "text": "[angry] We bought all those boxes! Why is the company on fire? I need a recovery plan. Now.",
+      "request": {
+        "text": "[angry] We bought all those boxes! Why is the company on fire? I need a recovery plan. Now.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "ransom": {
+      "file": "media/voices-ransom.mp3",
+      "bytes": 141732,
+      "speaker": "criminal",
+      "text": "[chuckles] Good evening. Your files are encrypted. Our customer support is, unfortunately, better than your vendor's.",
+      "request": {
+        "text": "[chuckles] Good evening. Your files are encrypted. Our customer support is, unfortunately, better than your vendor's.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "pay": {
+      "file": "media/voices-pay.mp3",
+      "bytes": 130447,
+      "speaker": "criminal",
+      "text": "Pleasure doing business. No, there is no satisfaction survey. And do not assume everything comes back.",
+      "request": {
+        "text": "Pleasure doing business. No, there is no satisfaction survey. And do not assume everything comes back.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "surge": {
+      "file": "media/voices-surge.mp3",
+      "bytes": 75276,
+      "speaker": "engineer",
+      "text": "[serious] Scanning surge incoming. Check all three uplinks. Keep an engineer free.",
+      "request": {
+        "text": "[serious] Scanning surge incoming. Check all three uplinks. Keep an engineer free.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "zero": {
+      "file": "media/voices-zero.mp3",
+      "bytes": 94502,
+      "speaker": "engineer",
+      "text": "New exploit. No fix yet. Contain the exposure. A purchase order is not a patch.",
+      "request": {
+        "text": "New exploit. No fix yet. Contain the exposure. A purchase order is not a patch.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "supply": {
+      "file": "media/voices-supply.mp3",
+      "bytes": 76530,
+      "speaker": "engineer",
+      "text": "That signed update came with a surprise. The surprise is malware.",
+      "request": {
+        "text": "That signed update came with a surprise. The surprise is malware.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "fatigue": {
+      "file": "media/voices-fatigue.mp3",
+      "bytes": 94502,
+      "speaker": "engineer",
+      "text": "[tired] I can keep going. But I just tried to reboot my coffee. We need another shift.",
+      "request": {
+        "text": "[tired] I can keep going. But I just tried to reboot my coffee. We need another shift.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "review": {
+      "file": "media/voices-review.mp3",
+      "bytes": 88233,
+      "speaker": "board",
+      "text": "Noon review. Tell me what stayed running, what we spent, and what we are fixing next.",
+      "request": {
+        "text": "Noon review. Tell me what stayed running, what we spent, and what we are fixing next.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "goodreview": {
+      "file": "media/voices-goodreview.mp3",
+      "bytes": 102026,
+      "speaker": "board",
+      "text": "Limited damage. Controlled spend. Good. You may continue making security look uneventful.",
+      "request": {
+        "text": "Limited damage. Controlled spend. Good. You may continue making security look uneventful.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "vendor": {
+      "file": "media/voices-vendor.mp3",
+      "bytes": 116236,
+      "speaker": "business",
+      "text": "A vendor password is online. They say it is an isolated incident. They also said their password was unique.",
+      "request": {
+        "text": "A vendor password is online. They say it is an isolated incident. They also said their password was unique.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "won": {
+      "file": "media/voices-won.mp3",
+      "bytes": 100772,
+      "speaker": "engineer",
+      "text": "[relieved] Midnight. We made it. The company is still here, and so are we. Handing over.",
+      "request": {
+        "text": "[relieved] Midnight. We made it. The company is still here, and so are we. Handing over.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "lost": {
+      "file": "media/voices-lost.mp3",
+      "bytes": 98264,
+      "speaker": "board",
+      "text": "[disappointed] We are out of runway. Save the evidence. Tell the truth. Then show me what we change tomorrow.",
+      "request": {
+        "text": "[disappointed] We are out of runway. Save the evidence. Tell the truth. Then show me what we change tomorrow.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "boardbrief": {
+      "file": "media/voices-boardbrief.mp3",
+      "bytes": 108713,
+      "speaker": "board",
+      "text": "Thank you. A risk decision I can actually understand. Keep me informed before the newspapers do.",
+      "request": {
+        "text": "Thank you. A risk decision I can actually understand. Keep me informed before the newspapers do.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "daywelcome": {
+      "file": "media/voices-daywelcome.mp3",
+      "bytes": 183946,
+      "speaker": "engineer",
+      "text": "A day as CISO. Three ways in. One company to keep alive. Start with the exposed system. Coffee is not a security control. Apparently.",
+      "request": {
+        "text": "A day as CISO. Three ways in. One company to keep alive. Start with the exposed system. Coffee is not a security control. Apparently.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "ransomware_help": {
+      "file": "media/voices-ransomware_help.mp3",
+      "bytes": 262104,
+      "speaker": "engineer",
+      "text": "[serious] We have a ransomware foothold. The countdown is time until encryption. Remove the intruder now. If files lock, we need tested backups, an engineer, and recovery budget. A patch closes the door. It does not unlock the files.",
+      "request": {
+        "text": "[serious] We have a ransomware foothold. The countdown is time until encryption. Remove the intruder now. If files lock, we need tested backups, an engineer, and recovery budget. A patch closes the door. It does not unlock the files.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "firsttip": {
+      "file": "media/voices-firsttip.mp3",
+      "bytes": 237862,
+      "speaker": "engineer",
+      "text": "First tip: buy visibility before buying everything. A scanner finds weaknesses. Radar identifies attackers. IPS handles device exploits. WAF slows web attacks. Keep some money for fixing things.",
+      "request": {
+        "text": "First tip: buy visibility before buying everything. A scanner finds weaknesses. Radar identifies attackers. IPS handles device exploits. WAF slows web attacks. Keep some money for fixing things.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "promotion": {
+      "file": "media/voices-promotion.mp3",
+      "bytes": 333993,
+      "speaker": "board",
+      "text": "[warmly] Congratulations. You are our new Chief Information Security Officer. You have our full confidence: five out of five. Keep the company running, spend wisely, and tell me the truth. Nothing is infected yet. Take a breath. Learn the estate. And please, no slides with a padlock on them.",
+      "request": {
+        "text": "[warmly] Congratulations. You are our new Chief Information Security Officer. You have our full confidence: five out of five. Keep the company running, spend wisely, and tell me the truth. Nothing is infected yet. Take a breath. Learn the estate. And please, no slides with a padlock on them.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "hackertaunt": {
+      "file": "media/voices-hackertaunt.mp3",
+      "bytes": 155942,
+      "speaker": "criminal",
+      "text": "[chuckles] Nice perimeter. Very architectural. Your forgotten internal server has a somewhat more welcoming personality.",
+      "request": {
+        "text": "[chuckles] Nice perimeter. Very architectural. Your forgotten internal server has a somewhat more welcoming personality.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "businessplan": {
+      "file": "media/voices-businessplan.mp3",
+      "bytes": 248311,
+      "speaker": "business",
+      "text": "Security and sales want the same thing: a company that still exists tomorrow. If there is no patch, disable the public service. We can keep private operations running. I can sell slightly inconvenient. I cannot sell encrypted.",
+      "request": {
+        "text": "Security and sales want the same thing: a company that still exists tomorrow. If there is no patch, disable the public service. We can keep private operations running. I can sell slightly inconvenient. I cannot sell encrypted.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "peer": {
+      "file": "media/voices-peer.mp3",
+      "bytes": 252073,
+      "speaker": "peer",
+      "text": "[laughs] Is that your incident dashboard or a Christmas tree? Sorry. Mine looked like that last Tuesday. Backups, identity, one spare engineer. Learn from my very expensive character development.",
+      "request": {
+        "text": "[laughs] Is that your incident dashboard or a Christmas tree? Sorry. Mine looked like that last Tuesday. Backups, identity, one spare engineer. Learn from my very expensive character development.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "patchless": {
+      "file": "media/voices-patchless.mp3",
+      "bytes": 227831,
+      "speaker": "engineer",
+      "text": "[serious] Sorry. No patch available. We can disable the exposed service, quarantine the system, or replace it. Matching WAF or IPS coverage and EDR buy time. None of those magically fixes the vulnerability.",
+      "request": {
+        "text": "[serious] Sorry. No patch available. We can disable the exposed service, quarantine the system, or replace it. Matching WAF or IPS coverage and EDR buy time. None of those magically fixes the vulnerability.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "boardpressure": {
+      "file": "media/voices-boardpressure.mp3",
+      "bytes": 148419,
+      "speaker": "board",
+      "text": "[frustrated] I do not need another maturity framework! I need to know what customers can still use, who is fixing the rest, and when I can stop refreshing my phone!",
+      "request": {
+        "text": "[frustrated] I do not need another maturity framework! I need to know what customers can still use, who is fixing the rest, and when I can stop refreshing my phone!",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "businesshope": {
+      "file": "media/voices-businesshope.mp3",
+      "bytes": 163466,
+      "speaker": "business",
+      "text": "The customer portal is still selling. The coffee machine is still judgmental. Keep those critical services alive and I will handle the angry spreadsheets.",
+      "request": {
+        "text": "The customer portal is still selling. The coffee machine is still judgmental. Keep those critical services alive and I will handle the angry spreadsheets.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "hackerlate": {
+      "file": "media/voices-hackerlate.mp3",
+      "bytes": 163466,
+      "speaker": "criminal",
+      "text": "Your security team gets tired. Our scripts do not. On the bright side, our scripts are also terrible at performance reviews.",
+      "request": {
+        "text": "Your security team gets tired. Our scripts do not. On the bright side, our scripts are also terrible at performance reviews.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "salespitch": {
+      "file": "media/voices-salespitch.mp3",
+      "bytes": 241624,
+      "speaker": "seller",
+      "text": "[smoothly] I heard you are experiencing an opportunity. I can activate our emergency package today. Just a tiny fifty percent urgency premium. Same product. Same rollout. But the invoice says strategic, which is rather reassuring.",
+      "request": {
+        "text": "[smoothly] I heard you are experiencing an opportunity. I can activate our emergency package today. Just a tiny fifty percent urgency premium. Same product. Same rollout. But the invoice says strategic, which is rather reassuring.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "salesclosed": {
+      "file": "media/voices-salesclosed.mp3",
+      "bytes": 148419,
+      "speaker": "seller",
+      "text": "[pleased] Excellent decision. Our thoughts, prayers, and account expansion team are with you. Implementation time is unchanged, of course.",
+      "request": {
+        "text": "[pleased] Excellent decision. Our thoughts, prayers, and account expansion team are with you. Implementation time is unchanged, of course.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "crownpanic": {
+      "file": "media/voices-crownpanic.mp3",
+      "bytes": 153435,
+      "speaker": "board",
+      "text": "[angry] Our crown jewel is down! That is not a red dot. That is our business! Contain it, restore service, and give me a straight answer. Now!",
+      "request": {
+        "text": "[angry] Our crown jewel is down! That is not a red dot. That is our business! Contain it, restore service, and give me a straight answer. Now!",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "supplywave": {
+      "file": "media/voices-supplywave.mp3",
+      "bytes": 235355,
+      "speaker": "engineer",
+      "text": "[urgent] Poisoned update. Malware is spawning inside that building. Ten percent of a wave, every wave, until we clean it. Quarantine stops the spread. Then remove the intruder. A perimeter wall will not fix an inside job.",
+      "request": {
+        "text": "[urgent] Poisoned update. Malware is spawning inside that building. Ten percent of a wave, every wave, until we clean it. Quarantine stops the spread. Then remove the intruder. A perimeter wall will not fix an inside job.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "leakanomaly": {
+      "file": "media/voices-leakanomaly.mp3",
+      "bytes": 185199,
+      "speaker": "business",
+      "text": "Our outbound traffic has developed ambitions. Something is sending company data away. We do not know where yet. Please trace it before our customer list becomes somebody else’s customer list.",
+      "request": {
+        "text": "Our outbound traffic has developed ambitions. Something is sending company data away. We do not know where yet. Please trace it before our customer list becomes somebody else’s customer list.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "leakfound": {
+      "file": "media/voices-leakfound.mp3",
+      "bytes": 213621,
+      "speaker": "engineer",
+      "text": "Data loss monitoring found the source. Follow the rising packets. Quarantine egress now. Then assign an engineer to remove the collector and rotate credentials. Detection is not containment.",
+      "request": {
+        "text": "Data loss monitoring found the source. Follow the rising packets. Quarantine egress now. Then assign an engineer to remove the collector and rotate credentials. Detection is not containment.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "leakboard": {
+      "file": "media/voices-leakboard.mp3",
+      "bytes": 177676,
+      "speaker": "board",
+      "text": "[upset] Our customer data is leaving the building? Stop the transfer, preserve the evidence, and tell the response team. Nobody is calling this a learning opportunity in the press release.",
+      "request": {
+        "text": "[upset] Our customer data is leaving the building? Stop the transfer, preserve the evidence, and tell the response team. Nobody is calling this a learning opportunity in the press release.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "shadowit": {
+      "file": "media/voices-shadowit.mp3",
+      "bytes": 159704,
+      "speaker": "business",
+      "text": "A department connected another device. Apparently procurement takes too long, but creating an incident is delightfully efficient. Asset discovery will find it.",
+      "request": {
+        "text": "A department connected another device. Apparently procurement takes too long, but creating an incident is delightfully efficient. Asset discovery will find it.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "tipbackup": {
+      "file": "media/voices-tipbackup.mp3",
+      "bytes": 185199,
+      "speaker": "engineer",
+      "text": "Recovery tip: fund tested backups first. Rebuild queues the locked systems by revenue. Keep enough budget and engineers free. A patch does not decrypt the files.",
+      "request": {
+        "text": "Recovery tip: fund tested backups first. Rebuild queues the locked systems by revenue. Keep enough budget and engineers free. A patch does not decrypt the files.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "tipcapacity": {
+      "file": "media/voices-tipcapacity.mp3",
+      "bytes": 117490,
+      "speaker": "engineer",
+      "text": "Your engineers are busy. Open the Team tab to fund another shift. More tools do not create more hands.",
+      "request": {
+        "text": "Your engineers are busy. Open the Team tab to fund another shift. More tools do not create more hands.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "tipidentity": {
+      "file": "media/voices-tipidentity.mp3",
+      "bytes": 183946,
+      "speaker": "engineer",
+      "text": "Fund the identity provider before stolen passwords start crossing the network. Amber wires show its rollout is active. Firewall segments cannot stop a valid stolen login.",
+      "request": {
+        "text": "Fund the identity provider before stolen passwords start crossing the network. Amber wires show its rollout is active. Firewall segments cannot stop a valid stolen login.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "tipcontrols": {
+      "file": "media/voices-tipcontrols.mp3",
+      "bytes": 229085,
+      "speaker": "engineer",
+      "text": "Watch the targets revealed by radar. Put IPS near device routes, WAF near web routes, and EDR on critical systems. Keep recovery money. An empty bank account is a surprisingly effective attacker.",
+      "request": {
+        "text": "Watch the targets revealed by radar. Put IPS near device routes, WAF near web routes, and EDR on critical systems. Keep recovery money. An empty bank account is a surprisingly effective attacker.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "salesclosed_v10": {
+      "file": "media/voices-salesclosed_v10.mp3",
+      "bytes": 164719,
+      "speaker": "seller",
+      "text": "[excited] Fantastic. Order received. Our team is on it. I will send the invoice to whoever still has a working inbox. We are with you all the way. Through procurement.",
+      "request": {
+        "text": "[excited] Fantastic. Order received. Our team is on it. I will send the invoice to whoever still has a working inbox. We are with you all the way. Through procurement.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "salespitch_v10": {
+      "file": "media/voices-salespitch_v10.mp3",
+      "bytes": 260850,
+      "speaker": "seller",
+      "text": "[rushed] Miles here! Heard the news, terrible, terrible. We are happy to help. I have your emergency package right here. One click, one signature, let us get you moving. I have already told my team you are a priority. Shall we get this approved?",
+      "request": {
+        "text": "[rushed] Miles here! Heard the news, terrible, terrible. We are happy to help. I have your emergency package right here. One click, one signature, let us get you moving. I have already told my team you are a priority. Shall we get this approved?",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "agency_intro": {
+      "file": "media/voices-agency_intro.mp3",
+      "bytes": 253327,
+      "speaker": "agency",
+      "text": "[dryly] FBI cyber liaison. First: preserve the logs. Second: contain the spread. Third: stop naming your incident channels, Definitely Not A Breach. We can read those too. Relax. We have seen worse.",
+      "request": {
+        "text": "[dryly] FBI cyber liaison. First: preserve the logs. Second: contain the spread. Third: stop naming your incident channels, Definitely Not A Breach. We can read those too. Relax. We have seen worse.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "agency_leak": {
+      "file": "media/voices-agency_leak.mp3",
+      "bytes": 232847,
+      "speaker": "agency",
+      "text": "[deadpan] Your data appears to have booked an international flight. Trace the source, stop the egress, preserve the evidence. Please do not delete the logs to make the chart look better. That is not incident response. That is interior decorating.",
+      "request": {
+        "text": "[deadpan] Your data appears to have booked an international flight. Trace the source, stop the egress, preserve the evidence. Please do not delete the logs to make the chart look better. That is not incident response. That is interior decorating.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "agency_ransom": {
+      "file": "media/voices-agency_ransom.mp3",
+      "bytes": 232847,
+      "speaker": "agency",
+      "text": "[wryly] The criminal says they are a trusted recovery partner? Fascinating. Their references include themselves, a burner phone, and your stolen customer database. Restore from verified backups. Keep the evidence. We will bring our own coffee.",
+      "request": {
+        "text": "[wryly] The criminal says they are a trusted recovery partner? Fascinating. Their references include themselves, a burner phone, and your stolen customer database. Restore from verified backups. Keep the evidence. We will bring our own coffee.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "bosswarning": {
+      "file": "media/voices-bosswarning.mp3",
+      "bytes": 236608,
+      "speaker": "engineer",
+      "text": "[urgent] BLACKOUT is inbound. That huge armored virus is the campaign lead. Upgrade IPS for armor. Use WAF if radar identifies a web payload. Keep EDR and recovery ready. It is big. It is not invincible.",
+      "request": {
+        "text": "[urgent] BLACKOUT is inbound. That huge armored virus is the campaign lead. Upgrade IPS for armor. Use WAF if radar identifies a web payload. Keep EDR and recovery ready. It is big. It is not invincible.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "loss1": {
+      "file": "media/voices-loss1.mp3",
+      "bytes": 207351,
+      "speaker": "board",
+      "text": "[angry] The company is offline. Customers cannot work. And you told me we had it under control! No more green dashboards. Preserve the evidence, face the team, and tell me exactly what failed.",
+      "request": {
+        "text": "[angry] The company is offline. Customers cannot work. And you told me we had it under control! No more green dashboards. Preserve the evidence, face the team, and tell me exactly what failed.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "loss2": {
+      "file": "media/voices-loss2.mp3",
+      "bytes": 223652,
+      "speaker": "board",
+      "text": "[furious] We funded security. We trusted your plan. Now our business is a ransom note with a logo! I want facts, not acronyms. What do we rebuild first, and how do we make sure this never becomes normal?",
+      "request": {
+        "text": "[furious] We funded security. We trusted your plan. Now our business is a ransom note with a logo! I want facts, not acronyms. What do we rebuild first, and how do we make sure this never becomes normal?",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "loss3": {
+      "file": "media/voices-loss3.mp3",
+      "bytes": 216128,
+      "speaker": "board",
+      "text": "[upset] There are people behind every one of those systems. Their work. Their customers. Their jobs. This was not a score on a screen to them. Save what we can. Then we owe everyone the truth.",
+      "request": {
+        "text": "[upset] There are people behind every one of those systems. Their work. Their customers. Their jobs. This was not a score on a screen to them. Save what we can. Then we owe everyone the truth.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "loss4": {
+      "file": "media/voices-loss4.mp3",
+      "bytes": 227831,
+      "speaker": "board",
+      "text": "[frustrated] I have six missed calls from investors and one from my mother asking if her data is on the dark web! The strategy deck said resilient. This does not feel resilient. Bring me the recovery plan. No animations.",
+      "request": {
+        "text": "[frustrated] I have six missed calls from investors and one from my mother asking if her data is on the dark web! The strategy deck said resilient. This does not feel resilient. Bring me the recovery plan. No animations.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "loss5": {
+      "file": "media/voices-loss5.mp3",
+      "bytes": 253327,
+      "speaker": "board",
+      "text": "[angry] Our emergency vendor just sent a congratulatory email. Congratulations on what? The company is down! Stop buying promises. Preserve the evidence, look after the engineers, and show me a recovery plan that actually works.",
+      "request": {
+        "text": "[angry] Our emergency vendor just sent a congratulatory email. Congratulations on what? The company is down! Stop buying promises. Preserve the evidence, look after the engineers, and show me a recovery plan that actually works.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "promotion_alt": {
+      "file": "media/voices-promotion_alt.mp3",
+      "bytes": 280076,
+      "speaker": "board",
+      "text": "[warmly] Congratulations, Chief Information Security Officer. The company is yours to protect. You start with five out of five board trust. We believe in you. Please do not make us believe in the crisis consultant instead. Learn the estate, keep some cash, and keep us running.",
+      "request": {
+        "text": "[warmly] Congratulations, Chief Information Security Officer. The company is yours to protect. You start with five out of five board trust. We believe in you. Please do not make us believe in the crisis consultant instead. Learn the estate, keep some cash, and keep us running.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "salespitch_v10_alt": {
+      "file": "media/voices-salespitch_v10_alt.mp3",
+      "bytes": 226159,
+      "speaker": "seller",
+      "text": "[rushed] Miles Sterling! We saw the incident and cleared our calendar. Happy to help, absolutely happy. Your emergency package is ready for approval. Let us turn this difficult moment into a signed order. Together.",
+      "request": {
+        "text": "[rushed] Miles Sterling! We saw the incident and cleared our calendar. Happy to help, absolutely happy. Your emergency package is ready for approval. Let us turn this difficult moment into a signed order. Together.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "salesclosed_v10_alt": {
+      "file": "media/voices-salesclosed_v10_alt.mp3",
+      "bytes": 177676,
+      "speaker": "seller",
+      "text": "[excited] Approved! Wonderful. The package is in motion. My finance team is already describing this as a beautiful partnership. Your finance team may need a minute.",
+      "request": {
+        "text": "[excited] Approved! Wonderful. The package is in motion. My finance team is already describing this as a beautiful partnership. Your finance team may need a minute.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "agency_intro_alt": {
+      "file": "media/voices-agency_intro_alt.mp3",
+      "bytes": 188125,
+      "speaker": "agency",
+      "text": "[dryly] Dana Cole, FBI cyber liaison. Preserve your logs and contain the infection. Please stop rebooting the evidence. The evidence has had a very long day.",
+      "request": {
+        "text": "[dryly] Dana Cole, FBI cyber liaison. Preserve your logs and contain the infection. Please stop rebooting the evidence. The evidence has had a very long day.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "agency_leak_alt": {
+      "file": "media/voices-agency_leak_alt.mp3",
+      "bytes": 194395,
+      "speaker": "agency",
+      "text": "[serious] Company data is leaving without a forwarding address. Trace the source with data loss monitoring, then quarantine it. Renaming the database to Nothing Important is not encryption.",
+      "request": {
+        "text": "[serious] Company data is leaving without a forwarding address. Trace the source with data loss monitoring, then quarantine it. Renaming the database to Nothing Important is not encryption.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "agency_ransom_alt": {
+      "file": "media/voices-agency_ransom_alt.mp3",
+      "bytes": 177676,
+      "speaker": "agency",
+      "text": "[deadpan] A criminal with a customer-success team is still a criminal. Verify your backups, save the evidence, and do not confuse a friendly emoji with a recovery guarantee.",
+      "request": {
+        "text": "[deadpan] A criminal with a customer-success team is still a criminal. Verify your backups, save the evidence, and do not confuse a friendly emoji with a recovery guarantee.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "bosswarning_alt": {
+      "file": "media/voices-bosswarning_alt.mp3",
+      "bytes": 226159,
+      "speaker": "engineer",
+      "text": "[shouting] BLACKOUT at the perimeter! Big armor, bad intentions. Radar tells you the payload. Upgrade IPS for device attacks; WAF slows web attacks. Nobody panic-buy a second coffee machine!",
+      "request": {
+        "text": "[shouting] BLACKOUT at the perimeter! Big armor, bad intentions. Radar tells you the payload. Upgrade IPS for device attacks; WAF slows web attacks. Nobody panic-buy a second coffee machine!",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "loss1_alt": {
+      "file": "media/voices-loss1_alt.mp3",
+      "bytes": 208605,
+      "speaker": "board",
+      "text": "[shouting] The business is down! Those red buildings are customers, payroll, livelihoods! I want evidence preserved and a recovery owner for every critical service. Not another dashboard with a reassuring font!",
+      "request": {
+        "text": "[shouting] The business is down! Those red buildings are customers, payroll, livelihoods! I want evidence preserved and a recovery owner for every critical service. Not another dashboard with a reassuring font!",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "loss2_alt": {
+      "file": "media/voices-loss2_alt.mp3",
+      "bytes": 164719,
+      "speaker": "board",
+      "text": "[angry] We have achieved complete alignment. Every department is furious at the same time. Tell me what failed, what survived, and who is bringing this company back online.",
+      "request": {
+        "text": "[angry] We have achieved complete alignment. Every department is furious at the same time. Tell me what failed, what survived, and who is bringing this company back online.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "loss3_alt": {
+      "file": "media/voices-loss3_alt.mp3",
+      "bytes": 208605,
+      "speaker": "board",
+      "text": "[sad] This is the call I hoped we would never make. Customers trusted us with their work and their data. Look after the team, preserve what remains, and tell the truth. We owe them that.",
+      "request": {
+        "text": "[sad] This is the call I hoped we would never make. Customers trusted us with their work and their data. Look after the team, preserve what remains, and tell the truth. We owe them that.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "loss4_alt": {
+      "file": "media/voices-loss4_alt.mp3",
+      "bytes": 186871,
+      "speaker": "board",
+      "text": "[furious] The press called before you did! The press! My phone has become an incident-response tool and I hate the interface. Recover the business, then explain the decisions that brought us here.",
+      "request": {
+        "text": "[furious] The press called before you did! The press! My phone has become an incident-response tool and I hate the interface. Recover the business, then explain the decisions that brought us here.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "loss5_alt": {
+      "file": "media/voices-loss5_alt.mp3",
+      "bytes": 209859,
+      "speaker": "board",
+      "text": "[frustrated] We bought a platform, a solution, a transformation, and apparently a catastrophe subscription. Enough. Give the engineers room, save the evidence, and bring back the services people actually need.",
+      "request": {
+        "text": "[frustrated] We bought a platform, a solution, a transformation, and apparently a catastrophe subscription. Enough. Give the engineers room, save the evidence, and bring back the services people actually need.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "firsttip_alt": {
+      "file": "media/voices-firsttip_alt.mp3",
+      "bytes": 226159,
+      "speaker": "engineer",
+      "text": "[encouraging] Start small: Scanner, then visibility across the three uplinks. Match WAF to web traffic and IPS to device exploits. Save money for engineers. Security shopping is not security strategy.",
+      "request": {
+        "text": "[encouraging] Start small: Scanner, then visibility across the three uplinks. Match WAF to web traffic and IPS to device exploits. Save money for engineers. Security shopping is not security strategy.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "businessplan_alt": {
+      "file": "media/voices-businessplan_alt.mp3",
+      "bytes": 181438,
+      "speaker": "business",
+      "text": "[wryly] If there is no patch, disable the public service while we work inside. A little inconvenience beats explaining to customers that their orders now belong to a man called Crypt0Daddy.",
+      "request": {
+        "text": "[wryly] If there is no patch, disable the public service while we work inside. A little inconvenience beats explaining to customers that their orders now belong to a man called Crypt0Daddy.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "hackertaunt_alt": {
+      "file": "media/voices-hackertaunt_alt.mp3",
+      "bytes": 207351,
+      "speaker": "criminal",
+      "text": "[laughing] Lovely firewall. Did you also protect the internal server named Temporary Final Version Seven? Because we have developed a very special relationship with it.",
+      "request": {
+        "text": "[laughing] Lovely firewall. Did you also protect the internal server named Temporary Final Version Seven? Because we have developed a very special relationship with it.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "peer_alt": {
+      "file": "media/voices-peer_alt.mp3",
+      "bytes": 255835,
+      "speaker": "peer",
+      "text": "[chuckles] Mine went red last quarter. I called it a live resilience exercise. The board called it Thursday. Buy backups, protect identity, and keep an engineer free. You are welcome.",
+      "request": {
+        "text": "[chuckles] Mine went red last quarter. I called it a live resilience exercise. The board called it Thursday. Buy backups, protect identity, and keep an engineer free. You are welcome.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "patchless_alt": {
+      "file": "media/voices-patchless_alt.mp3",
+      "bytes": 205679,
+      "speaker": "engineer",
+      "text": "[urgent] No patch yet. We can disable the exposed service, isolate the asset, or replace it. Matching controls buy time; they do not close the flaw. The vendor apology is also not a control.",
+      "request": {
+        "text": "[urgent] No patch yet. We can disable the exposed service, isolate the asset, or replace it. Matching controls buy time; they do not close the flaw. The vendor apology is also not a control.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "boardpressure_alt": {
+      "file": "media/voices-boardpressure_alt.mp3",
+      "bytes": 167645,
+      "speaker": "board",
+      "text": "[angry] Stop saying we are monitoring the situation! I am also monitoring it, and I have no idea what I am doing. Tell me what still works and who is fixing what does not!",
+      "request": {
+        "text": "[angry] Stop saying we are monitoring the situation! I am also monitoring it, and I have no idea what I am doing. Tell me what still works and who is fixing what does not!",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "businesshope_alt": {
+      "file": "media/voices-businesshope_alt.mp3",
+      "bytes": 183946,
+      "speaker": "business",
+      "text": "[relieved] Orders are still moving. Customers are still buying. My spreadsheet has stopped using capital letters. Keep the important services alive and I will handle the awkward conversations.",
+      "request": {
+        "text": "[relieved] Orders are still moving. Customers are still buying. My spreadsheet has stopped using capital letters. Keep the important services alive and I will handle the awkward conversations.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "crownpanic_alt": {
+      "file": "media/voices-crownpanic_alt.mp3",
+      "bytes": 160958,
+      "speaker": "board",
+      "text": "[shouting] That is our crown jewel! The business cannot run on a red warning icon! Contain it, fund recovery, and tell me what customers can use right now!",
+      "request": {
+        "text": "[shouting] That is our crown jewel! The business cannot run on a red warning icon! Contain it, fund recovery, and tell me what customers can use right now!",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "hackerlate_alt": {
+      "file": "media/voices-hackerlate_alt.mp3",
+      "bytes": 221144,
+      "speaker": "criminal",
+      "text": "[mocking] Still awake? Our automation has no overtime policy. Yours has one exhausted engineer and a motivational poster. Respectfully, the poster is not slowing us down.",
+      "request": {
+        "text": "[mocking] Still awake? Our automation has no overtime policy. Yours has one exhausted engineer and a motivational poster. Respectfully, the poster is not slowing us down.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "leakanomaly_alt": {
+      "file": "media/voices-leakanomaly_alt.mp3",
+      "bytes": 189379,
+      "speaker": "business",
+      "text": "[concerned] Why is outbound traffic doing more work than sales? Something is taking our data. We need data loss monitoring to identify the source before somebody else launches our customer newsletter.",
+      "request": {
+        "text": "[concerned] Why is outbound traffic doing more work than sales? Something is taking our data. We need data loss monitoring to identify the source before somebody else launches our customer newsletter.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "supplywave_alt": {
+      "file": "media/voices-supplywave_alt.mp3",
+      "bytes": 195648,
+      "speaker": "engineer",
+      "text": "[urgent] The update was signed. It was also poisoned. Malware is coming from inside that building every wave. Quarantine it, then remove the intruder. A perimeter fence cannot un-install a gift.",
+      "request": {
+        "text": "[urgent] The update was signed. It was also poisoned. Malware is coming from inside that building every wave. Quarantine it, then remove the intruder. A perimeter fence cannot un-install a gift.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "leakfound_alt": {
+      "file": "media/voices-leakfound_alt.mp3",
+      "bytes": 194395,
+      "speaker": "engineer",
+      "text": "[urgent] We traced the leak. The rising packets mark its source. Select that building, quarantine egress, then remove the collector. Finding the leak is step one. Please continue to step two.",
+      "request": {
+        "text": "[urgent] We traced the leak. The rising packets mark its source. Select that building, quarantine egress, then remove the collector. Finding the leak is step one. Please continue to step two.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "leakboard_alt": {
+      "file": "media/voices-leakboard_alt.mp3",
+      "bytes": 196902,
+      "speaker": "board",
+      "text": "[angry] Our customer records are not a promotional giveaway! Stop the transfer, preserve the evidence, and get the response team involved. Nobody use the phrase unexpected transparency.",
+      "request": {
+        "text": "[angry] Our customer records are not a promotional giveaway! Stop the transfer, preserve the evidence, and get the response team involved. Nobody use the phrase unexpected transparency.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "shadowit_alt": {
+      "file": "media/voices-shadowit_alt.mp3",
+      "bytes": 177676,
+      "speaker": "business",
+      "text": "[sheepish] Someone connected a team server without asking. They called it agile. Discovery will call it an asset. The incident report may use stronger language.",
+      "request": {
+        "text": "[sheepish] Someone connected a team server without asking. They called it agile. Discovery will call it an asset. The incident report may use stronger language.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "tipbackup_alt": {
+      "file": "media/voices-tipbackup_alt.mp3",
+      "bytes": 176422,
+      "speaker": "engineer",
+      "text": "[guiding] Locked files need tested backups, response money and available engineers. Fund recovery, then rebuild. A patch is a door lock, not a time machine.",
+      "request": {
+        "text": "[guiding] Locked files need tested backups, response money and available engineers. Fund recovery, then rebuild. A patch is a door lock, not a time machine.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "tipcapacity_alt": {
+      "file": "media/voices-tipcapacity_alt.mp3",
+      "bytes": 168899,
+      "speaker": "engineer",
+      "text": "[tired] Every engineer is assigned. Open the Team tab and hire another shift. I cannot parallelize myself, although procurement did ask whether there was a plugin.",
+      "request": {
+        "text": "[tired] Every engineer is assigned. Open the Team tab and hire another shift. I cannot parallelize myself, although procurement did ask whether there was a plugin.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "tipidentity_alt": {
+      "file": "media/voices-tipidentity_alt.mp3",
+      "bytes": 178930,
+      "speaker": "engineer",
+      "text": "[guiding] Identity protection stops stolen logins crossing your estate. Fund the identity provider. Those amber wires are more useful than another wall against someone holding a valid password.",
+      "request": {
+        "text": "[guiding] Identity protection stops stolen logins crossing your estate. Fund the identity provider. Those amber wires are more useful than another wall against someone holding a valid password.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "tipcontrols_alt": {
+      "file": "media/voices-tipcontrols_alt.mp3",
+      "bytes": 201918,
+      "speaker": "engineer",
+      "text": "[guiding] Read the radar labels: web payload, WAF; device exploit, IPS. Critical system, EDR. Empty budget, regret. Keep enough cash for the repair bill.",
+      "request": {
+        "text": "[guiding] Read the radar labels: web payload, WAF; device exploit, IPS. Critical system, EDR. Empty budget, regret. Keep enough cash for the repair bill.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "daywelcome_alt": {
+      "file": "media/voices-daywelcome_alt.mp3",
+      "bytes": 180184,
+      "speaker": "engineer",
+      "text": "[upbeat] Three uplinks, one company, and a very ambitious coffee budget. Find the exposed services first. The internet is already checking them for you, without permission.",
+      "request": {
+        "text": "[upbeat] Three uplinks, one company, and a very ambitious coffee budget. Find the exposed services first. The internet is already checking them for you, without permission.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "welcome_alt": {
+      "file": "media/voices-welcome_alt.mp3",
+      "bytes": 176422,
+      "speaker": "engineer",
+      "text": "[warmly] Welcome to the command floor. Inventory first, matching defenses second, emergency reserve always. It is a company, not a contest to buy the most boxes.",
+      "request": {
+        "text": "[warmly] Welcome to the command floor. Inventory first, matching defenses second, emergency reserve always. It is a company, not a contest to buy the most boxes.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "ransomware_help_alt": {
+      "file": "media/voices-ransomware_help_alt.mp3",
+      "bytes": 214875,
+      "speaker": "engineer",
+      "text": "[urgent] Intruder detected. The timer counts down to encryption. Remove the intruder now. If files lock, recovery needs tested backups, engineers and money. Please do not patch the ransom note.",
+      "request": {
+        "text": "[urgent] Intruder detected. The timer counts down to encryption. Remove the intruder now. If files lock, recovery needs tested backups, engineers and money. Please do not patch the ransom note.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "patched_alt": {
+      "file": "media/voices-patched_alt.mp3",
+      "bytes": 126685,
+      "speaker": "engineer",
+      "text": "[relieved] Fix verified. The door is closed. I am recording this rare event in which the change ticket and reality briefly agree.",
+      "request": {
+        "text": "[relieved] Fix verified. The door is closed. I am recording this rare event in which the change ticket and reality briefly agree.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "patch_alt": {
+      "file": "media/voices-patch_alt.mp3",
+      "bytes": 129193,
+      "speaker": "engineer",
+      "text": "[wryly] Patch queued. I have a maintenance window, a rollback plan, and the confidence of someone who has not opened the release notes yet.",
+      "request": {
+        "text": "[wryly] Patch queued. I have a maintenance window, a rollback plan, and the confidence of someone who has not opened the release notes yet.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "isolate_alt": {
+      "file": "media/voices-isolate_alt.mp3",
+      "bytes": 136716,
+      "speaker": "business",
+      "text": "[annoyed] Production is unplugged. Sales is asking when it comes back. I said after it stops serving criminals, which they described as surprisingly reasonable.",
+      "request": {
+        "text": "[annoyed] Production is unplugged. Sales is asking when it comes back. I said after it stops serving criminals, which they described as surprisingly reasonable.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "restore_alt": {
+      "file": "media/voices-restore_alt.mp3",
+      "bytes": 164719,
+      "speaker": "engineer",
+      "text": "[focused] Recovery underway. Verified backups, clean rebuild, service checks. This is the part where last month’s boring preparation becomes today’s favorite investment.",
+      "request": {
+        "text": "[focused] Recovery underway. Verified backups, clean rebuild, service checks. This is the part where last month’s boring preparation becomes today’s favorite investment.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "compromise_alt": {
+      "file": "media/voices-compromise_alt.mp3",
+      "bytes": 154688,
+      "speaker": "board",
+      "text": "[angry] We have an intruder! I want containment, an owner, and a recovery plan. If the next sentence begins with industry-leading, I am hanging up.",
+      "request": {
+        "text": "[angry] We have an intruder! I want containment, an owner, and a recovery plan. If the next sentence begins with industry-leading, I am hanging up.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "ransom_alt": {
+      "file": "media/voices-ransom_alt.mp3",
+      "bytes": 180184,
+      "speaker": "criminal",
+      "text": "[smug] Your files are locked. Our payment portal is open. Ironically, we invested quite heavily in availability. Shall we discuss your new data-access subscription?",
+      "request": {
+        "text": "[smug] Your files are locked. Our payment portal is open. Ironically, we invested quite heavily in availability. Shall we discuss your new data-access subscription?",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "pay_alt": {
+      "file": "media/voices-pay_alt.mp3",
+      "bytes": 173915,
+      "speaker": "criminal",
+      "text": "[pleased] Payment received. Your account manager is delighted. Your recovery outcome remains a separate conversation. We are criminals, not a service-level agreement.",
+      "request": {
+        "text": "[pleased] Payment received. Your account manager is delighted. Your recovery outcome remains a separate conversation. We are criminals, not a service-level agreement.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "surge_alt": {
+      "file": "media/voices-surge_alt.mp3",
+      "bytes": 170153,
+      "speaker": "engineer",
+      "text": "[urgent] Scanning pressure is climbing. Check all three entrances, upgrade saturated controls, and leave an engineer available. This is not the moment to reorganize the dashboard.",
+      "request": {
+        "text": "[urgent] Scanning pressure is climbing. Check all three entrances, upgrade saturated controls, and leave an engineer available. This is not the moment to reorganize the dashboard.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "zero_alt": {
+      "file": "media/voices-zero_alt.mp3",
+      "bytes": 163466,
+      "speaker": "engineer",
+      "text": "[serious] New exploit, no fix. Reduce exposure and layer the matching defenses. I asked the vendor for an ETA. They sent a thought-leadership article.",
+      "request": {
+        "text": "[serious] New exploit, no fix. Reduce exposure and layer the matching defenses. I asked the vendor for an ETA. They sent a thought-leadership article.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "supply_alt": {
+      "file": "media/voices-supply_alt.mp3",
+      "bytes": 180184,
+      "speaker": "engineer",
+      "text": "[dryly] The trusted update shipped malware. The release notes call it an unexpected dependency. Quarantine the source and clean it before it becomes everyone’s dependency.",
+      "request": {
+        "text": "[dryly] The trusted update shipped malware. The release notes call it an unexpected dependency. Quarantine the source and clean it before it becomes everyone’s dependency.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "fatigue_alt": {
+      "file": "media/voices-fatigue_alt.mp3",
+      "bytes": 150927,
+      "speaker": "engineer",
+      "text": "[exhausted] I just addressed the firewall as Mum. We need another shift or a rest. My next change ticket may otherwise contain a grocery list.",
+      "request": {
+        "text": "[exhausted] I just addressed the firewall as Mum. We need another shift or a rest. My next change ticket may otherwise contain a grocery list.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "review_alt": {
+      "file": "media/voices-review_alt.mp3",
+      "bytes": 186871,
+      "speaker": "board",
+      "text": "[stern] Noon review. What stayed online, what did we spend, and what is still at risk? Three answers. If you open a forty-slide deck, I will count that as an incident.",
+      "request": {
+        "text": "[stern] Noon review. What stayed online, what did we spend, and what is still at risk? Three answers. If you open a forty-slide deck, I will count that as an incident.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "goodreview_alt": {
+      "file": "media/voices-goodreview_alt.mp3",
+      "bytes": 118744,
+      "speaker": "board",
+      "text": "[pleased] Controlled damage and sensible spending. Good. This is the kind of boring I am willing to fund. Keep it boring.",
+      "request": {
+        "text": "[pleased] Controlled damage and sensible spending. Good. This is the kind of boring I am willing to fund. Keep it boring.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "won_alt": {
+      "file": "media/voices-won_alt.mp3",
+      "bytes": 144239,
+      "speaker": "engineer",
+      "text": "[relieved] Midnight. We kept the business alive. Document the handover and let the team breathe. Tomorrow’s problems can at least wait until tomorrow’s coffee.",
+      "request": {
+        "text": "[relieved] Midnight. We kept the business alive. Document the handover and let the team breathe. Tomorrow’s problems can at least wait until tomorrow’s coffee.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "vendor_alt": {
+      "file": "media/voices-vendor_alt.mp3",
+      "bytes": 166391,
+      "speaker": "business",
+      "text": "[disbelieving] The vendor reused a password. Across customers. They say security is their highest priority, which must make their other priorities absolutely terrifying.",
+      "request": {
+        "text": "[disbelieving] The vendor reused a password. Across customers. They say security is their highest priority, which must make their other priorities absolutely terrifying.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "lost_alt": {
+      "file": "media/voices-lost_alt.mp3",
+      "bytes": 132955,
+      "speaker": "board",
+      "text": "[disappointed] We have run out of room to absorb damage. Protect the evidence and the people. Then we rebuild the business and the decisions behind it.",
+      "request": {
+        "text": "[disappointed] We have run out of room to absorb damage. Protect the evidence and the people. Then we rebuild the business and the decisions behind it.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "boardbrief_alt": {
+      "file": "media/voices-boardbrief_alt.mp3",
+      "bytes": 153435,
+      "speaker": "board",
+      "text": "[approving] Clear risk, clear owner, clear next step. Finally, a briefing that does not require a translator. Keep me informed before the headlines do.",
+      "request": {
+        "text": "[approving] Clear risk, clear owner, clear next step. Finally, a briefing that does not require a translator. Keep me informed before the headlines do.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "hint_contain": {
+      "file": "media/voices-hint_contain.mp3",
+      "bytes": 176422,
+      "speaker": "engineer",
+      "text": "[urgent] We found the leaking building, but data is still leaving. Click the source, then Quarantine egress. The rising packets should stop. After that, remove the collector.",
+      "request": {
+        "text": "[urgent] We found the leaking building, but data is still leaving. Click the source, then Quarantine egress. The rising packets should stop. After that, remove the collector.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "hint_detect": {
+      "file": "media/voices-hint_detect.mp3",
+      "bytes": 199410,
+      "speaker": "engineer",
+      "text": "[guiding] The leak is still untraced. Open Programs, Detect, then Data loss monitoring. That identifies the source. Radar sees attackers; it cannot replace data loss monitoring.",
+      "request": {
+        "text": "[guiding] The leak is still untraced. Open Programs, Detect, then Data loss monitoring. That identifies the source. Radar sees attackers; it cannot replace data loss monitoring.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "hint_cleanup": {
+      "file": "media/voices-hint_cleanup.mp3",
+      "bytes": 160958,
+      "speaker": "engineer",
+      "text": "[guiding] Quarantine stopped the transfer. The intruder has not moved out. Select the contained building and assign an engineer to remove the collector and rotate credentials.",
+      "request": {
+        "text": "[guiding] Quarantine stopped the transfer. The intruder has not moved out. Select the contained building and assign an engineer to remove the collector and rotate credentials.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "hint_supply": {
+      "file": "media/voices-hint_supply.mp3",
+      "bytes": 166391,
+      "speaker": "engineer",
+      "text": "[urgent] That poisoned update is still spawning malware inside the company. Quarantine the source and remove the intruder. Buying another perimeter wall is not going to uninstall it.",
+      "request": {
+        "text": "[urgent] That poisoned update is still spawning malware inside the company. Quarantine the source and remove the intruder. Buying another perimeter wall is not going to uninstall it.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "social_blocked": {
+      "file": "media/voices-social_blocked.mp3",
+      "bytes": 181438,
+      "speaker": "business",
+      "text": "[amused] Fake executive, urgent request, suspicious callback number. We verified it through a trusted channel. Turns out the chief executive does not normally demand passwords from a taxi.",
+      "request": {
+        "text": "[amused] Fake executive, urgent request, suspicious callback number. We verified it through a trusted channel. Turns out the chief executive does not normally demand passwords from a taxi.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "social_warning": {
+      "file": "media/voices-social_warning.mp3",
+      "bytes": 217382,
+      "speaker": "business",
+      "text": "[alarmed] Someone impersonated our chief executive and pressured the help desk into a login reset. Apparently urgent and confidential were the entire authentication process. Staff training and stronger login checks would help.",
+      "request": {
+        "text": "[alarmed] Someone impersonated our chief executive and pressured the help desk into a login reset. Apparently urgent and confidential were the entire authentication process. Staff training and stronger login checks would help.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "hint_contain_alt": {
+      "file": "media/voices-hint_contain_alt.mp3",
+      "bytes": 159704,
+      "speaker": "engineer",
+      "text": "[shouting] We traced it! Now quarantine the leaking building. Detection is a smoke alarm, not a fire extinguisher. Stop egress, then send an engineer to clean up.",
+      "request": {
+        "text": "[shouting] We traced it! Now quarantine the leaking building. Detection is a smoke alarm, not a fire extinguisher. Stop egress, then send an engineer to clean up.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "hint_detect_alt": {
+      "file": "media/voices-hint_detect_alt.mp3",
+      "bytes": 188125,
+      "speaker": "engineer",
+      "text": "[patiently] Data is still walking out. Choose Detect in Programs and fund Data loss monitoring. Then we can show you which building. We cannot investigate a vague sense of doom forever.",
+      "request": {
+        "text": "[patiently] Data is still walking out. Choose Detect in Programs and fund Data loss monitoring. Then we can show you which building. We cannot investigate a vague sense of doom forever.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "hint_cleanup_alt": {
+      "file": "media/voices-hint_cleanup_alt.mp3",
+      "bytes": 181438,
+      "speaker": "engineer",
+      "text": "[dryly] The leak is contained, not cured. Select the building and remove the collector. Leaving malware in quarantine forever is not recovery. It is an unconventional hosting plan.",
+      "request": {
+        "text": "[dryly] The leak is contained, not cured. Select the building and remove the collector. Leaving malware in quarantine forever is not recovery. It is an unconventional hosting plan.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "hint_supply_alt": {
+      "file": "media/voices-hint_supply_alt.mp3",
+      "bytes": 180184,
+      "speaker": "engineer",
+      "text": "[serious] Malware is still coming from the poisoned-update host. Quarantine that source, then remove the intruder. Until cleanup finishes, this is an inside job with recurring appointments.",
+      "request": {
+        "text": "[serious] Malware is still coming from the poisoned-update host. Quarantine that source, then remove the intruder. Until cleanup finishes, this is an inside job with recurring appointments.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "social_blocked_alt": {
+      "file": "media/voices-social_blocked_alt.mp3",
+      "bytes": 178930,
+      "speaker": "business",
+      "text": "[pleased] Another impersonation attempt blocked. We checked the request instead of obeying the urgency. The caller said I would be fired. Our actual chief executive said nice work.",
+      "request": {
+        "text": "[pleased] Another impersonation attempt blocked. We checked the request instead of obeying the urgency. The caller said I would be fired. Our actual chief executive said nice work.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "social_warning_alt": {
+      "file": "media/voices-social_warning_alt.mp3",
+      "bytes": 246639,
+      "speaker": "business",
+      "text": "[annoyed] A very convincing caller bullied somebody into resetting an executive account. Staff training catches suspicious requests; identity controls block stolen logins. The caller also asked for gift cards. In hindsight, a clue.",
+      "request": {
+        "text": "[annoyed] A very convincing caller bullied somebody into resetting an executive account. Staff training catches suspicious requests; identity controls block stolen logins. The caller also asked for gift cards. In hindsight, a clue.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "head_intro": {
+      "file": "media/voices-head_intro.mp3",
+      "bytes": 216128,
+      "speaker": "head",
+      "text": "[dryly] Daniel, Head of Engineering. Welcome. My team ships the features that pay for your firewalls. Yours keeps them from becoming ransom notes. Let us agree on a change window before we agree on a blame window.",
+      "request": {
+        "text": "[dryly] Daniel, Head of Engineering. Welcome. My team ships the features that pay for your firewalls. Yours keeps them from becoming ransom notes. Let us agree on a change window before we agree on a blame window.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "head_isolate": {
+      "file": "media/voices-head_isolate.mp3",
+      "bytes": 264612,
+      "speaker": "head",
+      "text": "[frustrated] You just took a service away from my team. I support containment. I would also support a heads-up! If only the public endpoint is exposed, disable that service and keep private operations running. Bring it back after the fix, not after the shouting.",
+      "request": {
+        "text": "[frustrated] You just took a service away from my team. I support containment. I would also support a heads-up! If only the public endpoint is exposed, disable that service and keep private operations running. Bring it back after the fix, not after the shouting.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "head_patchless": {
+      "file": "media/voices-head_patchless.mp3",
+      "bytes": 262104,
+      "speaker": "head",
+      "text": "[exasperated] There is no patch. I checked twice. Forwarding the advisory in capital letters will not compile one. Restrict the exposed service, contain the host, and layer the right controls. We can replace it if the business can fund the change.",
+      "request": {
+        "text": "[exasperated] There is no patch. I checked twice. Forwarding the advisory in capital letters will not compile one. Restrict the exposed service, contain the host, and layer the right controls. We can replace it if the business can fund the change.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "head_newsystem": {
+      "file": "media/voices-head_newsystem.mp3",
+      "bytes": 265866,
+      "speaker": "head",
+      "text": "[sheepish] Small update. My team connected a new system. It was temporary, which in engineering means until someone retires. It is not in your inventory yet. Run asset discovery, scan it, and put it under the same controls as everything else.",
+      "request": {
+        "text": "[sheepish] Small update. My team connected a new system. It was temporary, which in engineering means until someone retires. It is not in your inventory yet. Run asset discovery, scan it, and put it under the same controls as everything else.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "head_rollout": {
+      "file": "media/voices-head_rollout.mp3",
+      "bytes": 245386,
+      "speaker": "head",
+      "text": "[insisting] Approved does not mean deployed. That rollout still has tests, migrations, and people who click Remind Me Tomorrow. Check the work ledger. The control protects us when it is active, not when the purchase order looks impressive.",
+      "request": {
+        "text": "[insisting] Approved does not mean deployed. That rollout still has tests, migrations, and people who click Remind Me Tomorrow. Check the work ledger. The control protects us when it is active, not when the purchase order looks impressive.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "head_capacity": {
+      "file": "media/voices-head_capacity.mp3",
+      "bytes": 257088,
+      "speaker": "head",
+      "text": "[tired] Every engineer is working. I cannot assign a patch to a motivational quote. Hire another engineer from the team panel, or contain the systems while the queue clears. And please stop naming every ticket Priority Zero. That is just a list.",
+      "request": {
+        "text": "[tired] Every engineer is working. I cannot assign a patch to a motivational quote. Hire another engineer from the team panel, or contain the systems while the queue clears. And please stop naming every ticket Priority Zero. That is just a list.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "ai_warning": {
+      "file": "media/voices-ai_warning.mp3",
+      "bytes": 260850,
+      "speaker": "engineer",
+      "text": "[urgent] AI threat inbound. An automated campaign with an adaptive shield, not a magic mind. Put radar on its route to expose it. Then use the matching WAF or upgraded IPS. Apparently the attacker automated its performance review before we did.",
+      "request": {
+        "text": "[urgent] AI threat inbound. An automated campaign with an adaptive shield, not a magic mind. Put radar on its route to expose it. Then use the matching WAF or upgraded IPS. Apparently the attacker automated its performance review before we did.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "grc_inventory": {
+      "file": "media/voices-grc_inventory.mp3",
+      "bytes": 250819,
+      "speaker": "regulator",
+      "text": "[dryly] Helena Ward, your regulator. Please submit the asset register. The actual systems, not the ones in the slide with the reassuring padlock. Run your scanner, assign an engineer in Operations, under Tasks, and obtain board sign-off.",
+      "request": {
+        "text": "[dryly] Helena Ward, your regulator. Please submit the asset register. The actual systems, not the ones in the slide with the reassuring padlock. Run your scanner, assign an engineer in Operations, under Tasks, and obtain board sign-off.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "grc_recovery": {
+      "file": "media/voices-grc_recovery.mp3",
+      "bytes": 250819,
+      "speaker": "regulator",
+      "text": "[firm] Next, recovery evidence. A backup you have never tested is a very expensive belief system. Activate tested backups and assign the evidence task. Your board will review the packet. Yes, they have homework too.",
+      "request": {
+        "text": "[firm] Next, recovery evidence. A backup you have never tested is a very expensive belief system. Activate tested backups and assign the evidence task. Your board will review the packet. Yes, they have homework too.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "grc_attestation": {
+      "file": "media/voices-grc_attestation.mp3",
+      "bytes": 221144,
+      "speaker": "regulator",
+      "text": "[insisting] Final request: the board risk attestation. Close the inventory and recovery evidence first. Then give your directors something specific to sign. A thumbs-up emoji in the incident channel is not a control owner.",
+      "request": {
+        "text": "[insisting] Final request: the board risk attestation. Close the inventory and recovery evidence first. Then give your directors something specific to sign. A thumbs-up emoji in the incident channel is not a control owner.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "grc_board": {
+      "file": "media/voices-grc_board.mp3",
+      "bytes": 157196,
+      "speaker": "board",
+      "text": "[weary] The evidence packet is here. We are reviewing it now. Apparently being on the board also involves reading. I was led to believe there would be more lunches.",
+      "request": {
+        "text": "[weary] The evidence packet is here. We are reviewing it now. Apparently being on the board also involves reading. I was led to believe there would be more lunches.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "grc_done": {
+      "file": "media/voices-grc_done.mp3",
+      "bytes": 205679,
+      "speaker": "regulator",
+      "text": "[pleased] Evidence accepted. Clear ownership, a real test, and a board signature. Look at that. Governance without a ninety-slide presentation. Please do not ruin this moment by saying synergy.",
+      "request": {
+        "text": "[pleased] Evidence accepted. Clear ownership, a real test, and a board signature. Look at that. Governance without a ninety-slide presentation. Please do not ruin this moment by saying synergy.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "grc_late": {
+      "file": "media/voices-grc_late.mp3",
+      "bytes": 216128,
+      "speaker": "regulator",
+      "text": "[stern] Your evidence deadline passed. The board has been notified. Submit the outstanding packet; ignoring the reminder does not make it a risk treatment. I have a follow-up template, and I am not afraid to use it.",
+      "request": {
+        "text": "[stern] Your evidence deadline passed. The board has been notified. Submit the outstanding packet; ignoring the reminder does not make it a risk treatment. I have a follow-up template, and I am not afraid to use it.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "worker_intro_2": {
+      "file": "media/voices-worker_intro_2.mp3",
+      "bytes": 221144,
+      "speaker": "contractor",
+      "text": "[confident] Great news: I can work in every time zone. Bad news: payroll keeps calling that physically impossible. Please approve my laptop delivery to the address marked definitely an office.",
+      "request": {
+        "text": "[confident] Great news: I can work in every time zone. Bad news: payroll keeps calling that physically impossible. Please approve my laptop delivery to the address marked definitely an office.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "worker_intro": {
+      "file": "media/voices-worker_intro.mp3",
+      "bytes": 240370,
+      "speaker": "contractor",
+      "text": "[cheerfully] Ben Carter, remote developer. My camera is broken, my references are on holiday, and my timesheet has achieved one hundred and ninety percent availability. Shall we skip onboarding? In the interest of agility.",
+      "request": {
+        "text": "[cheerfully] Ben Carter, remote developer. My camera is broken, my references are on holiday, and my timesheet has achieved one hundred and ninety percent availability. Shall we skip onboarding? In the interest of agility.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "worker_intro_3": {
+      "file": "media/voices-worker_intro_3.mp3",
+      "bytes": 239116,
+      "speaker": "contractor",
+      "text": "[deadpan] My résumé says team player. Technically, three of my references are also me. That is a very aligned team. Can somebody approve my access before Human Resources starts doing research?",
+      "request": {
+        "text": "[deadpan] My résumé says team player. Technically, three of my references are also me. That is a very aligned team. Can somebody approve my access before Human Resources starts doing research?",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "worker_detected": {
+      "file": "media/voices-worker_detected.mp3",
+      "bytes": 244132,
+      "speaker": "engineer",
+      "text": "[urgent] Contractor identity checks failed. We suspect a North Korea-linked worker fraud operation, not a software bug. Open Active threats. Revoke access and freeze payments, then investigate. A firewall cannot interview a résumé.",
+      "request": {
+        "text": "[urgent] Contractor identity checks failed. We suspect a North Korea-linked worker fraud operation, not a software bug. Open Active threats. Revoke access and freeze payments, then investigate. A firewall cannot interview a résumé.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "worker_contained_2": {
+      "file": "media/voices-worker_contained_2.mp3",
+      "bytes": 173915,
+      "speaker": "contractor",
+      "text": "[nervously] I see you revoked my sessions. Bold leadership. Could you at least endorse me for cloud architecture? My entire identity was hosted in one.",
+      "request": {
+        "text": "[nervously] I see you revoked my sessions. Bold leadership. Could you at least endorse me for cloud architecture? My entire identity was hosted in one.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "worker_contained": {
+      "file": "media/voices-worker_contained.mp3",
+      "bytes": 219890,
+      "speaker": "contractor",
+      "text": "[offended] My account is disabled and my payments are frozen. Is this your offboarding process? I was about to propose a five-year roadmap. Mostly invoices, but the font was excellent.",
+      "request": {
+        "text": "[offended] My account is disabled and my payments are frozen. Is this your offboarding process? I was about to propose a five-year roadmap. Mostly invoices, but the font was excellent.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "worker_resolved_2": {
+      "file": "media/voices-worker_resolved_2.mp3",
+      "bytes": 230339,
+      "speaker": "board",
+      "text": "[incredulous] We hired a résumé with a subscription model. Fine. You stopped the payments and completed the investigation. Please tell Human Resources that cultural fit does not mean the same person fits five identities.",
+      "request": {
+        "text": "[incredulous] We hired a résumé with a subscription model. Fine. You stopped the payments and completed the investigation. Please tell Human Resources that cultural fit does not mean the same person fits five identities.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "worker_resolved": {
+      "file": "media/voices-worker_resolved.mp3",
+      "bytes": 258342,
+      "speaker": "engineer",
+      "text": "[relieved] Access reviewed, evidence preserved, payment trail documented. The fraud case is closed. Next hire: verify identity, references and who actually has the laptop. A green availability dot is not a background check.",
+      "request": {
+        "text": "[relieved] Access reviewed, evidence preserved, payment trail documented. The fraud case is closed. Next hire: verify identity, references and who actually has the laptop. A green availability dot is not a background check.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "worker_prevented_2": {
+      "file": "media/voices-worker_prevented_2.mp3",
+      "bytes": 250819,
+      "speaker": "contractor",
+      "text": "[sighs] Your hiring team called my references independently. Nobody has ever read that far down my résumé. I respect the professionalism. I will now be unavailable in all six of my time zones.",
+      "request": {
+        "text": "[sighs] Your hiring team called my references independently. Nobody has ever read that far down my résumé. I respect the professionalism. I will now be unavailable in all six of my time zones.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "worker_prevented": {
+      "file": "media/voices-worker_prevented.mp3",
+      "bytes": 298048,
+      "speaker": "contractor",
+      "text": "[flustered] Live identity verification? Independent references? Company-device checks? Your hiring process has become extremely hostile to my business model. I will withdraw. For personal reasons. Several persons, actually.",
+      "request": {
+        "text": "[flustered] Live identity verification? Independent references? Company-device checks? Your hiring process has become extremely hostile to my business model. I will withdraw. For personal reasons. Several persons, actually.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "worker_tip": {
+      "file": "media/voices-worker_tip.mp3",
+      "bytes": 223652,
+      "speaker": "engineer",
+      "text": "[guiding] The contractor alert is still open. Active threats, then Revoke access and freeze payments. That costs nothing. An engineer can investigate afterward. Awareness helps prevention; it does not revoke a live account.",
+      "request": {
+        "text": "[guiding] The contractor alert is still open. Active threats, then Revoke access and freeze payments. That costs nothing. An engineer can investigate afterward. Awareness helps prevention; it does not revoke a live account.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "worker_tip_2": {
+      "file": "media/voices-worker_tip_2.mp3",
+      "bytes": 262104,
+      "speaker": "agency",
+      "text": "[dryly] Suspicious contractor? Preserve evidence, revoke access, hold payments, and review credentials. Please do not replace identity checks with a nationality guessing competition. Verify every remote hire. Yes, even the one who likes your posts.",
+      "request": {
+        "text": "[dryly] Suspicious contractor? Preserve evidence, revoke access, hold payments, and review credentials. Please do not replace identity checks with a nationality guessing competition. Verify every remote hire. Yes, even the one who likes your posts.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "insider_detected": {
+      "file": "media/voices-insider_detected.mp3",
+      "bytes": 244132,
+      "speaker": "engineer",
+      "text": "[urgent] A legitimate account is abusing its access. That is an insider incident, not an incoming bug. Open Active threats and suspend the account. Then investigate. Admin lock limits damage; it does not conduct the interview.",
+      "request": {
+        "text": "[urgent] A legitimate account is abusing its access. That is an insider incident, not an incoming bug. Open Active threats and suspend the account. Then investigate. Admin lock limits damage; it does not conduct the interview.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "insider_detected_2": {
+      "file": "media/voices-insider_detected_2.mp3",
+      "bytes": 242878,
+      "speaker": "business",
+      "text": "[alarmed] Somebody interpreted access to the shared drive as ownership of the shared drive. Suspend the account, preserve evidence, and review permissions. We meant bring your whole self to work, not take the whole database home.",
+      "request": {
+        "text": "[alarmed] Somebody interpreted access to the shared drive as ownership of the shared drive. Suspend the account, preserve evidence, and review permissions. We meant bring your whole self to work, not take the whole database home.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "insider_contained": {
+      "file": "media/voices-insider_contained.mp3",
+      "bytes": 195648,
+      "speaker": "business",
+      "text": "[relieved] Access suspended. The suspicious activity stopped. Please investigate before restoring anything. I would prefer our exit interview not to include a demonstration of how much data fits on a personal drive.",
+      "request": {
+        "text": "[relieved] Access suspended. The suspicious activity stopped. Please investigate before restoring anything. I would prefer our exit interview not to include a demonstration of how much data fits on a personal drive.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "insider_resolved": {
+      "file": "media/voices-insider_resolved.mp3",
+      "bytes": 213621,
+      "speaker": "engineer",
+      "text": "[pleased] Insider investigation complete. Credentials reviewed and evidence retained. Access is not a lifetime achievement award. Keep privileges narrow, monitor misuse, and let actual evidence do the talking.",
+      "request": {
+        "text": "[pleased] Insider investigation complete. Credentials reviewed and evidence retained. Access is not a lifetime achievement award. Keep privileges narrow, monitor misuse, and let actual evidence do the talking.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "succession": {
+      "file": "media/voices-succession.mp3",
+      "bytes": 190633,
+      "speaker": "engineer",
+      "text": "[mischievously] Board trust is nearly gone. I still have your back. I also updated my CV to say acting Chief Information Security Officer. Purely for disaster recovery.",
+      "request": {
+        "text": "[mischievously] Board trust is nearly gone. I still have your back. I also updated my CV to say acting Chief Information Security Officer. Purely for disaster recovery.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "head_intro_insider1": {
+      "file": "media/voices-head_intro_insider1.mp3",
+      "bytes": 153435,
+      "speaker": "head",
+      "text": "[deadpan] Engineering here. Our zero-trust strategy is that nobody trusts the deployment pipeline. Unfortunately, it still has production credentials.",
+      "request": {
+        "text": "[deadpan] Engineering here. Our zero-trust strategy is that nobody trusts the deployment pipeline. Unfortunately, it still has production credentials.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "head_intro_insider3": {
+      "file": "media/voices-head_intro_insider3.mp3",
+      "bytes": 144239,
+      "speaker": "head",
+      "text": "[dryly] Engineering update. We moved fast and broke things. Apparently the next step is your department, so technically our roadmap is complete.",
+      "request": {
+        "text": "[dryly] Engineering update. We moved fast and broke things. Apparently the next step is your department, so technically our roadmap is complete.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "head_intro_insider2": {
+      "file": "media/voices-head_intro_insider2.mp3",
+      "bytes": 173915,
+      "speaker": "head",
+      "text": "[cheerful] Welcome! We practice infrastructure as code. The code is a bash script called final final do not touch, owned by someone who left in February.",
+      "request": {
+        "text": "[cheerful] Welcome! We practice infrastructure as code. The code is a bash script called final final do not touch, owned by someone who left in February.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "review_insider2": {
+      "file": "media/voices-review_insider2.mp3",
+      "bytes": 139224,
+      "speaker": "board",
+      "text": "[dryly] We accepted the risk last quarter. Finance is asking why the risk accepted our money. Please explain in units other than maturity levels.",
+      "request": {
+        "text": "[dryly] We accepted the risk last quarter. Finance is asking why the risk accepted our money. Please explain in units other than maturity levels.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "review_insider1": {
+      "file": "media/voices-review_insider1.mp3",
+      "bytes": 196902,
+      "speaker": "board",
+      "text": "[impatient] Noon review. Availability, spending, next steps. If the answer is a heat map, I am appointing the printer as Chief Information Security Officer. It at least produces evidence.",
+      "request": {
+        "text": "[impatient] Noon review. Availability, spending, next steps. If the answer is a heat map, I am appointing the printer as Chief Information Security Officer. It at least produces evidence.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "review_insider3": {
+      "file": "media/voices-review_insider3.mp3",
+      "bytes": 171407,
+      "speaker": "board",
+      "text": "[stern] I want a one-page security report. Not a one-page link to ninety slides. The last deck was so long the attacker renewed their access halfway through.",
+      "request": {
+        "text": "[stern] I want a one-page security report. Not a one-page link to ninety slides. The last deck was so long the attacker renewed their access halfway through.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "agency_intro_insider1": {
+      "file": "media/voices-agency_intro_insider1.mp3",
+      "bytes": 190633,
+      "speaker": "agency",
+      "text": "[deadpan] FBI cyber liaison. Preserve the logs. Your SIEM says no incidents, but the license expired yesterday. That is not threat reduction. That is a billing event.",
+      "request": {
+        "text": "[deadpan] FBI cyber liaison. Preserve the logs. Your SIEM says no incidents, but the license expired yesterday. That is not threat reduction. That is a billing event.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "agency_intro_insider2": {
+      "file": "media/voices-agency_intro_insider2.mp3",
+      "bytes": 176422,
+      "speaker": "agency",
+      "text": "[dryly] FBI here. Contain the infection and keep the evidence. Please do not name the incident folder final. Last time we subpoenaed seventeen finals and a folder called oops.",
+      "request": {
+        "text": "[dryly] FBI here. Contain the infection and keep the evidence. Please do not name the incident folder final. Last time we subpoenaed seventeen finals and a folder called oops.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "agency_intro_insider3": {
+      "file": "media/voices-agency_intro_insider3.mp3",
+      "bytes": 168899,
+      "speaker": "agency",
+      "text": "[serious] Dana Cole, FBI. Save the logs and contain the intruder. And stop asking whether incognito mode counts as witness protection. We have a budget problem already.",
+      "request": {
+        "text": "[serious] Dana Cole, FBI. Save the logs and contain the intruder. And stop asking whether incognito mode counts as witness protection. We have a budget problem already.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "succession_insider2": {
+      "file": "media/voices-succession_insider2.mp3",
+      "bytes": 157196,
+      "speaker": "engineer",
+      "text": "[sweetly] The board looks nervous. Want me to present the recovery plan? I rehearsed your job title in the mirror. Succession planning is a security control, technically.",
+      "request": {
+        "text": "[sweetly] The board looks nervous. Want me to present the recovery plan? I rehearsed your job title in the mirror. Succession planning is a security control, technically.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    },
+    "succession_insider3": {
+      "file": "media/voices-succession_insider3.mp3",
+      "bytes": 167645,
+      "speaker": "engineer",
+      "text": "[dryly] I am absolutely not applying for your job. I am testing leadership failover. Now contain the incidents and brief the board before my test becomes production.",
+      "request": {
+        "text": "[dryly] I am absolutely not applying for your job. I am testing leadership failover. Now contain the incidents and brief the board before my test becomes production.",
+        "model_id": "eleven_v3",
+        "voice_settings": {
+          "stability": 0.5,
+          "similarity_boost": 0.75
+        }
+      }
+    }
+  },
+  "music": {
+    "nightshift": {
+      "file": "media/music-nightshift.mp3",
+      "bytes": 960515,
+      "request": {
+        "prompt": "Instrumental cinematic cyber security strategy game underscore, restrained pulsing analog synth in D minor, 92 BPM, dark warm bass, intricate soft ticks, sparse piano, quiet evolving tension, no vocals, no big drops, steady loopable atmosphere for concentrating in a night shift security operations centre.",
+        "music_length_ms": 60000,
+        "force_instrumental": true
+      }
+    },
+    "siege": {
+      "file": "media/music-siege.mp3",
+      "bytes": 960515,
+      "request": {
+        "prompt": "Instrumental tense cyber thriller game underscore, controlled urgent 112 BPM, low analog synth ostinato, muted electronic percussion, unsettling strings, restrained sub bass, no vocals or lyrics, no loud jump scares, steady loopable music during an escalating incident response.",
+        "music_length_ms": 60000,
+        "force_instrumental": true
+      }
+    }
+  },
+  "effects": {
+    "breach": {
+      "file": "media/effects-breach.mp3",
+      "bytes": 33062,
+      "request": {
+        "text": "A short ominous electronic security breach alert, two deep warning pulses with a metallic digital glitch tail, cinematic clean interface sound",
+        "duration_seconds": 2,
+        "prompt_influence": 0.4
+      }
+    },
+    "block": {
+      "file": "media/effects-block.mp3",
+      "bytes": 33062,
+      "request": {
+        "text": "A crisp soft futuristic defensive energy interception with a muted electrical impact, short game effect",
+        "duration_seconds": 2,
+        "prompt_influence": 0.4
+      }
+    },
+    "build": {
+      "file": "media/effects-build.mp3",
+      "bytes": 33062,
+      "request": {
+        "text": "Precise mechanical equipment activation, soft pneumatic clunk then a pleasant electronic confirmation chime",
+        "duration_seconds": 2,
+        "prompt_influence": 0.4
+      }
+    },
+    "rain": {
+      "file": "media/effects-rain.mp3",
+      "bytes": 193141,
+      "request": {
+        "text": "Quiet rain on a modern office window with distant muted city traffic, calm realistic atmospheric loop, no music or voices",
+        "duration_seconds": 12,
+        "prompt_influence": 0.4
+      }
+    },
+    "ips_shot": {
+      "file": "media/effects-ips_shot.mp3",
+      "bytes": 33062,
+      "request": {
+        "text": "Single powerful electromagnetic cannon discharge, sharp metallic transient and tight sub bass thump, short futuristic defensive weapon shot, dry close sound, no music",
+        "duration_seconds": 2,
+        "prompt_influence": 0.4
+      }
+    },
+    "waf_arc": {
+      "file": "media/effects-waf_arc.mp3",
+      "bytes": 33062,
+      "request": {
+        "text": "Short crackling blue electrical arc interception, bright laser snap with sizzling energy tail, precision futuristic defense game sound, no voice",
+        "duration_seconds": 2,
+        "prompt_influence": 0.4
+      }
+    },
+    "emp_burst": {
+      "file": "media/effects-emp_burst.mp3",
+      "bytes": 33062,
+      "request": {
+        "text": "Special attack electromagnetic pulse, rising electrical charge then powerful bass shockwave with sparkling energy decay, cinematic science fiction ability, no music",
+        "duration_seconds": 2,
+        "prompt_influence": 0.4
+      }
+    },
+    "shell_impact": {
+      "file": "media/effects-shell_impact.mp3",
+      "bytes": 33062,
+      "request": {
+        "text": "Hard chitin claws striking reinforced metal barrier, quick crunchy metallic impact with a short scrape, close detailed game sound",
+        "duration_seconds": 2,
+        "prompt_influence": 0.4
+      }
+    },
+    "barrier_break": {
+      "file": "media/effects-barrier_break.mp3",
+      "bytes": 33062,
+      "request": {
+        "text": "Reinforced metal security barrier breaks, heavy metal crunch and shards scattering onto asphalt, cinematic physical destruction, no voices",
+        "duration_seconds": 2,
+        "prompt_influence": 0.4
+      }
+    },
+    "encryption": {
+      "file": "media/effects-encryption.mp3",
+      "bytes": 33062,
+      "request": {
+        "text": "Ominous digital encryption cascade, stuttering hard drives locking then deep alarm bass pulse, short sinister cyber incident game event, no voice",
+        "duration_seconds": 2,
+        "prompt_influence": 0.4
+      }
+    }
+  },
+  "errors": {}
+}

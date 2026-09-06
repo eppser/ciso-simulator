@@ -1,0 +1,27 @@
+{
+  "name": "ciso-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:release": "vite build && node tools/build-release.mjs",
+    "build:api": "node tools/build-api.mjs",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "smoke": "vite build && node tools/nightshift-smoke.mjs",
+    "balance": "node tools/campaign-autoplay.mjs",
+    "media:audio": "node tools/generate-audio.mjs",
+    "media:video": "node tools/generate-video.mjs"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "puppeteer-core": "^25.10.0",
+    "vite": "^6.4.3",
+    "vitest": "^4.1.11"
+  }
+}

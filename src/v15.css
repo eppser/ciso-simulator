@@ -1,0 +1,8 @@
+/* Navigation belongs to operations, not the building palette. */
+.brand-credit a{border:0;border-radius:0;padding:0;background:none;color:#f4f3ef}
+.portrait.contractor{background-image:url('../public/concepts/v10/remote-contractor.png');background-size:cover;background-position:50% 35%;animation:none}
+.mouse-guide{left:auto!important;right:24px;bottom:169px!important;justify-content:flex-end;max-width:290px}
+.situation{bottom:225px;right:24px;width:280px}
+.control-icon.ips{border-color:#c7d5df55}
+@media(max-width:1150px) and (min-width:761px){.mouse-guide{right:16px;bottom:169px!important}}
+@media(max-width:760px){.mouse-guide{right:12px;bottom:345px!important;max-width:190px;gap:5px}.mouse-guide span{font-size:7px}}

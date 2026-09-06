@@ -1,0 +1,22 @@
+import puppeteer from 'puppeteer-core';
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const out='artifacts/v6/qa';fs.mkdirSync(out,{recursive:true});
+const browser=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--window-size=1600,1000']});
+const pause=ms=>new Promise(r=>setTimeout(r,ms));
+try{
+ const p=await browser.newPage();await p.setViewport({width:1600,height:1000});const errors=[],failed=[],checks=[];
+ p.on('pageerror',e=>errors.push(e.stack));p.on('response',r=>{if(r.status()>=400)failed.push(`${r.status()} ${r.url()}`);});
+ await p.goto('http://127.0.0.1:5178/',{waitUntil:'networkidle0'});await p.waitForSelector('[data-action=start]');
+ assert.equal(await p.$eval('.game-subtitle',e=>e.textContent),'But like Tower Defense.');assert.ok(await p.$eval('.start-art',e=>getComputedStyle(e).backgroundImage.includes('ciso-tower-defense')));assert.ok(!/fictional/i.test(await p.$eval('.start-modal',e=>e.textContent)));
+ await p.screenshot({path:`${out}/01-combat-opening.png`});await p.click('[data-action=start][data-id=startup]');await p.waitForFunction(()=>__app.running);
+ await p.evaluate(()=>{__app.audio.enabled=false;__app.ui.closeCall();__app.ui.callQueue=[];__app.game.messages=[];});
+ assert.equal(await p.$eval('#live-score',e=>e.textContent),'Score 0');await p.click('[data-action=score-help]');assert.equal(await p.$$eval('.score-help .scores>div',e=>e.length),3);const time=await p.evaluate(()=>__app.game.time);await pause(1000);assert.ok(await p.evaluate(()=>__app.game.time)>time+.7);await p.click('[data-action=resume]');
+ const samples=await p.evaluate(()=>{const a=__app,g=a.game;a.paused=true;g.hour=6;const score1=g.score();g.startLeak(g.asset('db'));g.time=100;g.recordScoreState();const ignored=g.score();g.programmes.add('dlp');g.programReady.set('dlp',0);g.tickIncidents(0);g.recordScoreState();const detected=g.score();g.budget=1000;g.quarantine('db');g.recordScoreState();const contained=g.score();g.cleanLeak('db');for(let i=0;i<1000&&g.asset('db').job;i++){g.time+=.1;g.tickJobs(.1);g.recordScoreState();}const recovered=g.score();a.ui.update();return{score1,ignored,detected,contained,recovered,evidence:g.scoreEvidence()};});
+ assert.ok(samples.detected>samples.ignored);assert.ok(samples.contained>samples.detected);assert.ok(samples.recovered>samples.contained);await p.click('[data-action=score-help]');await p.screenshot({path:`${out}/02-live-scoring.png`});await p.click('[data-action=resume]');
+ await p.evaluate(()=>{const a=__app,g=a.game;g.hour=23;g.phase='wave';g.phaseTimer=29.95;g.spawnCursor=g.waves[23].attackers.length;g.supplyChain=[];g.flags.nextPasswordAt=Infinity;g.tick(.1);a.ui.results();});assert.equal(await p.$$eval('.result-modal .scores>div',e=>e.length),3);await p.screenshot({path:`${out}/03-performance-report.png`});const final=await p.evaluate(()=>__app.game.score());assert.ok(final>0&&final<=10000);
+ await p.click('[data-action=resume]');await p.evaluate(()=>{__app.ui.showCall('agency_intro');});assert.ok(!/fictional/i.test(await p.$eval('#call',e=>e.textContent)));await p.screenshot({path:`${out}/04-agency-copy.png`});
+ checks.push('combat hero and requested subtitle','no removed wording in opening or agency call','live score starts at zero','three-category scoring help does not pause','detection, containment and completed recovery change points','three-category end report with measured evidence');
+ await p.evaluate(()=>__app.ui.startScreen());await p.setViewport({width:390,height:844});await pause(400);await p.screenshot({path:`${out}/05-mobile-opening.png`});assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);await p.click('[data-action=start][data-id=startup]');await p.evaluate(()=>{__app.paused=true;__app.ui.closeCall();__app.ui.callQueue=[];__app.game.messages=[];__app.game.hour=6;__app.ui.update();});await p.click('[data-action=score-help]');await p.screenshot({path:`${out}/06-mobile-score.png`});assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ const report={at:new Date().toISOString(),errors,failed,checks,samples,final};fs.writeFileSync(`${out}/report.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));assert.deepEqual(errors,[]);assert.deepEqual(failed,[]);
+}finally{await browser.close();}

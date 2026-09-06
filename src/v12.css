@@ -1,0 +1,5 @@
+.start-art{background-image:linear-gradient(0deg,#10131bd9,transparent 45%),url('../public/concepts/v6/ciso-tower-defense.png');background-position:right center}
+.game-subtitle{font-family:'Barlow Condensed',Impact,sans-serif;font-size:25px;letter-spacing:.3px;color:#f0cdc8!important;margin:-8px 0 22px!important;line-height:1.15!important}
+#live-score{color:#e9c5a3;font-variant-numeric:tabular-nums}
+.score-help .scores{gap:20px}.score-help .scores p{line-height:1.8}.score-rules{font-size:12px;line-height:1.8;color:#b4bfcb}.score-rules p{margin:12px 0}
+@media(max-width:900px){.game-subtitle{font-size:22px;margin:-9px 0 17px!important}.start-art{background-position:50% 33%}.score-help .scores{grid-template-columns:1fr;gap:6px}.score-help .scores>div{padding:9px 0}.score-help .scores strong{display:inline-block;margin:8px 12px}.score-help .scores p{margin:7px 0}}

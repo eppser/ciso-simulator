@@ -1,0 +1,4 @@
+.exposure-summary{border:1px solid color-mix(in srgb,var(--exposure-color),transparent 55%);border-left:3px solid var(--exposure-color);border-radius:5px;padding:10px 12px;margin:12px 0;background:#ffffff04}
+.exposure-summary>b{color:var(--exposure-color);font:700 10px var(--mono);letter-spacing:.04em}
+.exposure-summary p{font-size:10px;line-height:1.65;color:#b9c6d5;margin:6px 0 0}
+.finding-meta{margin:7px 0;font-size:11px}.finding-meta>strong{display:block;color:#e4e9ee}.finding-meta>span{display:block;color:#aabaca;font-size:10px;line-height:1.5;margin:4px 0}.finding-meta em{display:inline-block;font-style:normal;font-size:9px;padding:4px 6px;margin:3px 3px 0 0;border:1px solid #ffffff24;border-radius:4px;color:#e6ba81}.finding-meta summary{cursor:pointer;font-size:10px;color:#adbdcc;margin-top:8px}.finding-meta details p{color:#b5c4d3}

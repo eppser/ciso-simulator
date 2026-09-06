@@ -1,0 +1,32 @@
+import puppeteer from 'puppeteer-core';
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const out='artifacts/operations-v18';fs.mkdirSync(out,{recursive:true});
+const browser=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+try{
+ const p=await browser.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));await p.setViewport({width:1440,height:900});
+ await p.goto('http://127.0.0.1:5178/',{waitUntil:'networkidle0'});await p.click('[data-action="start"][data-id="startup"]');
+ await p.waitForFunction(()=>!__app.rig.tween);assert.equal(await p.$eval('#activity-log',e=>e.hidden),false);
+ await p.screenshot({path:`${out}/opening.png`});
+ await p.evaluate(()=>{__app.audio.enabled=false;__app.ui.closeCall();__app.ui.callQueue=[];__app.paused=true;});
+ await p.screenshot({path:`${out}/overview.png`});
+ await p.click('#activity-toggle');assert.equal(await p.$eval('#activity-log',e=>e.hidden),true);
+ await p.click('#grc-toggle');assert.equal(await p.$eval('#activity-log',e=>e.hidden),false);assert.equal(await p.$eval('#work-tray',e=>e.hidden),true);
+ await p.evaluate(()=>{const g=__app.game;g.asset('db').state='compromised';g.tickIncidents(0);__app.ui.update();});
+ assert.equal(await p.evaluate(()=>__app.game.offerDetails()),null);
+ await p.click('[data-action="evidence-prepare"]');assert.equal(await p.evaluate(()=>__app.game.evidence.state),'working');
+ await p.evaluate(()=>{const g=__app.game,j=g.jobs.find(j=>j.programme==='liaison-evidence');g.time+=j.remaining+1;g.tickJobs(j.remaining+1);g.trust=3;__app.ui.update();});
+ await p.click('[data-action="evidence-retain"]');assert.equal(await p.evaluate(()=>__app.game.trust),3);
+ await p.click('[data-action="evidence-share"]');assert.equal(await p.evaluate(()=>__app.game.trust),4);
+ await p.evaluate(()=>{__app.game.hour=4;__app.game.tickGrc();__app.ui.update();});
+ await p.click('[data-action="ops-history"]');await p.evaluate(()=>__app.ui.update());
+ assert.ok(await p.$('.log-entries'));await p.screenshot({path:`${out}/incident.png`});
+ await p.evaluate(()=>{__app.paused=false;__app.ui.closeCall();__app.ui.callQueue=[];});const time=await p.evaluate(()=>__app.game.time);
+ await p.waitForFunction(t=>__app.game.time>t,{},time);
+ await p.setViewport({width:390,height:844});await p.evaluate(()=>{__app.start('startup','full');__app.paused=true;__app.audio.enabled=false;});
+ await p.waitForFunction(()=>!__app.rig.tween);await p.screenshot({path:`${out}/mobile-opening.png`});
+ await p.evaluate(()=>{__app.ui.closeCall();__app.ui.callQueue=[];__app.ui.update();});
+ const r=await p.$eval('#activity-log',e=>{const r=e.getBoundingClientRect();return{x:r.x,right:r.right,y:r.y,bottom:r.bottom,display:getComputedStyle(e).display};});
+ assert.ok(r.x>=0&&r.right<=390&&r.bottom<744);assert.notEqual(r.display,'none');await p.screenshot({path:`${out}/mobile-overview.png`});
+ assert.deepEqual(errors,[]);fs.writeFileSync(`${out}/browser.json`,JSON.stringify({errors,mobile:r,checks:'default-open; vendor delay; prepare/retain/share; governance unified; history preserved; live simulation; mobile fit'},null,2));console.log('Operations browser checks passed');
+}finally{await browser.close();}

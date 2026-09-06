@@ -1,0 +1,6 @@
+#extras .swatches { display:flex; gap:4px; align-items:center; margin-right:4px; }
+#extras .sw { width:20px; height:20px; border-radius:50%; border:2px solid #444; cursor:pointer; padding:0; }
+#extras .sw.on { border-color:#ff5a50; box-shadow:0 0 0 1px #ff5a50; }
+#extras .cam { display:flex; gap:3px; align-items:center; }
+#extras .cam button { padding:4px 7px; font-size:11px; min-width:26px; }
+#extras .cam button.preset { font-size:10px; letter-spacing:.04em; text-transform:uppercase; color:#bdbdbd; }

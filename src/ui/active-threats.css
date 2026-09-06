@@ -1,0 +1,22 @@
+.activity-log{max-height:min(660px,calc(100vh - 265px));width:355px;overflow:auto;scrollbar-width:thin}
+.activity-log .log-entries{max-height:145px}
+.active-threats{border-top:1px solid #ffffff20;margin-top:12px;padding-top:12px}
+.active-threats-heading{display:flex;justify-content:space-between;align-items:center;font:10px var(--mono);letter-spacing:.06em;margin-bottom:8px}
+.active-threats-heading>span{color:#ffb89d}
+.active-threat{padding:10px 0;border-top:1px solid #ffffff0d}
+.active-threat>div:first-child{display:flex;gap:6px;justify-content:space-between;align-items:flex-start}
+.active-threat b{font-size:11px;line-height:1.4}
+.active-threat>small,.incident-cost{font-size:10px;color:#aab8c9}
+.active-threat p,.threats-clear{font-size:11px;line-height:1.5;margin:5px 0 7px;color:#cad1da}
+.incident-tag{font:8px var(--mono);text-transform:uppercase;letter-spacing:.03em;border-radius:3px;padding:3px 4px;white-space:nowrap}
+.incident-tag.active{background:#5d261e;color:#ffc0ae}
+.incident-tag.contained{background:#173c35;color:#97dfbc}
+.incident-tag.investigating{background:#203444;color:#a5d8ff}
+.incident-actions{display:flex;gap:5px;flex-wrap:wrap}
+.incident-actions button{padding:5px 7px;font-size:10px;border:1px solid #ffffff25;background:#ffffff08;border-radius:4px;text-align:left}
+.incident-actions button:disabled{opacity:.5;cursor:not-allowed}
+.incident-actions .incident-cost{flex-basis:100%}
+#activity-toggle.has-threats{color:#ffb39d}
+#activity-toggle .open-threat-count{margin-left:4px;display:inline-block;min-width:15px;background:#5b2921;border-radius:8px;font-size:9px;padding:1px 4px}
+body:has(.activity-log:not([hidden])) .mouse-guide{display:none}
+@media(max-width:900px){.activity-log{width:calc(100vw - 24px);max-height:calc(100dvh - 225px);bottom:110px}.activity-log .log-entries{max-height:90px}}

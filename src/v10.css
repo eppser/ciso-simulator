@@ -1,0 +1,29 @@
+/* Single-click onboarding, uninterrupted decisions, and legible incident hierarchy. */
+.game-byline{font:12px var(--mono);color:#9da5ae;margin:-8px 0 24px;letter-spacing:.4px}
+.game-byline a{color:#e0e4e7}
+.start-content h2{line-height:.86!important;margin:18px 0 24px!important}
+.start-content .lead{font-size:15px;line-height:1.6;margin:0 0 20px}
+.organization-cards{display:grid;gap:8px;margin:12px 0 18px}
+.organization-card{display:flex;align-items:center;gap:13px;text-align:left;padding:14px 15px;background:#ffffff05}
+.organization-card:hover{border-color:#ff776c;background:#ff3b3010;transform:translateX(2px)}
+.organization-card>span:nth-child(2){flex:1}.organization-card b{font-size:13px;display:block}.organization-card small{font-size:10px;display:block;margin-top:5px}.org-glyph{color:#e5bab0;font-size:26px}
+.supported{display:grid;gap:14px;padding:16px 0;border-top:1px solid var(--line);font-size:10px;color:#a7afb8}
+.supported>a{display:flex;align-items:center;gap:12px}.supported img{width:140px;height:auto;background:#f5f5f1;padding:8px;border-radius:3px}
+.source-note{font-size:9px!important;line-height:1.6}.source-note details{margin-top:10px}.source-note summary{cursor:pointer;color:#b9c4d1}.resume-day{margin:0 0 12px;width:100%}
+.portrait.agency{background-image:url('../public/concepts/v4/agency.png');background-size:cover;background-position:center}
+.call:has(.call-text h3) .portrait.board{background-image:url('../public/media/characters.png')}.call:has(.vendor-offer){border-color:#d5a77880}
+.call:has(.call-text):not(:has(.vendor-offer)) .portrait.board{background-position:33.333% 50%}
+.call:has(.call-text) .portrait.board.promotion{background-image:url('../public/concepts/v3/promotion.png');background-size:cover;background-position:center}
+.decision-tray{position:absolute;right:24px;top:205px;width:340px;padding:12px;pointer-events:auto;z-index:12;max-height:calc(100vh - 345px);overflow:auto;border-color:#c2935c80}
+.decision-heading{display:flex;align-items:center;justify-content:space-between;text-align:left;width:100%;padding:4px 0;border:0;background:none}.decision-heading b{display:block;font-size:16px;margin-top:7px}.decision-heading small{font:8px var(--mono);color:#e0bc83}.decision-tray>p{font-size:11px;line-height:1.6;color:#b8c0c9}.decision-tray .choices{display:grid;grid-template-columns:1fr;gap:6px;margin:10px 0}.decision-tray .choices button{padding:10px;text-align:left}.decision-tray .choices b{font-size:11px}.decision-tray .choices p{font-size:10px;margin:5px 0;line-height:1.5}.decision-tray>small{display:block;font-size:9px;line-height:1.5}
+body:has(.decision-tray.expanded:not([hidden])) .inspect,body:has(.decision-tray.expanded:not([hidden])) .situation{display:none}
+.boss-status{position:absolute;top:100px;left:50%;transform:translateX(-20%);width:310px;padding:12px 16px;border-color:#a7423d;pointer-events:none}.boss-status b{display:flex;justify-content:space-between;font:20px 'Barlow Condensed',sans-serif;letter-spacing:2px;margin:7px 0}.boss-status b small{font:10px var(--mono);letter-spacing:0}.boss-status>span:last-child{display:block;font-size:9px;margin-top:8px;color:#c5b8b5}.boss-status progress{height:5px}.boss-status progress::-webkit-progress-value{background:#ed4d36}
+.loss-statement{display:flex;gap:20px;padding:20px;background:linear-gradient(120deg,#331712,#191a1e);border:1px solid #9f514055;border-radius:6px;margin:20px 0}.loss-statement .portrait{width:100px;min-width:100px;height:130px;border-radius:4px}.loss-statement blockquote{margin:10px 0;font-size:15px;line-height:1.6;color:#efddd4}.loss-statement small{font-size:9px}.zone-guide{padding:16px;border:1px solid var(--line);border-radius:5px}.zone-guide b{font-size:12px}.zone-guide p{font-size:11px;color:#aab5c1;margin:6px 0 16px}
+@media(min-width:901px){.start-modal{max-height:94vh!important}.start-content{padding:32px 36px!important}.start-content h2{font-size:76px!important}.start-art{min-height:650px!important}}
+@media(max-width:900px){.start-content h2{font-size:58px!important}.start-content{padding:22px!important}.start-content .lead{font-size:13px;margin-bottom:12px}.organization-card{padding:12px}.supported{padding:12px 0;gap:10px}.game-byline{margin-bottom:16px}.decision-tray{top:180px;right:10px;width:min(340px,calc(100vw - 20px));max-height:calc(100vh - 290px)}.boss-status{top:110px;left:auto;right:10px;transform:none;width:230px}.loss-statement{gap:12px;padding:12px}.loss-statement .portrait{width:60px;min-width:60px;height:90px}.loss-statement blockquote{font-size:12px}.brand{font-size:10px}.brand span{font-size:8px;letter-spacing:.2px}.source-note{font-size:8px!important}}
+.decision-tray .choices button{min-height:0}
+.boss-status{left:auto;right:24px;transform:none}
+body:has(.boss-status:not([hidden])) .network-legend{display:none}
+@media(max-width:900px){.boss-status{top:76px;left:12px;right:12px;width:auto}.boss-status:not([hidden])~.call{max-height:230px}body:has(.boss-status:not([hidden])) .mission{display:none}body:has(.boss-status:not([hidden])) .risk-status{top:178px}body:has(.boss-status:not([hidden])) .incident-status{top:238px}body:has(.boss-status:not([hidden])) .decision-tray{top:300px}}
+
+@media(max-width:900px){body:has(.decision-tray.expanded:not([hidden])) .call{display:none}}

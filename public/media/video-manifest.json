@@ -1,0 +1,14 @@
+{
+  "error": {
+    "status": 402,
+    "detail": {
+      "detail": {
+        "type": "payment_required",
+        "code": "paid_plan_required",
+        "message": "This endpoint requires a Pro plan or above.",
+        "status": "paid_plan_required",
+        "request_id": "7dad9ec1cda14ce31e50b3dc7e50f634"
+      }
+    }
+  }
+}

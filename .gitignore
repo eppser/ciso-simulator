@@ -1,0 +1,13 @@
+node_modules
+dist
+smoke-out
+.env*
+!.env.example
+.DS_Store
+*.blend1
+*.blend2
+artifacts/
+.wrangler/
+supabase/.temp/
+supabase/functions/ciso-scoreboard/index.js
+data/*.raw.json

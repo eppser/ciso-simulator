@@ -1,0 +1,30 @@
+import puppeteer from 'puppeteer-core';
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const out='artifacts/v8/qa';fs.mkdirSync(out,{recursive:true});
+const browser=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+try{
+ const p=await browser.newPage();await p.setViewport({width:1600,height:1000});const errors=[],failed=[];
+ p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)failed.push(r.url());});
+ await p.goto('http://127.0.0.1:5178/',{waitUntil:'networkidle0'});await p.waitForSelector('.zdc-wordmark');
+ assert.ok((await p.title()).includes('CISO Simulator'));
+ const logos=await p.evaluate(()=>['.zdc-wordmark','.supported img'].map(s=>{const r=document.querySelector(s).getBoundingClientRect();return{width:r.width,height:r.height};}));assert.deepEqual(logos[0],logos[1]);
+ await p.screenshot({path:out+'/01-opening.png'});
+ await p.click('[data-action=start][data-id=startup]');await p.evaluate(()=>{__app.audio.enabled=false;__app.ui.closeCall();__app.ui.callQueue=[];__app.paused=true;});
+ assert.equal(await p.evaluate(()=>__app.rig.dist),40);assert.equal(await p.$eval('.mouse-guide',e=>getComputedStyle(e).backgroundColor),'rgba(0, 0, 0, 0)');
+ assert.ok(await p.$eval('#live-score',e=>!!e.closest('header')));assert.ok(await p.$eval('#team-count',e=>!!e.closest('header')));
+ await p.screenshot({path:out+'/02-command-floor.png'});
+ await p.click('[data-action=work-toggle]');await p.waitForSelector('#work-tray:not([hidden])');await p.click('.team-hire');await p.waitForFunction(()=>__app.game.concurrency()===3);await p.screenshot({path:out+'/03-compact-work-ledger.png'});await p.click('[data-action=work-close]');
+ await p.evaluate(()=>{const g=__app.game;g.hour=4;g.tickGrc();g.programmes.add('scanner');g.programReady.set('scanner',0);for(const a of g.assets.values())a.knownVulns=new Set(a.vulns);__app.ui.update();});
+ await p.click('[data-action=grc-toggle]');await p.click('[data-action=grc-start][data-id=inventory]');assert.equal(await p.evaluate(()=>__app.game.grc[0].state),'working');
+ await p.evaluate(()=>{__app.game.time+=25;__app.game.tickJobs(25);__app.ui.showCall('grc_board');__app.ui.update();});assert.equal(await p.evaluate(()=>__app.game.grc[0].state),'board-review');await p.screenshot({path:out+'/04-board-evidence.png'});
+ await p.evaluate(()=>{__app.game.time+=21;__app.game.tickGrc();__app.ui.showCall('grc_done');__app.ui.update();});assert.equal(await p.evaluate(()=>__app.game.grc[0].state),'done');await p.screenshot({path:out+'/05-regulator.png'});await p.click('[data-action=work-close]');
+ await p.evaluate(()=>{const a=__app,g=a.game;a.ui.closeCall();a.ui.callQueue=[];g.hour=8;g.attackers=[];g.spawn(g.waves[8].attackers.find(t=>t.aiThreat));const at=g.attackers.at(-1);at.x=12;at.y=11;at.intelRevealed=true;for(let i=0;i<4;i++){g.spawn({...g.waves[4].attackers[1],avatar:'virus'});const v=g.attackers.at(-1);v.x=10+i*.8;v.y=13;}g.spawnInternalMalware(g.asset('ci'));g.attackers.at(-1).x=12;g.attackers.at(-1).y=14;a.rig.goTo({x:14,z:12,dist:22,pitch:.85});a.ui.update();});
+ await new Promise(r=>setTimeout(r,800));await p.screenshot({path:out+'/06-organic-ai-threat.png'});
+ await p.evaluate(()=>{const g=__app.game;g.damage(g.asset('web'),30,{vuln:'visual QA'},null);g.detonate({assetId:g.identityId});});await new Promise(r=>setTimeout(r,350));await p.screenshot({path:out+'/07-ransomware-impact.png'});
+ assert.ok(await p.evaluate(()=>__app.effects.items.some(i=>i.kind==='impact-label')));
+ await p.setViewport({width:390,height:844});await p.evaluate(()=>{__app.ui.closeCall();__app.ui.callQueue=[];__app.ui.startScreen();});await p.screenshot({path:out+'/08-mobile-opening.png'});assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ await p.click('[data-action=start][data-id=startup]');await p.evaluate(()=>{__app.paused=true;__app.audio.enabled=false;__app.ui.closeCall();__app.ui.callQueue=[];});assert.equal(await p.evaluate(()=>__app.effects.items.some(i=>i.kind==='impact-label')),false);await p.screenshot({path:out+'/09-mobile-header.png'});assert.ok(await p.evaluate(()=>document.querySelector('.clock').getBoundingClientRect().bottom<=document.querySelector('.timeline-wrap').getBoundingClientRect().top));assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+ await p.click('[data-action=grc-toggle]');await p.screenshot({path:out+'/10-mobile-governance.png'});
+ assert.deepEqual(errors,[]);assert.deepEqual(failed,[]);const report={at:new Date().toISOString(),logos,errors,failed,checks:['equal logo boxes','CISO Simulator title','larger header with team and score','closer camera','transparent mouse guide','paid team hire through compact ledger','real GRC evidence work and board sign-off','regulator portrait','organic malware and AI boss rendering','ransomware floating impact','390px responsive layout']};fs.writeFileSync(out+'/report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+}finally{await browser.close();}

@@ -1,0 +1,8 @@
+.utilities button,.utilities .header-grc{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:32px;padding:6px 9px;border:1px solid #ffffff18;border-radius:5px;background:#ffffff05;color:#ddd!important;font:500 11px Arial,sans-serif!important;white-space:nowrap}
+.utilities button:hover{background:#ffffff12;border-color:#ffffff40;color:white!important}
+.utilities button:focus-visible{outline:2px solid #ff534c;outline-offset:2px}
+.utilities svg{width:15px;height:15px;flex:none}
+.utilities #audio:before{display:none}
+.utilities #audio{min-width:32px}
+.trust-help:after,.trust-help.earned:after{content:'Board confidence'}
+@media(max-width:1100px){.utilities button,.utilities .header-grc{padding:6px;gap:4px}.utilities button span{display:none}.utilities svg{width:17px;height:17px}}

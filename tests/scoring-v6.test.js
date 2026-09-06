@@ -1,0 +1,31 @@
+import {describe,it,expect} from 'vitest';
+import {Campaign} from '../src/sim/campaign.js';
+import {ORGS} from '../src/sim/orgs.js';
+import {BUILTIN_DAYS,scenarioModel} from '../src/sim/scenarios.js';
+const mk=()=>new Campaign({model:scenarioModel(BUILTIN_DAYS[0]),org:ORGS.startup,seed:20260902});
+const finish=g=>{g.hour=24;g.phase='won';return g;};
+const points=(g,id)=>g.scoreBreakdown().find(s=>s.id===id).value;
+function leakRun(detectAfter,containAfter,clean=true){
+ const g=mk(),a=g.asset('db');g.budget=1000;g.startLeak(a);g.time=detectAfter;g.programmes.add('dlp');g.programReady.set('dlp',0);g.tickIncidents(0);g.recordScoreState();
+ g.time=containAfter;g.quarantine(a.id);g.recordScoreState();
+ if(clean){g.cleanLeak(a.id);for(let n=0;n<1000&&a.job;n++){g.time+=.1;g.tickJobs(.1);g.recordScoreState();}}
+ return finish(g);
+}
+describe('outcome-based scores',()=>{
+ it('does not label an unfiled report overdue before its deadline',()=>{const g=mk();g.regulator={filed:false,deadline:40};g.time=10;expect(g.scoreEvidence().regulatory).toBe(true);expect(g.scoreEvidence().reporting).toBe('pending · within deadline');g.time=41;expect(g.scoreEvidence().regulatory).toBe(false);expect(g.scoreEvidence().reporting).toBe('overdue');});
+ it('starts at zero, keeps three categories, and is deterministic',()=>{const g=mk();expect(g.score()).toBe(0);finish(g);const a=g.scoreBreakdown();expect(a).toHaveLength(3);expect(g.scoreBreakdown()).toEqual(a);expect(g.score()).toBe(a.reduce((s,c)=>s+c.value,0));expect(g.score()).toBeLessThanOrEqual(10000);});
+ it('awards more response points for faster detection and containment at the same budget and end state',()=>{const fast=leakRun(2,6),slow=leakRun(80,120);expect(fast.stats.spent).toBe(slow.stats.spent);expect(fast.trust).toBe(slow.trust);expect(fast.impact).toBe(slow.impact);expect(points(fast,'leadership')).toBeGreaterThan(points(slow,'leadership')+300);expect(fast.scoreEvidence().means.containment).toBe(6);});
+ it('keeps unresolved incidents in the denominator instead of rewarding only completed jobs',()=>{const done=leakRun(2,6),open=leakRun(2,6,false);expect(points(done,'leadership')).toBeGreaterThan(points(open,'leadership'));expect(open.scoreEvidence().unresolved).toBe(1);expect(open.scoreEvidence().means.recovery).toBeNull();});
+ it('rewards a WAF in range more than the same-price WAF outside traffic',()=>{
+  function run(near){const g=mk();g.budget=1000;const v=g.model.vulns.find(v=>v.web&&g.assetsByVuln.get(v.id)?.some(a=>a.exposed)),asset=g.assetsByVuln.get(v.id).find(a=>a.exposed);asset.vulns.add(v.id);g.spawn({vuln:v.id,hp:20,speed:1,spawn:0,row:1});const at=g.attackers.at(-1);at.x=2;at.y=2;const coords=near?[2,3]:[26,20];expect(g.place('waf',...coords).ok).toBe(true);for(let i=0;i<40;i++)g.tickTowers(.1);g.recordScoreState();return finish(g);}
+  const placed=run(true),idle=run(false);expect(placed.stats.spent).toBe(idle.stats.spent);expect(placed.scoreEvidence().prevented).toBe(1);expect(idle.scoreEvidence().prevented).toBe(0);expect(points(placed,'efficiency')).toBeGreaterThan(points(idle,'efficiency'));
+ });
+ it('does not give prevention points for unrelated traffic or repeated kill notifications',()=>{const g=mk();const at={id:42,alive:true,kind:'scan',vuln:'not-in-estate'};g.scoreTrackSource(at);g.kill(at);g.kill(at);g.recordScoreState();expect(g.scoreEvidence().threats).toBe(0);expect(g.scoreEvidence().prevented).toBe(0);});
+ it('credits relevant patches/containment but not targets that are merely already compromised',()=>{const g=mk(),a=g.asset(g.firstAssetId),at={id:99,kind:'scan',alive:true,vuln:g.firstVulnId};g.scoreTrackSource(at);a.state='compromised';expect(g.scoreExposureClosed(at)).toBe(false);for(const b of g.assetsByVuln.get(at.vuln)||[])b.vulns.delete(at.vuln);expect(g.scoreExposureClosed(at)).toBe(true);at.withdrawing=true;at.alive=false;g.recordScoreState();expect(g.scoreEvidence().prevented).toBe(1);});
+ it('rewards earlier exposure reduction rather than last-second purchases',()=>{const early=mk(),late=mk();for(const a of early.assets.values())a.vulns.clear();early.recordScoreInterval(100);late.recordScoreInterval(100);for(const a of late.assets.values())a.vulns.clear();finish(early);finish(late);expect(points(early,'efficiency')).toBeGreaterThan(points(late,'efficiency'));expect(points(early,'leadership')).toBeGreaterThan(points(late,'leadership'));});
+ it('does not reward buying idle programs, overbuilding or sale/refund cycling',()=>{const lean=mk(),extra=mk();extra.budget=1000;extra.buy('intel');extra.place('ips',26,20);extra.time=41;extra.sell(extra.towers.at(-1).id);finish(lean);finish(extra);expect(points(lean,'efficiency')).toBeGreaterThan(points(extra,'efficiency'));});
+ it('scores identity and test-ring outcomes when they actually block attacks',()=>{const g=mk();g.programmes.add('pam');g.socialEngineering();expect(g.scoreEvidence().prevented).toBe(1);g.programmes.add('vetting');g.programmes.add('intel');g.hour=10;g.tickSupplyChain();g.time=81;g.tickSupplyChain();expect(g.scoreEvidence().prevented).toBe(2);});
+ it('penalizes critical-service downtime even with identical final impact',()=>{const up=mk(),down=mk();down.asset('db').quarantined=true;up.recordScoreInterval(100);down.recordScoreInterval(100);finish(up);finish(down);expect(points(up,'resilience')).toBeGreaterThan(points(down,'resilience'));});
+ it('penalizes lost data and missed reporting without adding a fourth category',()=>{const good=finish(mk()),bad=finish(mk());bad.stats.leakedGB=100;bad.time=1;bad.regulator={filed:false,deadline:0};expect(points(good,'resilience')).toBeGreaterThan(points(bad,'resilience'));expect(points(good,'leadership')).toBeGreaterThan(points(bad,'leadership'));});
+ it('freezes final evidence so post-game selling cannot inflate the score',()=>{const g=mk();g.budget=1000;g.place('ips',26,20);g.hour=23;g.phase='wave';g.phaseTimer=29.95;g.spawnCursor=g.waves[23].attackers.length;g.supplyChain=[];g.flags.leakStarted=true;g.flags.nextPasswordAt=Infinity;g.tick(.1);expect(g.phase).toBe('won');const score=g.score(),e=g.scoreEvidence();g.time=1000;g.sell(g.towers.at(-1).id);g.impact=90;g.trust=0;expect(g.score()).toBe(score);expect(g.scoreEvidence()).toBe(e);});
+});
