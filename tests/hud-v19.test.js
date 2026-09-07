@@ -14,8 +14,8 @@ it('orders missed mandatory deadlines ahead of active threats and optional reque
 it('links to actions on the left and keeps optional completion out of the main feed',()=>{
  const g=mk();g.requestEvidence();expect(renderOperations(g)).not.toContain('data-action="evidence-prepare"');
  expect(renderOperations(g)).toContain('data-action="operation-action" data-id="fbi-evidence"');
- expect(renderActionDirectory(g,1,'Govern')).toContain('data-action="evidence-prepare"');
- g.evidence.state='deferred';expect(renderOperations(g)).not.toContain('FBI · incident logs');expect(renderActionDirectory(g,1,'Govern')).toContain('FBI · incident logs');
+ expect(renderActionDirectory(g,1,'Respond')).toContain('data-action="evidence-prepare"');
+ g.evidence.state='deferred';expect(renderOperations(g)).not.toContain('FBI · incident logs');expect(renderActionDirectory(g,1,'Respond')).toContain('FBI · incident logs');
 });
 it('combines threats and requests without duplicating the engineering ledger',()=>{
  const g=mk();g.asset('db').state='compromised';g.requestEvidence();g.log('A completed order','build');

@@ -1,0 +1,31 @@
+/* One metric rhythm: icon/label, value, supporting status. */
+header .topstats{display:grid;grid-template-columns:repeat(5,minmax(102px,1fr));gap:0;align-items:stretch;flex:0 1 690px}
+header .topstats>div{min-width:0;padding:0 16px;border-left:1px solid #ffffff0c;display:grid;grid-template-rows:16px 30px 15px;align-content:center}
+header .topstats>div:first-child{border-left:0}
+header .topstats label{display:flex;align-items:center;gap:6px;font:8px/1 var(--mono);letter-spacing:.09em;white-space:nowrap;color:#a8b3c2;margin:0}
+header .topstats label svg{width:12px;height:12px;color:#dbb28c;flex:none}
+header .topstats strong,header .topstats #live-score{font:600 23px/30px var(--mono);letter-spacing:-.06em;font-variant-numeric:tabular-nums;color:#f1f2f4;margin:0;padding:0;white-space:nowrap}
+header .topstats strong small{font:10px var(--mono);letter-spacing:0;color:#9eacbe;margin-left:4px}
+header .topstats button{background:none;border:0;border-radius:3px;box-shadow:none;text-align:left;padding:0;min-height:0;display:block;color:inherit;cursor:pointer}
+header .topstats button:focus-visible{outline:2px solid #dbb28c;outline-offset:3px}
+header .topstats #impact{position:relative}
+header .topstats #impact progress{position:absolute;top:31px;left:0;margin:0;height:3px;width:100%;max-width:104px}
+header .topstats .trust-help{grid-row:2/4;position:relative}
+header .topstats .trust-help::after{content:'Full confidence';position:absolute;bottom:0;left:0;font:8px/15px var(--mono);color:#98a5b6;letter-spacing:0}
+header .topstats .trust-help.earned::after{content:'Board confidence'}
+header .topstats #trust{display:flex;align-items:center;height:30px;position:absolute;top:0;left:0}
+header .topstats .trust-pips{gap:4px;margin:0 4px 0 0}
+header .topstats .trust-pips i{width:12px;height:18px;border-radius:3px}
+header .topstats .header-team button{grid-row:2/4}
+header .topstats #team-count{display:block;font:600 23px/30px var(--mono);letter-spacing:-.06em}
+header .topstats #team-status,header .topstats .metric-note{font:8px/15px var(--mono);letter-spacing:0;color:#98a5b6;white-space:nowrap;margin:0}
+header .topstats #live-score{color:#e4bf93}
+header .topstats .metric-note{display:block}
+.track-tabs{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px!important;padding-bottom:0!important}
+.track-tabs button{font-size:11px!important;padding:8px 2px!important;min-width:0;text-align:center}
+.track-tabs button:first-child{grid-column:1/-1;text-align:left;padding-left:10px!important}
+.track-tabs button.selected{color:#ffe4cd;border-color:#d6a477;background:#d6a47715;box-shadow:inset 0 -2px #d6a477}
+.track-explanation{font:11px/1.6 var(--sans,Arial);color:#aebac9;padding:8px 4px 12px;margin:0;border-bottom:1px solid #ffffff12}
+.organization-card:focus:not(:focus-visible){outline:none;box-shadow:none}
+@media(min-width:1100px) and (max-width:1450px){header .topstats{flex-basis:575px;grid-template-columns:repeat(5,minmax(96px,1fr))}header .topstats>div{padding:0 10px}header .topstats label{font-size:7px;letter-spacing:.02em}header .topstats .trust-pips i{width:10px}header .brand-title{font-size:26px}}
+@media(max-width:1099px){header .topstats{grid-template-columns:repeat(5,minmax(70px,1fr));flex:1}header .topstats>div{padding:0 5px}header .topstats label{font-size:6px;gap:3px;letter-spacing:0}header .topstats strong,header .topstats #live-score{font-size:19px}header .topstats .trust-pips{gap:2px}header .topstats .trust-pips i{width:7px;height:15px}header .topstats #team-status,header .topstats .metric-note,header .topstats .trust-help::after{font-size:6px}}

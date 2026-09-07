@@ -4,7 +4,8 @@ import { quickGuide, GUIDE_TABS } from '../src/ui/quick-guide.js';
 describe('short visual field guide', () => {
  it('makes board confidence an explicit opening objective', () => {
   expect(quickGuide(0)).toContain('board trust high');
-  expect(quickGuide(0)).toContain('meet deadlines in Programs → Govern');
+  expect(quickGuide(0)).toContain('meet evidence deadlines in Programs → Govern');
+  expect(quickGuide(0)).toContain('File incident reports in Programs → Respond');
  });
  it.each(GUIDE_TABS.map((_, i) => i))('page %i has three illustrated examples and navigation', page => {
   const html = quickGuide(page);

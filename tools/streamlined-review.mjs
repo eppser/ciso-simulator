@@ -29,13 +29,13 @@ try{
   assert.ok(await p.$eval('#inspect [data-action=respond]',e=>e.disabled));assert.match(await p.$eval('#inspect',e=>e.textContent),/Needs \$/);
   await p.evaluate(()=>{const a=__app,g=a.game;g.budget=1000;g.requestEvidence();g.regulator={deadline:g.time+100,filed:false};g.hour=4;g.tickGrc();a.select(null);a.ui.update();});
   await p.click('#activity-log [data-action=operation-action][data-id=fbi-evidence]');
-  assert.equal(await p.evaluate(()=>__app.ui.track),'Govern');assert.equal(await p.$('#activity-log [data-action=evidence-prepare]'),null);
+  assert.equal(await p.evaluate(()=>__app.ui.track),'Respond');assert.equal(await p.$('#activity-log [data-action=evidence-prepare]'),null);
   await p.click('#panel [data-action=evidence-prepare]');assert.equal(await p.evaluate(()=>__app.game.evidence.state),'working');
-  assert.ok(await p.$('#panel .program-card [data-action=file]'));assert.ok(await p.$('#panel .program-card [data-action=freeze]'));
+  assert.ok(await p.$('#panel .program-card [data-action=file]'));await p.click('[data-action=track][data-id=Govern]');assert.ok(await p.$('#panel .program-card [data-action=freeze]'));
   assert.doesNotMatch(await p.$eval('#panel',e=>e.textContent),/ALL CAPABILITIES/);
   await p.screenshot({path:`${out}/${org}-operations.png`});results.push({org,recoveryClick:true,hiddenUntilScanned:true,requestLink:true});
  }
- await p.setViewport({width:390,height:844});await p.evaluate(()=>{__app.select(null);__app.ui.update();});
+ await p.setViewport({width:1024,height:844});await p.evaluate(()=>{__app.select(null);__app.ui.update();});
  assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  await p.screenshot({path:out+'/mobile.png'});
  assert.deepEqual(errors,[]);console.log(JSON.stringify({base,results,errors}));

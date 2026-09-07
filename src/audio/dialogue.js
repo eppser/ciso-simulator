@@ -3,21 +3,21 @@ import { ALTERNATES } from './dialogue-variants.js';
 import { HUMAN_LINES, HUMAN_VARIANTS } from './human-dialogue.js';
 // cast. The source dataset does not attribute activity to these characters.
 export const CAST = {
-  contractor:{name:'Ben “On Mute” Carter',role:'Remote contractor · unverified alias',voice:'N2lVS1w4EtoT3dr4eOWO',portrait:9},
-  regulator:{name:'Dr. Helena Ward',role:'Cybersecurity regulator',voice:'EXAVITQu4vr4xnSDxMaL',portrait:8},
-  head: { name:'Daniel Reyes', role:'Head of Engineering', voice:'JBFqnCBsd6RMkjVDRZzb', portrait:7 },
-  agency: { name:'Special Agent Dana Cole', role:'FBI cyber liaison', voice:'EXAVITQu4vr4xnSDxMaL', portrait:6 },
+  contractor:{name:'Ben “On Mute” Carter',role:'Remote contractor · unverified alias',voice:'iP95p4xoKVk53GoZ742B',portrait:9},
+  regulator:{name:'Dr. Helena Ward',role:'Cybersecurity regulator',voice:'Xb7hH8MSUJpSbSDYk0k2',portrait:8},
+  head: { name:'Daniel Reyes', role:'Head of Engineering', voice:'CwhRBWXzGAHq8TQ4Fs17', portrait:7 },
+  agency: { name:'Special Agent Dana Cole', role:'FBI cyber liaison', voice:'XrExE9yKIg1WjnnlVkGX', portrait:6 },
   engineer: { name: 'Maya Chen', role: 'Security engineering', voice: 'EXAVITQu4vr4xnSDxMaL', portrait: 0 },
   board: { name: 'Richard Voss', role: 'Board chair', voice: 'JBFqnCBsd6RMkjVDRZzb', portrait: 1 },
   criminal: { name: 'NULL COLLECTIVE', role: 'threat actor', voice: 'N2lVS1w4EtoT3dr4eOWO', portrait: 2 },
   business: { name: 'Amara Okafor', role: 'Business operations', voice: 'FGY2WhTYpPnrIDTdsKH5', portrait: 3 },
-  peer: { name: 'Alex Mercer', role: 'Your peer CISO', voice: 'N2lVS1w4EtoT3dr4eOWO', portrait: 4 },
-  seller: { name: 'Miles Sterling', role: 'Emergency solutions vendor', voice: 'JBFqnCBsd6RMkjVDRZzb', portrait: 5 },
+  peer: { name: 'Alex Mercer', role: 'Your peer CISO', voice: 'nPczCjzI2devNBz1zQrb', portrait: 4 },
+  seller: { name: 'Miles Sterling', role: 'Emergency solutions vendor', voice: 'TX3LPaxmHKxFdv7VOQHJ', portrait: 5 },
 };
 export const LOSS_LINES = ['loss1','loss2','loss3','loss4','loss5'];
 export const LINES = {
   ai_warning:{speaker:'engineer',text:'[urgent] AI threat inbound. An automated campaign with an adaptive shield, not a magic mind. Put radar on its route to expose it. Then use the matching WAF or upgraded IPS. Apparently the attacker automated its performance review before we did.'},
-  grc_inventory:{speaker:'regulator',text:'[dryly] Helena Ward, your regulator. Please submit the asset register. The actual systems, not the ones in the slide with the reassuring padlock. Run your scanner, assign an engineer in Operations, under Tasks, and obtain board sign-off.'},
+  grc_inventory:{speaker:'regulator',text:'[dryly] Helena Ward, your regulator. Please submit the asset register. The actual systems, not the ones in the slide with the reassuring padlock. Run your scanner, open the request in Operations and assign an engineer, and obtain board sign-off.'},
   grc_recovery:{speaker:'regulator',text:'[firm] Next, recovery evidence. A backup you have never tested is a very expensive belief system. Activate tested backups and assign the evidence task. Your board will review the packet. Yes, they have homework too.'},
   grc_attestation:{speaker:'regulator',text:'[insisting] Final request: the board risk attestation. Close the inventory and recovery evidence first. Then give your directors something specific to sign. A thumbs-up emoji in the incident channel is not a control owner.'},
   grc_board:{speaker:'board',text:'[weary] The evidence packet is here. We are reviewing it now. Apparently being on the board also involves reading. I was led to believe there would be more lunches.'},

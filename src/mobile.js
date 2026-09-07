@@ -1,0 +1,4 @@
+export function isMobileDevice(navigator){
+ return navigator.userAgentData?.mobile===true||/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(/Macintosh/i.test(navigator.userAgent)&&navigator.maxTouchPoints>1);
+}
+export function mobileNotice(){return `<main class="desktop-notice"><a class="mobile-brand" href="https://zerodayclock.com"><i></i>ZeroDayClock</a><div class="desktop-glyph" aria-hidden="true"><svg viewBox="0 0 80 64" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="5" width="68" height="42" rx="4"/><path d="M27 59h26M40 47v12M32 22l16 8-8 3-3 8z"/></svg></div><h1>CISO SIMULATOR</h1><h2>Your command desk awaits.</h2><p>Mobile gameplay isn’t supported yet.<br>Open this link in a desktop or laptop browser<br>with a mouse and keyboard.</p><code>game.zerodayclock.com</code><a class="mobile-scores" href="/scoreboard">View public scores ↗</a></main>`;}

@@ -35,7 +35,7 @@ try{
   assert.ok(['won','lost'].includes(result.phase));assert.ok(result.eligible);reports.push({...result,run:undefined});fs.writeFileSync(out+'/'+org+'-replay.json',JSON.stringify(result));await page.screenshot({path:out+'/'+org+'-results.png'});
   await page.click('[data-action=leaderboard]');await page.waitForSelector('.lb-submit');assert.match(await page.$eval('#leaderboard',e=>e.textContent),/YOUR DAY/);await page.screenshot({path:out+'/'+org+'-scoreboard.png'});
  }
- await page.goto(base+'/scoreboard',{waitUntil:'networkidle0'});await page.waitForSelector('.lb-empty');assert.match(await page.$eval('.lb-empty',e=>e.textContent),/No scores yet/);
+ await page.goto(base+'/scoreboard',{waitUntil:'networkidle0'});await page.waitForFunction(()=>document.querySelector('.lb-row')||document.querySelector('.lb-empty')?.textContent.includes('No scores yet'));assert.equal(await page.$('.lb-org'),null);
  await page.setViewport({width:390,height:844});await page.screenshot({path:out+'/scoreboard-mobile.png'});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  assert.deepEqual(errors,[]);fs.writeFileSync(out+'/browser-report.json',JSON.stringify({base,reports,errors},null,2));console.log(JSON.stringify({base,reports,errors}));
 }finally{await browser.close();}

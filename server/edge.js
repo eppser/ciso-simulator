@@ -15,7 +15,8 @@ export async function handler(request){
   const url=new URL(request.url),action=url.searchParams.get('action');
   if(request.method==='GET'&&action==='scores'){
    const {org,view,page}=boardQuery(url),select='id,name,superskill,score,categories,org,scenario,ruleset,outcome,seconds,created_at';
-   const query=new URLSearchParams({select,org:'eq.'+org,order:view==='top'?'score.desc,created_at.asc,id.asc':'created_at.desc,id.desc',limit:'26',offset:String(page*25)});
+   const query=new URLSearchParams({select,order:view==='top'?'score.desc,created_at.asc,id.asc':'created_at.desc,id.desc',limit:'26',offset:String(page*25)});
+   if(org!=='all')query.set('org','eq.'+org);
    if(view==='top'){query.set('ruleset','eq.'+RULESET);query.set('scenario','eq.'+SCENARIO);}
    const rows=await db('ciso_game_scores?'+query);return json({rows:rows.slice(0,25),more:rows.length>25,ruleset:RULESET,scenario:SCENARIO});
   }

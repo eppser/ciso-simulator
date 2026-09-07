@@ -48,7 +48,7 @@ Your reward: ransomware, supply-chain compromise, a suspicious remote contractor
 
 [Open the scoreboard →](https://game.zerodayclock.com/scoreboard)
 
-At the end of a run, choose **Compare & submit score**. Add a callsign and superskill, consent to publication, and submit. Top scores compare the same difficulty, scenario and rules. Run history keeps previous submissions.
+At the end of a run, choose **Compare & submit score**. Add a callsign and superskill, consent to publication, and submit. Top scores combine all three difficulties on the current scenario and rules, using a [published difficulty allowance](docs/scoring-v24.md). Run history preserves earlier scores.
 
 Scores are **recomputed server-side from the command journal**. Invented totals and duplicate tickets are rejected. No fake seed players or made-up rankings. Callsigns are pseudonyms, not verified identities; this is not a bot-proof competition.
 
@@ -75,7 +75,7 @@ npm ci
 npm run dev
 ```
 
-Requires **Node 24+** and a modern WebGL-capable browser. Local play needs no Supabase or ElevenLabs key; the shared scoreboard needs a configured backend.
+Requires **Node 24+** and a modern WebGL-capable desktop browser. Mobile gameplay is not supported yet. Local play needs no Supabase or ElevenLabs key; the shared scoreboard needs a configured backend.
 
 ```sh
 npm test

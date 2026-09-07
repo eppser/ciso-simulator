@@ -13,12 +13,12 @@ export function quickGuide(page = 0) {
  const pages = [
   `<p class="guide-intro">Survive to midnight. Keep business impact low and board trust high. Protect critical systems and spend wisely.</p>
    <div class="guide-cards">
-    ${card('1 · Find the weak spots', flow(node('scanner', 'Scan'), node('systems', 'Select asset')), '<b>Programs → Find → Scanner.</b> Select a building to see its weaknesses and available fixes.')}
+    ${card('1 · Find the weak spots', flow(node('scanner', 'Scan'), node('systems', 'Select asset')), '<b>Programs → Identify → Scanner.</b> Select a building to see its weaknesses and available fixes.')}
     ${card('2 · Cover the entrances', flow(node('ndr', 'Reveal'), node('ips', 'Defend')), '<b>Build → select a control → click a free tile.</b> Cover all three left-hand uplinks. Radar reveals targets; it does not shoot.')}
     ${card('3 · Fix, then recover', flow(node('engineer', 'Assign'), node('patched', 'Restore', 'good')), 'Patch exposed systems. Clean up infected ones. <b>Engineers at the top</b> opens the work ledger; Team adds capacity.')}
    </div>
    <div class="guide-zones"><span><b>DMZ</b>Public services</span>${arrow}<span><b>Internal</b>Business systems</span>${arrow}<span><b>Core</b>Critical infrastructure</span></div>
-   <p class="guide-note">Protect crown jewels in every zone. Report incidents and meet deadlines in Programs → Govern to build board trust. Score rewards resilience, effective defense and fast response—not just purchases.</p>`,
+   <p class="guide-note">Protect crown jewels in every zone. File incident reports in Programs → Respond; meet evidence deadlines in Programs → Govern to build board trust. Score rewards resilience, effective defense and fast response—not just purchases.</p>`,
   `<p class="guide-intro">A creature is an attack attempt—not proof of infection. Its payload matters more than its shape.</p>
    <div class="guide-cards">
     ${card('Web attack', flow(node('web', 'Web exploit', 'danger'), node('waf', 'WAF'), node('systems', 'Website')), '<b>WAF slows and damages web attacks.</b> Place it in range before they reach the website.')}

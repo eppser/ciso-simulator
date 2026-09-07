@@ -1,3 +1,4 @@
+import {normalizedPoints} from './score-normalization.js';
 // Outcome-based scoring. No random bonuses and no points just for purchasing items.
 const clamp=n=>Math.max(0,Math.min(1,Number.isFinite(n)?n:0));
 const ratio=(n,d,empty=1)=>d>0?clamp(n/d):empty;
@@ -85,10 +86,10 @@ export const scoringMethods={
  },
  scoreBreakdown(){
   const e=this.scoreEvidence(),pct=n=>`${Math.round(n*100)}%`,seconds=n=>n==null?'—':`${n.toFixed(1)}s`;
-  const resilience=Math.round(4000*e.progress*(.6*e.health+.3*e.uptime+.1*e.data));
+  const resilience=normalizedPoints(4000,.6*e.health+.3*e.uptime+.1*e.data,e.progress,this.org.id);
   // Retained money is only valuable alongside measured prevention and exposure reduction.
-  const efficiency=Math.round(3000*e.progress*(.7*e.prevention+.3*e.exposure)*(.65+.35*e.discipline));
-  const leadership=Math.round(3000*e.progress*(.5*e.response+.2*e.exposure+.15*(e.regulatory?1:0)+.1*e.trust+.05*e.team));
+  const efficiency=normalizedPoints(3000,(.7*e.prevention+.3*e.exposure)*(.65+.35*e.discipline),e.progress,this.org.id);
+  const leadership=normalizedPoints(3000,.5*e.response+.2*e.exposure+.15*(e.regulatory?1:0)+.1*e.trust+.05*e.team,e.progress,this.org.id);
   return[
    {id:'resilience',name:'Business resilience',value:resilience,max:4000,detail:`${e.impact.toFixed(1)} impact · ${pct(e.uptime)} weighted uptime · ${e.leakedGB.toFixed(1)} GB lost`},
    {id:'efficiency',name:'Defense effectiveness',value:efficiency,max:3000,detail:`${e.threats?`${e.prevented}/${e.threats} relevant attempts prevented (${pct(e.prevention)} weighted)`:'No relevant attempts yet'} · ${pct(e.exposure)} exposure controlled · $${e.net.toFixed(0)}k spend + fraud loss`},

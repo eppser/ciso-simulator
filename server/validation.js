@@ -5,8 +5,8 @@ export function publicText(value,max,label){
  return s;
 }
 export function boardQuery(url){
- const org=url.searchParams.get('org')||'startup',view=url.searchParams.get('view')||'top',page=Number(url.searchParams.get('page')||0);
- if(!['startup','midcap','enterprise'].includes(org)||!['top','history'].includes(view)||!Number.isInteger(page)||page<0||page>2000)throw Error('Invalid scoreboard filter.');
+ const org=url.searchParams.get('org')||'all',view=url.searchParams.get('view')||'top',page=Number(url.searchParams.get('page')||0);
+ if(!['all','startup','midcap','enterprise'].includes(org)||!['top','history'].includes(view)||!Number.isInteger(page)||page<0||page>2000)throw Error('Invalid scoreboard filter.');
  return{org,view,page};
 }
 export async function boundedJSON(request,max=300000){

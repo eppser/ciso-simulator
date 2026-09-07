@@ -9,6 +9,7 @@ import './v17.css';
 import './v18.css';
 import './v19.css';
 import './v20.css';
+import './v24.css';
 import { stepRealtime } from './sim/realtime.js';
 import {applyStormLight} from './render/storm-look.js';
 import { Campaign } from './sim/campaign.js';

@@ -52,8 +52,8 @@ it('a new act cannot start a second briefing while the first engineer is still w
 it('requests are actionable in categories and only linked from the combined feed',()=>{
  const g=mk();g.budget=1000;g.regulator={deadline:100,filed:false};g.requestEvidence();g.hour=4;g.tickGrc();
  const h=g.startHumanThreat('worker-fraud');h.detectedAt=0;
- expect(renderActionDirectory(g,1,'Protect')).toContain('data-action="human-contain"');
- const left=renderActionDirectory(g,1,'Govern');for(const id of ['file','freeze','grc-start','evidence-prepare'])expect(left).toContain(`data-action="${id}"`);
+ expect(renderActionDirectory(g,1,'Respond')).toContain('data-action="human-contain"');
+ const left=renderActionDirectory(g,1,'Govern')+renderActionDirectory(g,1,'Respond');for(const id of ['file','freeze','grc-start','evidence-prepare'])expect(left).toContain(`data-action="${id}"`);
  expect(left).not.toContain('ALL CAPABILITIES');expect(left).toContain('program-card action-card');
  const right=renderOperations(g);for(const id of ['file','freeze','grc-start','evidence-prepare','human-contain'])expect(right).not.toContain(`data-action="${id}"`);
  for(const r of operationCards(g).filter(r=>!r.archive))expect(right).toContain(`data-action="operation-action" data-id="${r.id}"`);

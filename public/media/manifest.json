@@ -13,7 +13,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "welcome": {
       "file": "media/voices-welcome.mp3",
@@ -27,7 +28,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "isolate": {
       "file": "media/voices-isolate.mp3",
@@ -41,7 +43,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "patched": {
       "file": "media/voices-patched.mp3",
@@ -55,7 +58,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "restore": {
       "file": "media/voices-restore.mp3",
@@ -69,7 +73,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "compromise": {
       "file": "media/voices-compromise.mp3",
@@ -83,7 +88,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "ransom": {
       "file": "media/voices-ransom.mp3",
@@ -97,7 +103,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO"
     },
     "pay": {
       "file": "media/voices-pay.mp3",
@@ -111,7 +118,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO"
     },
     "surge": {
       "file": "media/voices-surge.mp3",
@@ -125,7 +133,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "zero": {
       "file": "media/voices-zero.mp3",
@@ -139,7 +148,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "supply": {
       "file": "media/voices-supply.mp3",
@@ -153,7 +163,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "fatigue": {
       "file": "media/voices-fatigue.mp3",
@@ -167,7 +178,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "review": {
       "file": "media/voices-review.mp3",
@@ -181,7 +193,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "goodreview": {
       "file": "media/voices-goodreview.mp3",
@@ -195,7 +208,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "vendor": {
       "file": "media/voices-vendor.mp3",
@@ -209,7 +223,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "won": {
       "file": "media/voices-won.mp3",
@@ -223,7 +238,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "lost": {
       "file": "media/voices-lost.mp3",
@@ -237,7 +253,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "boardbrief": {
       "file": "media/voices-boardbrief.mp3",
@@ -251,7 +268,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "daywelcome": {
       "file": "media/voices-daywelcome.mp3",
@@ -265,7 +283,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "ransomware_help": {
       "file": "media/voices-ransomware_help.mp3",
@@ -279,7 +298,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "firsttip": {
       "file": "media/voices-firsttip.mp3",
@@ -293,7 +313,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "promotion": {
       "file": "media/voices-promotion.mp3",
@@ -307,7 +328,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "hackertaunt": {
       "file": "media/voices-hackertaunt.mp3",
@@ -321,7 +343,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO"
     },
     "businessplan": {
       "file": "media/voices-businessplan.mp3",
@@ -335,13 +358,15 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "peer": {
-      "file": "media/voices-peer.mp3",
-      "bytes": 252073,
+      "file": "media/voices-peer-nPczCjzI2devNBz1zQrb.mp3",
+      "bytes": 217382,
       "speaker": "peer",
       "text": "[laughs] Is that your incident dashboard or a Christmas tree? Sorry. Mine looked like that last Tuesday. Backups, identity, one spare engineer. Learn from my very expensive character development.",
+      "voiceId": "nPczCjzI2devNBz1zQrb",
       "request": {
         "text": "[laughs] Is that your incident dashboard or a Christmas tree? Sorry. Mine looked like that last Tuesday. Backups, identity, one spare engineer. Learn from my very expensive character development.",
         "model_id": "eleven_v3",
@@ -363,7 +388,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "boardpressure": {
       "file": "media/voices-boardpressure.mp3",
@@ -377,7 +403,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "businesshope": {
       "file": "media/voices-businesshope.mp3",
@@ -391,7 +418,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "hackerlate": {
       "file": "media/voices-hackerlate.mp3",
@@ -405,7 +433,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO"
     },
     "salespitch": {
       "file": "media/voices-salespitch.mp3",
@@ -447,7 +476,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "supplywave": {
       "file": "media/voices-supplywave.mp3",
@@ -461,7 +491,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "leakanomaly": {
       "file": "media/voices-leakanomaly.mp3",
@@ -475,7 +506,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "leakfound": {
       "file": "media/voices-leakfound.mp3",
@@ -489,7 +521,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "leakboard": {
       "file": "media/voices-leakboard.mp3",
@@ -503,7 +536,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "shadowit": {
       "file": "media/voices-shadowit.mp3",
@@ -517,7 +551,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "tipbackup": {
       "file": "media/voices-tipbackup.mp3",
@@ -531,7 +566,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "tipcapacity": {
       "file": "media/voices-tipcapacity.mp3",
@@ -545,7 +581,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "tipidentity": {
       "file": "media/voices-tipidentity.mp3",
@@ -559,7 +596,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "tipcontrols": {
       "file": "media/voices-tipcontrols.mp3",
@@ -573,13 +611,15 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "salesclosed_v10": {
-      "file": "media/voices-salesclosed_v10.mp3",
-      "bytes": 164719,
+      "file": "media/voices-salesclosed_v10-TX3LPaxmHKxFdv7VOQHJ.mp3",
+      "bytes": 152181,
       "speaker": "seller",
       "text": "[excited] Fantastic. Order received. Our team is on it. I will send the invoice to whoever still has a working inbox. We are with you all the way. Through procurement.",
+      "voiceId": "TX3LPaxmHKxFdv7VOQHJ",
       "request": {
         "text": "[excited] Fantastic. Order received. Our team is on it. I will send the invoice to whoever still has a working inbox. We are with you all the way. Through procurement.",
         "model_id": "eleven_v3",
@@ -590,10 +630,11 @@
       }
     },
     "salespitch_v10": {
-      "file": "media/voices-salespitch_v10.mp3",
-      "bytes": 260850,
+      "file": "media/voices-salespitch_v10-TX3LPaxmHKxFdv7VOQHJ.mp3",
+      "bytes": 212367,
       "speaker": "seller",
       "text": "[rushed] Miles here! Heard the news, terrible, terrible. We are happy to help. I have your emergency package right here. One click, one signature, let us get you moving. I have already told my team you are a priority. Shall we get this approved?",
+      "voiceId": "TX3LPaxmHKxFdv7VOQHJ",
       "request": {
         "text": "[rushed] Miles here! Heard the news, terrible, terrible. We are happy to help. I have your emergency package right here. One click, one signature, let us get you moving. I have already told my team you are a priority. Shall we get this approved?",
         "model_id": "eleven_v3",
@@ -604,10 +645,11 @@
       }
     },
     "agency_intro": {
-      "file": "media/voices-agency_intro.mp3",
-      "bytes": 253327,
+      "file": "media/voices-agency_intro-XrExE9yKIg1WjnnlVkGX.mp3",
+      "bytes": 248311,
       "speaker": "agency",
       "text": "[dryly] FBI cyber liaison. First: preserve the logs. Second: contain the spread. Third: stop naming your incident channels, Definitely Not A Breach. We can read those too. Relax. We have seen worse.",
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
       "request": {
         "text": "[dryly] FBI cyber liaison. First: preserve the logs. Second: contain the spread. Third: stop naming your incident channels, Definitely Not A Breach. We can read those too. Relax. We have seen worse.",
         "model_id": "eleven_v3",
@@ -618,10 +660,11 @@
       }
     },
     "agency_leak": {
-      "file": "media/voices-agency_leak.mp3",
-      "bytes": 232847,
+      "file": "media/voices-agency_leak-XrExE9yKIg1WjnnlVkGX.mp3",
+      "bytes": 223652,
       "speaker": "agency",
       "text": "[deadpan] Your data appears to have booked an international flight. Trace the source, stop the egress, preserve the evidence. Please do not delete the logs to make the chart look better. That is not incident response. That is interior decorating.",
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
       "request": {
         "text": "[deadpan] Your data appears to have booked an international flight. Trace the source, stop the egress, preserve the evidence. Please do not delete the logs to make the chart look better. That is not incident response. That is interior decorating.",
         "model_id": "eleven_v3",
@@ -632,10 +675,11 @@
       }
     },
     "agency_ransom": {
-      "file": "media/voices-agency_ransom.mp3",
-      "bytes": 232847,
+      "file": "media/voices-agency_ransom-XrExE9yKIg1WjnnlVkGX.mp3",
+      "bytes": 250819,
       "speaker": "agency",
       "text": "[wryly] The criminal says they are a trusted recovery partner? Fascinating. Their references include themselves, a burner phone, and your stolen customer database. Restore from verified backups. Keep the evidence. We will bring our own coffee.",
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
       "request": {
         "text": "[wryly] The criminal says they are a trusted recovery partner? Fascinating. Their references include themselves, a burner phone, and your stolen customer database. Restore from verified backups. Keep the evidence. We will bring our own coffee.",
         "model_id": "eleven_v3",
@@ -657,7 +701,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "loss1": {
       "file": "media/voices-loss1.mp3",
@@ -671,7 +716,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "loss2": {
       "file": "media/voices-loss2.mp3",
@@ -685,7 +731,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "loss3": {
       "file": "media/voices-loss3.mp3",
@@ -699,7 +746,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "loss4": {
       "file": "media/voices-loss4.mp3",
@@ -713,7 +761,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "loss5": {
       "file": "media/voices-loss5.mp3",
@@ -727,7 +776,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "promotion_alt": {
       "file": "media/voices-promotion_alt.mp3",
@@ -741,13 +791,15 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "salespitch_v10_alt": {
-      "file": "media/voices-salespitch_v10_alt.mp3",
-      "bytes": 226159,
+      "file": "media/voices-salespitch_v10_alt-TX3LPaxmHKxFdv7VOQHJ.mp3",
+      "bytes": 209859,
       "speaker": "seller",
       "text": "[rushed] Miles Sterling! We saw the incident and cleared our calendar. Happy to help, absolutely happy. Your emergency package is ready for approval. Let us turn this difficult moment into a signed order. Together.",
+      "voiceId": "TX3LPaxmHKxFdv7VOQHJ",
       "request": {
         "text": "[rushed] Miles Sterling! We saw the incident and cleared our calendar. Happy to help, absolutely happy. Your emergency package is ready for approval. Let us turn this difficult moment into a signed order. Together.",
         "model_id": "eleven_v3",
@@ -758,10 +810,11 @@
       }
     },
     "salesclosed_v10_alt": {
-      "file": "media/voices-salesclosed_v10_alt.mp3",
-      "bytes": 177676,
+      "file": "media/voices-salesclosed_v10_alt-TX3LPaxmHKxFdv7VOQHJ.mp3",
+      "bytes": 163466,
       "speaker": "seller",
       "text": "[excited] Approved! Wonderful. The package is in motion. My finance team is already describing this as a beautiful partnership. Your finance team may need a minute.",
+      "voiceId": "TX3LPaxmHKxFdv7VOQHJ",
       "request": {
         "text": "[excited] Approved! Wonderful. The package is in motion. My finance team is already describing this as a beautiful partnership. Your finance team may need a minute.",
         "model_id": "eleven_v3",
@@ -772,10 +825,11 @@
       }
     },
     "agency_intro_alt": {
-      "file": "media/voices-agency_intro_alt.mp3",
-      "bytes": 188125,
+      "file": "media/voices-agency_intro_alt-XrExE9yKIg1WjnnlVkGX.mp3",
+      "bytes": 168899,
       "speaker": "agency",
       "text": "[dryly] Dana Cole, FBI cyber liaison. Preserve your logs and contain the infection. Please stop rebooting the evidence. The evidence has had a very long day.",
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
       "request": {
         "text": "[dryly] Dana Cole, FBI cyber liaison. Preserve your logs and contain the infection. Please stop rebooting the evidence. The evidence has had a very long day.",
         "model_id": "eleven_v3",
@@ -786,10 +840,11 @@
       }
     },
     "agency_leak_alt": {
-      "file": "media/voices-agency_leak_alt.mp3",
-      "bytes": 194395,
+      "file": "media/voices-agency_leak_alt-XrExE9yKIg1WjnnlVkGX.mp3",
+      "bytes": 178930,
       "speaker": "agency",
       "text": "[serious] Company data is leaving without a forwarding address. Trace the source with data loss monitoring, then quarantine it. Renaming the database to Nothing Important is not encryption.",
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
       "request": {
         "text": "[serious] Company data is leaving without a forwarding address. Trace the source with data loss monitoring, then quarantine it. Renaming the database to Nothing Important is not encryption.",
         "model_id": "eleven_v3",
@@ -800,10 +855,11 @@
       }
     },
     "agency_ransom_alt": {
-      "file": "media/voices-agency_ransom_alt.mp3",
-      "bytes": 177676,
+      "file": "media/voices-agency_ransom_alt-XrExE9yKIg1WjnnlVkGX.mp3",
+      "bytes": 154688,
       "speaker": "agency",
       "text": "[deadpan] A criminal with a customer-success team is still a criminal. Verify your backups, save the evidence, and do not confuse a friendly emoji with a recovery guarantee.",
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
       "request": {
         "text": "[deadpan] A criminal with a customer-success team is still a criminal. Verify your backups, save the evidence, and do not confuse a friendly emoji with a recovery guarantee.",
         "model_id": "eleven_v3",
@@ -825,7 +881,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "loss1_alt": {
       "file": "media/voices-loss1_alt.mp3",
@@ -839,7 +896,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "loss2_alt": {
       "file": "media/voices-loss2_alt.mp3",
@@ -853,7 +911,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "loss3_alt": {
       "file": "media/voices-loss3_alt.mp3",
@@ -867,7 +926,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "loss4_alt": {
       "file": "media/voices-loss4_alt.mp3",
@@ -881,7 +941,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "loss5_alt": {
       "file": "media/voices-loss5_alt.mp3",
@@ -895,7 +956,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "firsttip_alt": {
       "file": "media/voices-firsttip_alt.mp3",
@@ -909,7 +971,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "businessplan_alt": {
       "file": "media/voices-businessplan_alt.mp3",
@@ -923,7 +986,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "hackertaunt_alt": {
       "file": "media/voices-hackertaunt_alt.mp3",
@@ -937,13 +1001,15 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO"
     },
     "peer_alt": {
-      "file": "media/voices-peer_alt.mp3",
-      "bytes": 255835,
+      "file": "media/voices-peer_alt-nPczCjzI2devNBz1zQrb.mp3",
+      "bytes": 218636,
       "speaker": "peer",
       "text": "[chuckles] Mine went red last quarter. I called it a live resilience exercise. The board called it Thursday. Buy backups, protect identity, and keep an engineer free. You are welcome.",
+      "voiceId": "nPczCjzI2devNBz1zQrb",
       "request": {
         "text": "[chuckles] Mine went red last quarter. I called it a live resilience exercise. The board called it Thursday. Buy backups, protect identity, and keep an engineer free. You are welcome.",
         "model_id": "eleven_v3",
@@ -965,7 +1031,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "boardpressure_alt": {
       "file": "media/voices-boardpressure_alt.mp3",
@@ -979,7 +1046,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "businesshope_alt": {
       "file": "media/voices-businesshope_alt.mp3",
@@ -993,7 +1061,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "crownpanic_alt": {
       "file": "media/voices-crownpanic_alt.mp3",
@@ -1007,7 +1076,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "hackerlate_alt": {
       "file": "media/voices-hackerlate_alt.mp3",
@@ -1021,7 +1091,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO"
     },
     "leakanomaly_alt": {
       "file": "media/voices-leakanomaly_alt.mp3",
@@ -1035,7 +1106,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "supplywave_alt": {
       "file": "media/voices-supplywave_alt.mp3",
@@ -1049,7 +1121,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "leakfound_alt": {
       "file": "media/voices-leakfound_alt.mp3",
@@ -1063,7 +1136,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "leakboard_alt": {
       "file": "media/voices-leakboard_alt.mp3",
@@ -1077,7 +1151,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "shadowit_alt": {
       "file": "media/voices-shadowit_alt.mp3",
@@ -1091,7 +1166,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "tipbackup_alt": {
       "file": "media/voices-tipbackup_alt.mp3",
@@ -1105,7 +1181,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "tipcapacity_alt": {
       "file": "media/voices-tipcapacity_alt.mp3",
@@ -1119,7 +1196,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "tipidentity_alt": {
       "file": "media/voices-tipidentity_alt.mp3",
@@ -1133,7 +1211,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "tipcontrols_alt": {
       "file": "media/voices-tipcontrols_alt.mp3",
@@ -1147,7 +1226,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "daywelcome_alt": {
       "file": "media/voices-daywelcome_alt.mp3",
@@ -1161,7 +1241,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "welcome_alt": {
       "file": "media/voices-welcome_alt.mp3",
@@ -1175,7 +1256,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "ransomware_help_alt": {
       "file": "media/voices-ransomware_help_alt.mp3",
@@ -1189,7 +1271,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "patched_alt": {
       "file": "media/voices-patched_alt.mp3",
@@ -1203,7 +1286,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "patch_alt": {
       "file": "media/voices-patch_alt.mp3",
@@ -1217,7 +1301,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "isolate_alt": {
       "file": "media/voices-isolate_alt.mp3",
@@ -1231,7 +1316,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "restore_alt": {
       "file": "media/voices-restore_alt.mp3",
@@ -1245,7 +1331,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "compromise_alt": {
       "file": "media/voices-compromise_alt.mp3",
@@ -1259,7 +1346,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "ransom_alt": {
       "file": "media/voices-ransom_alt.mp3",
@@ -1273,7 +1361,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO"
     },
     "pay_alt": {
       "file": "media/voices-pay_alt.mp3",
@@ -1287,7 +1376,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "N2lVS1w4EtoT3dr4eOWO"
     },
     "surge_alt": {
       "file": "media/voices-surge_alt.mp3",
@@ -1301,7 +1391,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "zero_alt": {
       "file": "media/voices-zero_alt.mp3",
@@ -1315,7 +1406,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "supply_alt": {
       "file": "media/voices-supply_alt.mp3",
@@ -1329,7 +1421,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "fatigue_alt": {
       "file": "media/voices-fatigue_alt.mp3",
@@ -1343,7 +1436,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "review_alt": {
       "file": "media/voices-review_alt.mp3",
@@ -1357,7 +1451,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "goodreview_alt": {
       "file": "media/voices-goodreview_alt.mp3",
@@ -1371,7 +1466,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "won_alt": {
       "file": "media/voices-won_alt.mp3",
@@ -1385,7 +1481,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "vendor_alt": {
       "file": "media/voices-vendor_alt.mp3",
@@ -1399,7 +1496,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "lost_alt": {
       "file": "media/voices-lost_alt.mp3",
@@ -1413,7 +1511,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "boardbrief_alt": {
       "file": "media/voices-boardbrief_alt.mp3",
@@ -1427,7 +1526,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "hint_contain": {
       "file": "media/voices-hint_contain.mp3",
@@ -1441,7 +1541,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "hint_detect": {
       "file": "media/voices-hint_detect.mp3",
@@ -1455,7 +1556,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "hint_cleanup": {
       "file": "media/voices-hint_cleanup.mp3",
@@ -1469,7 +1571,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "hint_supply": {
       "file": "media/voices-hint_supply.mp3",
@@ -1483,7 +1586,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "social_blocked": {
       "file": "media/voices-social_blocked.mp3",
@@ -1497,7 +1601,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "social_warning": {
       "file": "media/voices-social_warning.mp3",
@@ -1511,7 +1616,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "hint_contain_alt": {
       "file": "media/voices-hint_contain_alt.mp3",
@@ -1525,7 +1631,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "hint_detect_alt": {
       "file": "media/voices-hint_detect_alt.mp3",
@@ -1539,7 +1646,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "hint_cleanup_alt": {
       "file": "media/voices-hint_cleanup_alt.mp3",
@@ -1553,7 +1661,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "hint_supply_alt": {
       "file": "media/voices-hint_supply_alt.mp3",
@@ -1567,7 +1676,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "social_blocked_alt": {
       "file": "media/voices-social_blocked_alt.mp3",
@@ -1581,7 +1691,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "social_warning_alt": {
       "file": "media/voices-social_warning_alt.mp3",
@@ -1595,13 +1706,15 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "head_intro": {
-      "file": "media/voices-head_intro.mp3",
-      "bytes": 216128,
+      "file": "media/voices-head_intro-CwhRBWXzGAHq8TQ4Fs17.mp3",
+      "bytes": 254581,
       "speaker": "head",
       "text": "[dryly] Daniel, Head of Engineering. Welcome. My team ships the features that pay for your firewalls. Yours keeps them from becoming ransom notes. Let us agree on a change window before we agree on a blame window.",
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
       "request": {
         "text": "[dryly] Daniel, Head of Engineering. Welcome. My team ships the features that pay for your firewalls. Yours keeps them from becoming ransom notes. Let us agree on a change window before we agree on a blame window.",
         "model_id": "eleven_v3",
@@ -1612,10 +1725,11 @@
       }
     },
     "head_isolate": {
-      "file": "media/voices-head_isolate.mp3",
-      "bytes": 264612,
+      "file": "media/voices-head_isolate-CwhRBWXzGAHq8TQ4Fs17.mp3",
+      "bytes": 299302,
       "speaker": "head",
       "text": "[frustrated] You just took a service away from my team. I support containment. I would also support a heads-up! If only the public endpoint is exposed, disable that service and keep private operations running. Bring it back after the fix, not after the shouting.",
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
       "request": {
         "text": "[frustrated] You just took a service away from my team. I support containment. I would also support a heads-up! If only the public endpoint is exposed, disable that service and keep private operations running. Bring it back after the fix, not after the shouting.",
         "model_id": "eleven_v3",
@@ -1626,10 +1740,11 @@
       }
     },
     "head_patchless": {
-      "file": "media/voices-head_patchless.mp3",
-      "bytes": 262104,
+      "file": "media/voices-head_patchless-CwhRBWXzGAHq8TQ4Fs17.mp3",
+      "bytes": 273807,
       "speaker": "head",
       "text": "[exasperated] There is no patch. I checked twice. Forwarding the advisory in capital letters will not compile one. Restrict the exposed service, contain the host, and layer the right controls. We can replace it if the business can fund the change.",
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
       "request": {
         "text": "[exasperated] There is no patch. I checked twice. Forwarding the advisory in capital letters will not compile one. Restrict the exposed service, contain the host, and layer the right controls. We can replace it if the business can fund the change.",
         "model_id": "eleven_v3",
@@ -1640,10 +1755,11 @@
       }
     },
     "head_newsystem": {
-      "file": "media/voices-head_newsystem.mp3",
-      "bytes": 265866,
+      "file": "media/voices-head_newsystem-CwhRBWXzGAHq8TQ4Fs17.mp3",
+      "bytes": 258342,
       "speaker": "head",
       "text": "[sheepish] Small update. My team connected a new system. It was temporary, which in engineering means until someone retires. It is not in your inventory yet. Run asset discovery, scan it, and put it under the same controls as everything else.",
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
       "request": {
         "text": "[sheepish] Small update. My team connected a new system. It was temporary, which in engineering means until someone retires. It is not in your inventory yet. Run asset discovery, scan it, and put it under the same controls as everything else.",
         "model_id": "eleven_v3",
@@ -1654,10 +1770,11 @@
       }
     },
     "head_rollout": {
-      "file": "media/voices-head_rollout.mp3",
-      "bytes": 245386,
+      "file": "media/voices-head_rollout-CwhRBWXzGAHq8TQ4Fs17.mp3",
+      "bytes": 276315,
       "speaker": "head",
       "text": "[insisting] Approved does not mean deployed. That rollout still has tests, migrations, and people who click Remind Me Tomorrow. Check the work ledger. The control protects us when it is active, not when the purchase order looks impressive.",
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
       "request": {
         "text": "[insisting] Approved does not mean deployed. That rollout still has tests, migrations, and people who click Remind Me Tomorrow. Check the work ledger. The control protects us when it is active, not when the purchase order looks impressive.",
         "model_id": "eleven_v3",
@@ -1668,10 +1785,11 @@
       }
     },
     "head_capacity": {
-      "file": "media/voices-head_capacity.mp3",
-      "bytes": 257088,
+      "file": "media/voices-head_capacity-CwhRBWXzGAHq8TQ4Fs17.mp3",
+      "bytes": 264612,
       "speaker": "head",
       "text": "[tired] Every engineer is working. I cannot assign a patch to a motivational quote. Hire another engineer from the team panel, or contain the systems while the queue clears. And please stop naming every ticket Priority Zero. That is just a list.",
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
       "request": {
         "text": "[tired] Every engineer is working. I cannot assign a patch to a motivational quote. Hire another engineer from the team panel, or contain the systems while the queue clears. And please stop naming every ticket Priority Zero. That is just a list.",
         "model_id": "eleven_v3",
@@ -1693,15 +1811,17 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "grc_inventory": {
-      "file": "media/voices-grc_inventory.mp3",
-      "bytes": 250819,
+      "file": "media/voices-grc_inventory-Xb7hH8MSUJpSbSDYk0k2.mp3",
+      "bytes": 257088,
       "speaker": "regulator",
-      "text": "[dryly] Helena Ward, your regulator. Please submit the asset register. The actual systems, not the ones in the slide with the reassuring padlock. Run your scanner, assign an engineer in Operations, under Tasks, and obtain board sign-off.",
+      "text": "[dryly] Helena Ward, your regulator. Please submit the asset register. The actual systems, not the ones in the slide with the reassuring padlock. Run your scanner, open the request in Operations and assign an engineer, and obtain board sign-off.",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
       "request": {
-        "text": "[dryly] Helena Ward, your regulator. Please submit the asset register. The actual systems, not the ones in the slide with the reassuring padlock. Run your scanner, assign an engineer in Operations, under Tasks, and obtain board sign-off.",
+        "text": "[dryly] Helena Ward, your regulator. Please submit the asset register. The actual systems, not the ones in the slide with the reassuring padlock. Run your scanner, open the request in Operations and assign an engineer, and obtain board sign-off.",
         "model_id": "eleven_v3",
         "voice_settings": {
           "stability": 0.5,
@@ -1710,10 +1830,11 @@
       }
     },
     "grc_recovery": {
-      "file": "media/voices-grc_recovery.mp3",
-      "bytes": 250819,
+      "file": "media/voices-grc_recovery-Xb7hH8MSUJpSbSDYk0k2.mp3",
+      "bytes": 240370,
       "speaker": "regulator",
       "text": "[firm] Next, recovery evidence. A backup you have never tested is a very expensive belief system. Activate tested backups and assign the evidence task. Your board will review the packet. Yes, they have homework too.",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
       "request": {
         "text": "[firm] Next, recovery evidence. A backup you have never tested is a very expensive belief system. Activate tested backups and assign the evidence task. Your board will review the packet. Yes, they have homework too.",
         "model_id": "eleven_v3",
@@ -1724,10 +1845,11 @@
       }
     },
     "grc_attestation": {
-      "file": "media/voices-grc_attestation.mp3",
-      "bytes": 221144,
+      "file": "media/voices-grc_attestation-Xb7hH8MSUJpSbSDYk0k2.mp3",
+      "bytes": 246639,
       "speaker": "regulator",
       "text": "[insisting] Final request: the board risk attestation. Close the inventory and recovery evidence first. Then give your directors something specific to sign. A thumbs-up emoji in the incident channel is not a control owner.",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
       "request": {
         "text": "[insisting] Final request: the board risk attestation. Close the inventory and recovery evidence first. Then give your directors something specific to sign. A thumbs-up emoji in the incident channel is not a control owner.",
         "model_id": "eleven_v3",
@@ -1749,13 +1871,15 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "grc_done": {
-      "file": "media/voices-grc_done.mp3",
-      "bytes": 205679,
+      "file": "media/voices-grc_done-Xb7hH8MSUJpSbSDYk0k2.mp3",
+      "bytes": 203172,
       "speaker": "regulator",
       "text": "[pleased] Evidence accepted. Clear ownership, a real test, and a board signature. Look at that. Governance without a ninety-slide presentation. Please do not ruin this moment by saying synergy.",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
       "request": {
         "text": "[pleased] Evidence accepted. Clear ownership, a real test, and a board signature. Look at that. Governance without a ninety-slide presentation. Please do not ruin this moment by saying synergy.",
         "model_id": "eleven_v3",
@@ -1766,10 +1890,11 @@
       }
     },
     "grc_late": {
-      "file": "media/voices-grc_late.mp3",
-      "bytes": 216128,
+      "file": "media/voices-grc_late-Xb7hH8MSUJpSbSDYk0k2.mp3",
+      "bytes": 240370,
       "speaker": "regulator",
       "text": "[stern] Your evidence deadline passed. The board has been notified. Submit the outstanding packet; ignoring the reminder does not make it a risk treatment. I have a follow-up template, and I am not afraid to use it.",
+      "voiceId": "Xb7hH8MSUJpSbSDYk0k2",
       "request": {
         "text": "[stern] Your evidence deadline passed. The board has been notified. Submit the outstanding packet; ignoring the reminder does not make it a risk treatment. I have a follow-up template, and I am not afraid to use it.",
         "model_id": "eleven_v3",
@@ -1780,10 +1905,11 @@
       }
     },
     "worker_intro_2": {
-      "file": "media/voices-worker_intro_2.mp3",
-      "bytes": 221144,
+      "file": "media/voices-worker_intro_2-iP95p4xoKVk53GoZ742B.mp3",
+      "bytes": 181438,
       "speaker": "contractor",
       "text": "[confident] Great news: I can work in every time zone. Bad news: payroll keeps calling that physically impossible. Please approve my laptop delivery to the address marked definitely an office.",
+      "voiceId": "iP95p4xoKVk53GoZ742B",
       "request": {
         "text": "[confident] Great news: I can work in every time zone. Bad news: payroll keeps calling that physically impossible. Please approve my laptop delivery to the address marked definitely an office.",
         "model_id": "eleven_v3",
@@ -1794,10 +1920,11 @@
       }
     },
     "worker_intro": {
-      "file": "media/voices-worker_intro.mp3",
-      "bytes": 240370,
+      "file": "media/voices-worker_intro-iP95p4xoKVk53GoZ742B.mp3",
+      "bytes": 209859,
       "speaker": "contractor",
       "text": "[cheerfully] Ben Carter, remote developer. My camera is broken, my references are on holiday, and my timesheet has achieved one hundred and ninety percent availability. Shall we skip onboarding? In the interest of agility.",
+      "voiceId": "iP95p4xoKVk53GoZ742B",
       "request": {
         "text": "[cheerfully] Ben Carter, remote developer. My camera is broken, my references are on holiday, and my timesheet has achieved one hundred and ninety percent availability. Shall we skip onboarding? In the interest of agility.",
         "model_id": "eleven_v3",
@@ -1808,10 +1935,11 @@
       }
     },
     "worker_intro_3": {
-      "file": "media/voices-worker_intro_3.mp3",
-      "bytes": 239116,
+      "file": "media/voices-worker_intro_3-iP95p4xoKVk53GoZ742B.mp3",
+      "bytes": 162212,
       "speaker": "contractor",
       "text": "[deadpan] My résumé says team player. Technically, three of my references are also me. That is a very aligned team. Can somebody approve my access before Human Resources starts doing research?",
+      "voiceId": "iP95p4xoKVk53GoZ742B",
       "request": {
         "text": "[deadpan] My résumé says team player. Technically, three of my references are also me. That is a very aligned team. Can somebody approve my access before Human Resources starts doing research?",
         "model_id": "eleven_v3",
@@ -1833,13 +1961,15 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "worker_contained_2": {
-      "file": "media/voices-worker_contained_2.mp3",
-      "bytes": 173915,
+      "file": "media/voices-worker_contained_2-iP95p4xoKVk53GoZ742B.mp3",
+      "bytes": 140478,
       "speaker": "contractor",
       "text": "[nervously] I see you revoked my sessions. Bold leadership. Could you at least endorse me for cloud architecture? My entire identity was hosted in one.",
+      "voiceId": "iP95p4xoKVk53GoZ742B",
       "request": {
         "text": "[nervously] I see you revoked my sessions. Bold leadership. Could you at least endorse me for cloud architecture? My entire identity was hosted in one.",
         "model_id": "eleven_v3",
@@ -1850,10 +1980,11 @@
       }
     },
     "worker_contained": {
-      "file": "media/voices-worker_contained.mp3",
-      "bytes": 219890,
+      "file": "media/voices-worker_contained-iP95p4xoKVk53GoZ742B.mp3",
+      "bytes": 164719,
       "speaker": "contractor",
       "text": "[offended] My account is disabled and my payments are frozen. Is this your offboarding process? I was about to propose a five-year roadmap. Mostly invoices, but the font was excellent.",
+      "voiceId": "iP95p4xoKVk53GoZ742B",
       "request": {
         "text": "[offended] My account is disabled and my payments are frozen. Is this your offboarding process? I was about to propose a five-year roadmap. Mostly invoices, but the font was excellent.",
         "model_id": "eleven_v3",
@@ -1875,7 +2006,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "worker_resolved": {
       "file": "media/voices-worker_resolved.mp3",
@@ -1889,13 +2021,15 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "worker_prevented_2": {
-      "file": "media/voices-worker_prevented_2.mp3",
-      "bytes": 250819,
+      "file": "media/voices-worker_prevented_2-iP95p4xoKVk53GoZ742B.mp3",
+      "bytes": 186871,
       "speaker": "contractor",
       "text": "[sighs] Your hiring team called my references independently. Nobody has ever read that far down my résumé. I respect the professionalism. I will now be unavailable in all six of my time zones.",
+      "voiceId": "iP95p4xoKVk53GoZ742B",
       "request": {
         "text": "[sighs] Your hiring team called my references independently. Nobody has ever read that far down my résumé. I respect the professionalism. I will now be unavailable in all six of my time zones.",
         "model_id": "eleven_v3",
@@ -1906,10 +2040,11 @@
       }
     },
     "worker_prevented": {
-      "file": "media/voices-worker_prevented.mp3",
-      "bytes": 298048,
+      "file": "media/voices-worker_prevented-iP95p4xoKVk53GoZ742B.mp3",
+      "bytes": 236608,
       "speaker": "contractor",
       "text": "[flustered] Live identity verification? Independent references? Company-device checks? Your hiring process has become extremely hostile to my business model. I will withdraw. For personal reasons. Several persons, actually.",
+      "voiceId": "iP95p4xoKVk53GoZ742B",
       "request": {
         "text": "[flustered] Live identity verification? Independent references? Company-device checks? Your hiring process has become extremely hostile to my business model. I will withdraw. For personal reasons. Several persons, actually.",
         "model_id": "eleven_v3",
@@ -1931,13 +2066,15 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "worker_tip_2": {
-      "file": "media/voices-worker_tip_2.mp3",
-      "bytes": 262104,
+      "file": "media/voices-worker_tip_2-XrExE9yKIg1WjnnlVkGX.mp3",
+      "bytes": 271299,
       "speaker": "agency",
       "text": "[dryly] Suspicious contractor? Preserve evidence, revoke access, hold payments, and review credentials. Please do not replace identity checks with a nationality guessing competition. Verify every remote hire. Yes, even the one who likes your posts.",
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
       "request": {
         "text": "[dryly] Suspicious contractor? Preserve evidence, revoke access, hold payments, and review credentials. Please do not replace identity checks with a nationality guessing competition. Verify every remote hire. Yes, even the one who likes your posts.",
         "model_id": "eleven_v3",
@@ -1959,7 +2096,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "insider_detected_2": {
       "file": "media/voices-insider_detected_2.mp3",
@@ -1973,7 +2111,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "insider_contained": {
       "file": "media/voices-insider_contained.mp3",
@@ -1987,7 +2126,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "FGY2WhTYpPnrIDTdsKH5"
     },
     "insider_resolved": {
       "file": "media/voices-insider_resolved.mp3",
@@ -2001,7 +2141,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "succession": {
       "file": "media/voices-succession.mp3",
@@ -2015,13 +2156,15 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "head_intro_insider1": {
-      "file": "media/voices-head_intro_insider1.mp3",
-      "bytes": 153435,
+      "file": "media/voices-head_intro_insider1-CwhRBWXzGAHq8TQ4Fs17.mp3",
+      "bytes": 157196,
       "speaker": "head",
       "text": "[deadpan] Engineering here. Our zero-trust strategy is that nobody trusts the deployment pipeline. Unfortunately, it still has production credentials.",
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
       "request": {
         "text": "[deadpan] Engineering here. Our zero-trust strategy is that nobody trusts the deployment pipeline. Unfortunately, it still has production credentials.",
         "model_id": "eleven_v3",
@@ -2032,10 +2175,11 @@
       }
     },
     "head_intro_insider3": {
-      "file": "media/voices-head_intro_insider3.mp3",
-      "bytes": 144239,
+      "file": "media/voices-head_intro_insider3-CwhRBWXzGAHq8TQ4Fs17.mp3",
+      "bytes": 168899,
       "speaker": "head",
       "text": "[dryly] Engineering update. We moved fast and broke things. Apparently the next step is your department, so technically our roadmap is complete.",
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
       "request": {
         "text": "[dryly] Engineering update. We moved fast and broke things. Apparently the next step is your department, so technically our roadmap is complete.",
         "model_id": "eleven_v3",
@@ -2046,10 +2190,11 @@
       }
     },
     "head_intro_insider2": {
-      "file": "media/voices-head_intro_insider2.mp3",
-      "bytes": 173915,
+      "file": "media/voices-head_intro_insider2-CwhRBWXzGAHq8TQ4Fs17.mp3",
+      "bytes": 180184,
       "speaker": "head",
       "text": "[cheerful] Welcome! We practice infrastructure as code. The code is a bash script called final final do not touch, owned by someone who left in February.",
+      "voiceId": "CwhRBWXzGAHq8TQ4Fs17",
       "request": {
         "text": "[cheerful] Welcome! We practice infrastructure as code. The code is a bash script called final final do not touch, owned by someone who left in February.",
         "model_id": "eleven_v3",
@@ -2071,7 +2216,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "review_insider1": {
       "file": "media/voices-review_insider1.mp3",
@@ -2085,7 +2231,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "review_insider3": {
       "file": "media/voices-review_insider3.mp3",
@@ -2099,13 +2246,15 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "JBFqnCBsd6RMkjVDRZzb"
     },
     "agency_intro_insider1": {
-      "file": "media/voices-agency_intro_insider1.mp3",
-      "bytes": 190633,
+      "file": "media/voices-agency_intro_insider1-XrExE9yKIg1WjnnlVkGX.mp3",
+      "bytes": 181438,
       "speaker": "agency",
       "text": "[deadpan] FBI cyber liaison. Preserve the logs. Your SIEM says no incidents, but the license expired yesterday. That is not threat reduction. That is a billing event.",
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
       "request": {
         "text": "[deadpan] FBI cyber liaison. Preserve the logs. Your SIEM says no incidents, but the license expired yesterday. That is not threat reduction. That is a billing event.",
         "model_id": "eleven_v3",
@@ -2116,10 +2265,11 @@
       }
     },
     "agency_intro_insider2": {
-      "file": "media/voices-agency_intro_insider2.mp3",
-      "bytes": 176422,
+      "file": "media/voices-agency_intro_insider2-XrExE9yKIg1WjnnlVkGX.mp3",
+      "bytes": 175168,
       "speaker": "agency",
       "text": "[dryly] FBI here. Contain the infection and keep the evidence. Please do not name the incident folder final. Last time we subpoenaed seventeen finals and a folder called oops.",
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
       "request": {
         "text": "[dryly] FBI here. Contain the infection and keep the evidence. Please do not name the incident folder final. Last time we subpoenaed seventeen finals and a folder called oops.",
         "model_id": "eleven_v3",
@@ -2130,10 +2280,11 @@
       }
     },
     "agency_intro_insider3": {
-      "file": "media/voices-agency_intro_insider3.mp3",
-      "bytes": 168899,
+      "file": "media/voices-agency_intro_insider3-XrExE9yKIg1WjnnlVkGX.mp3",
+      "bytes": 152181,
       "speaker": "agency",
       "text": "[serious] Dana Cole, FBI. Save the logs and contain the intruder. And stop asking whether incognito mode counts as witness protection. We have a budget problem already.",
+      "voiceId": "XrExE9yKIg1WjnnlVkGX",
       "request": {
         "text": "[serious] Dana Cole, FBI. Save the logs and contain the intruder. And stop asking whether incognito mode counts as witness protection. We have a budget problem already.",
         "model_id": "eleven_v3",
@@ -2155,7 +2306,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     },
     "succession_insider3": {
       "file": "media/voices-succession_insider3.mp3",
@@ -2169,7 +2321,8 @@
           "stability": 0.5,
           "similarity_boost": 0.75
         }
-      }
+      },
+      "voiceId": "EXAVITQu4vr4xnSDxMaL"
     }
   },
   "music": {

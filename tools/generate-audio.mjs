@@ -1,6 +1,8 @@
 // Run through with-elevenlabs-key. No credentials enter the browser or asset manifest.
 import { mkdir, writeFile, readFile, access } from 'node:fs/promises';
 import { CAST, LINES } from '../src/audio/dialogue.js';
+const speakers = process.env.AUDIO_SPEAKERS?.split(',');
+const legacyVoices={contractor:'N2lVS1w4EtoT3dr4eOWO',regulator:'EXAVITQu4vr4xnSDxMaL',head:'JBFqnCBsd6RMkjVDRZzb',agency:'EXAVITQu4vr4xnSDxMaL',engineer:'EXAVITQu4vr4xnSDxMaL',board:'JBFqnCBsd6RMkjVDRZzb',criminal:'N2lVS1w4EtoT3dr4eOWO',business:'FGY2WhTYpPnrIDTdsKH5',peer:'N2lVS1w4EtoT3dr4eOWO',seller:'JBFqnCBsd6RMkjVDRZzb'};
 const root = new URL('../public/media/', import.meta.url);
 await mkdir(root, { recursive: true });
 const key = process.env.ELEVENLABS_API_KEY;
@@ -8,8 +10,10 @@ if (!key) throw new Error('Use with-elevenlabs-key node tools/generate-audio.mjs
 let manifest = { provider: 'ElevenLabs', voices: {}, music: {}, effects: {}, errors: {} };
 try { manifest = JSON.parse(await readFile(new URL('manifest.json', root), 'utf8')); } catch {}
 async function generate(id, group, route, body) {
-  const filename = `${group}-${id}.mp3`, file = new URL(filename, root);
-  try { await access(file); if (manifest[group]?.[id] && JSON.stringify(manifest[group][id].request)===JSON.stringify(body)) return; } catch {}
+  const voiceId=group==='voices'?CAST[LINES[id].speaker].voice:null;
+  const filename = `${group}-${id}${voiceId?'-'+voiceId:''}.mp3`, file = new URL(filename, root);
+  const previous=manifest[group]?.[id];
+  try { await access(new URL('../'+previous.file,root)); if (JSON.stringify(previous.request)===JSON.stringify(body)&&(!voiceId||(previous.voiceId||legacyVoices[previous.speaker])===voiceId)){if(voiceId)previous.voiceId=voiceId;return;} } catch {}
   const response = await fetch(`https://api.elevenlabs.io/v1/${route}`, {
     method: 'POST', headers: { 'xi-api-key': key, 'Content-Type': 'application/json' },
     body: JSON.stringify(body), signal: AbortSignal.timeout(240000),
@@ -18,11 +22,11 @@ async function generate(id, group, route, body) {
   if (!response.headers.get('content-type')?.includes('audio')) throw new Error(`Unexpected content type for ${id}`);
   const bytes = Buffer.from(await response.arrayBuffer());
   await writeFile(file, bytes);
-  manifest[group][id] = { file: `media/${filename}`, bytes: bytes.length, ...(group === 'voices' ? LINES[id] : {}), request: body };
+  manifest[group][id] = { file: `media/${filename}`, bytes: bytes.length, ...(group === 'voices' ? {...LINES[id],voiceId} : {}), request: body };
   delete manifest.errors[id];
   console.log(`${id}: saved ${bytes.length} bytes`);
 }
-const jobs = Object.entries(LINES).map(([id, line]) => () => generate(id, 'voices', `text-to-speech/${CAST[line.speaker].voice}`, {
+const jobs = Object.entries(LINES).filter(([,line])=>!speakers||speakers.includes(line.speaker)).map(([id, line]) => () => generate(id, 'voices', `text-to-speech/${CAST[line.speaker].voice}`, {
   text: line.text, model_id: 'eleven_v3', voice_settings: { stability: 0.5, similarity_boost: 0.75 },
 }));
 jobs.push(() => generate('nightshift', 'music', 'music', { prompt: 'Instrumental cinematic cyber security strategy game underscore, restrained pulsing analog synth in D minor, 92 BPM, dark warm bass, intricate soft ticks, sparse piano, quiet evolving tension, no vocals, no big drops, steady loopable atmosphere for concentrating in a night shift security operations centre.', music_length_ms: 60000, force_instrumental: true }));
