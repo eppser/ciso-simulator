@@ -13,7 +13,7 @@ A cybersecurity tower-defense game you can play in your desktop browser.
 
 *Actual gameplay, edited and accelerated. Build → scan → defend. No install. No login.*
 
-[Watch / download the high-resolution clip](docs/media/gameplay.mp4) · **Desktop only** · Three difficulties · ~22 minutes at 1×
+[Download the high-resolution MP4](https://github.com/eppser/ciso-simulator/raw/refs/heads/main/docs/media/gameplay.mp4) · **Desktop only** · Three difficulties · ~22 minutes at 1×
 
 [![Release checks](https://github.com/eppser/ciso-simulator/actions/workflows/release.yml/badge.svg)](https://github.com/eppser/ciso-simulator/actions/workflows/release.yml)
 
