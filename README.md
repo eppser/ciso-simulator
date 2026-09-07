@@ -97,6 +97,8 @@ node tools/firewall-economy-audit.mjs
 
 **Three.js + Blender-authored assets · deterministic simulation · generated voice performances · Cloudflare Pages · Supabase/Postgres with RLS**
 
+Targets 60 FPS without lowering the artwork. See the [measured runtime optimizations and visual-equivalence tests](docs/PERFORMANCE.md).
+
 | Change this | Start here |
 |---|---|
 | Organizations and assets | `src/sim/orgs.js` |

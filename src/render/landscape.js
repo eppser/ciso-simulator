@@ -44,5 +44,5 @@ export function dressCampus(game){
  const leafCanvas=document.createElement('canvas');leafCanvas.width=leafCanvas.height=64;const ctx=leafCanvas.getContext('2d');ctx.fillStyle='#fff';ctx.beginPath();ctx.ellipse(32,32,13,28,-.4,0,Math.PI*2);ctx.fill();const alpha=new THREE.CanvasTexture(leafCanvas);
  const leafGeo=new THREE.PlaneGeometry(.095,.16),leafmat=new THREE.MeshStandardMaterial({color:0x3e5038,roughness:.85,alphaMap:alpha,alphaTest:.45,side:THREE.DoubleSide});
  const leaves=new THREE.InstancedMesh(leafGeo,leafmat,foliage.length);leaves.castShadow=true;leaves.receiveShadow=true;const d=new THREE.Object3D();foliage.forEach((p,i)=>{d.position.set(...p);d.rotation.set(i*1.8,i*2.3,i*.81);d.scale.setScalar(.7+(i%9)*.08);d.updateMatrix();leaves.setMatrixAt(i,d.matrix);});group.add(leaves);
- group.userData.dispose=()=>{group.traverse(o=>{if(o.isMesh)o.geometry.dispose();});materials.forEach(m=>{m.map?.dispose();m.dispose();});leafmat.dispose();alpha.dispose();};return group;
+ group.userData.dispose=()=>{group.traverse(o=>{if(o.isMesh)o.geometry.dispose();if(o.isInstancedMesh)o.dispose();});materials.forEach(m=>{m.map?.dispose();m.dispose();});leafmat.dispose();alpha.dispose();};return group;
 }

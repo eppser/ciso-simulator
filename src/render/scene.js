@@ -97,7 +97,8 @@ export class SceneRig {
 
     // Environment map for reflections.
     this.pmrem = new THREE.PMREMGenerator(this.renderer);
-    this.envTex = this.pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    const room=new RoomEnvironment();this.envTarget=this.pmrem.fromScene(room,0.04);room.dispose();
+    this.envTex = this.envTarget.texture;
     this.scene.environment = this.envTex;
 
     this.composer = new EffectComposer(this.renderer);
@@ -132,7 +133,7 @@ export class SceneRig {
     const hdr=await new RGBELoader().loadAsync(`${import.meta.env.BASE_URL}environment/urban-courtyard-1k.hdr`);
     hdr.mapping=THREE.EquirectangularReflectionMapping;
     const target=this.pmrem.fromEquirectangular(hdr);this.scene.environment=target.texture;
-    this.envTex.dispose();this.envTex=target.texture;hdr.dispose();this.scene.environmentRotation.y=.65;
+    this.envTarget.dispose();this.envTarget=target;this.envTex=target.texture;hdr.dispose();this.pmrem.dispose();this.scene.environmentRotation.y=.65;
   }
   setAO(on) { this.ao.enabled = on; }
   applyTheme(t) {

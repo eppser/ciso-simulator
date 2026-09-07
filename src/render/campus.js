@@ -8,6 +8,7 @@ import { CampusSignals } from './signals.js';
 import { dressCampus,perimeterTrees } from './landscape.js';
 import { loadAssetKit,copyAsset,animateEngineer } from './asset-kit.js';
 import { Reflector } from 'three/addons/objects/Reflector.js';
+import { ReflectionMaterials } from './reflection-materials.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { GRID, SPAWNS, ZONES } from '../sim/grid.js';
 import { textSprite } from './text.js';
@@ -34,10 +35,10 @@ export class Campus {
     this.reflector=new Reflector(new THREE.PlaneGeometry(31.6,23.6),{color:0x89969f,textureWidth:1024,textureHeight:768,clipBias:.004});
     this.reflector.rotation.x=-Math.PI/2;this.reflector.position.set(14.5,-.025,10.5);this.reflector.material.transparent=true;this.reflector.material.opacity=.14;this.reflector.material.depthWrite=false;
     // Tactical labels are an overlay, not physical signage mirrored in the asphalt.
-    const reflect=this.reflector.onBeforeRender;
+    const reflect=this.reflector.onBeforeRender,reflectionMaterials=this.reflectionMaterials=new ReflectionMaterials();
     this.reflector.onBeforeRender=function(renderer,scene,...args){
-      const hidden=[];scene.traverse(o=>{if(o.visible&&(o.isSprite||o.userData.noReflection||o.material?.depthTest===false)){hidden.push(o);o.visible=false;}});
-      try{reflect.call(this,renderer,scene,...args);}finally{for(const o of hidden)o.visible=true;}
+      const hidden=[];reflectionMaterials.begin();scene.traverseVisible(o=>{if(o.isSprite||o.userData.noReflection||o.material?.depthTest===false){hidden.push(o);o.visible=false;}else if(o!==this&&o.material)reflectionMaterials.swap(o);});
+      try{reflect.call(this,renderer,scene,...args);}finally{reflectionMaterials.restore();for(const o of hidden)o.visible=true;}
     };
     this.wetGround=dressWetGround(this.reflector);
     this.group.add(this.reflector);

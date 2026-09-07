@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {updateInstances,updateVertices} from './buffers.js';
 const dummy=new THREE.Object3D(),up=new THREE.Vector3(0,1,0),dir=new THREE.Vector3();
 // Batched overlays: capability links and incident markers, not additional point lights.
 export class CampusSignals {
@@ -30,7 +31,7 @@ export class CampusSignals {
    for(let i=0;i<32&&bits<512;i++){const p=(time*.23+i/32)%1;dummy.position.set(x+Math.sin(i*13+p*4)*.22,1+p*6,z+Math.cos(i*17+p*3)*.22);dummy.rotation.set(p*4,i,p*3);dummy.scale.setScalar(1.2-p*.5);dummy.updateMatrix();this.bits.setMatrixAt(bits++,dummy.matrix);}
   }
   for(const t of game.towers)if(t.type==='waf')for(const id of t.beams||[]){const a=game.attackers.find(a=>a.id===id&&a.alive);if(!a||beam>=256)continue;const start=new THREE.Vector3(t.x,1.08,t.y),end=new THREE.Vector3(a.x,.28,a.y);dir.subVectors(end,start);const length=dir.length();dummy.position.copy(start).add(end).multiplyScalar(.5);dummy.quaternion.setFromUnitVectors(up,dir.normalize());dummy.scale.set(1+Math.sin(time*30+id)*.15,length,1);dummy.updateMatrix();this.beams.setMatrixAt(beam++,dummy.matrix);}
-  this.wires.geometry.setDrawRange(0,n);pos.needsUpdate=true;col.needsUpdate=true;
-  for(const [mesh,count]of [[this.beams,beam],[this.bits,bits],[this.markers,marker],[this.columns,columns]]){mesh.count=count;mesh.instanceMatrix.needsUpdate=true;}if(this.markers.instanceColor)this.markers.instanceColor.needsUpdate=true;
+  this.wires.geometry.setDrawRange(0,n);this.wires.visible=n>0;updateVertices(pos,n);updateVertices(col,n);
+  for(const [mesh,count]of [[this.beams,beam],[this.bits,bits],[this.markers,marker],[this.columns,columns]])updateInstances(mesh,count);
  }
 }
