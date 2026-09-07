@@ -3,6 +3,7 @@ import {Campaign} from '../src/sim/campaign.js';
 import {ORGS} from '../src/sim/orgs.js';
 import {BUILTIN_DAYS,scenarioModel} from '../src/sim/scenarios.js';
 import {operationCards,renderOperations} from '../src/ui/operations-center.js';
+import {renderActionDirectory} from '../src/ui/action-directory.js';
 import {sessionMenu} from '../src/ui/session-menu.js';
 const mk=()=>new Campaign({model:scenarioModel(BUILTIN_DAYS[0]),org:ORGS.startup,seed:42});
 it('orders missed mandatory deadlines ahead of active threats and optional requests',()=>{
@@ -10,14 +11,16 @@ it('orders missed mandatory deadlines ahead of active threats and optional reque
  const cards=operationCards(g);expect(cards[0].id).toBe('grc-inventory');expect(cards.findIndex(c=>c.kind==='threat')).toBeLessThan(cards.findIndex(c=>c.id==='fbi-evidence'));
  expect(renderOperations(g)).not.toContain('FIRST STEP');
 });
-it('reveals actions on expansion and keeps optional completion out of the main feed',()=>{
+it('links to actions on the left and keeps optional completion out of the main feed',()=>{
  const g=mk();g.requestEvidence();expect(renderOperations(g)).not.toContain('data-action="evidence-prepare"');
- expect(renderOperations(g,1,false,'requests',new Set(['fbi-evidence']))).toContain('data-action="evidence-prepare"');
- g.evidence.state='deferred';expect(renderOperations(g)).not.toContain('FBI · incident logs');expect(renderOperations(g,1,false,'requests')).toContain('FBI · incident logs');
+ expect(renderOperations(g)).toContain('data-action="operation-action" data-id="fbi-evidence"');
+ expect(renderActionDirectory(g,1,'Govern')).toContain('data-action="evidence-prepare"');
+ g.evidence.state='deferred';expect(renderOperations(g)).not.toContain('FBI · incident logs');expect(renderActionDirectory(g,1,'Govern')).toContain('FBI · incident logs');
 });
-it('filters threat, work and request cards without losing history',()=>{
+it('combines threats and requests without duplicating the engineering ledger',()=>{
  const g=mk();g.asset('db').state='compromised';g.requestEvidence();g.log('A completed order','build');
- expect(renderOperations(g,1,false,'threats')).toContain('Malware foothold');expect(renderOperations(g,1,false,'threats')).not.toContain('FBI · incident logs');
+ expect(renderOperations(g)).toContain('Malware foothold');expect(renderOperations(g)).toContain('FBI · incident logs');
+ expect(renderOperations(g)).not.toContain('ops-counters');expect(operationCards(g).some(r=>r.kind==='work')).toBe(false);
  expect(renderOperations(g,1,true)).toContain('A completed order');expect(renderOperations(g)).not.toContain('A completed order');
 });
 it('menu and restart confirmation are read-only renderers, with explicit consequences',()=>{

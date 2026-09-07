@@ -40,7 +40,7 @@ export function simulate(config) {
     }
     // Restrict the initially patchless service, not the entire company.
     const first = g.asset(g.firstAssetId);
-    if (careful && g.time < 15 && first?.exposed && !first.restricted && tryAction('restrict', () => g.restrictService(first.id))) return;
+    if (careful && g.time < 30 && first?.knownVulns?.size && first.exposed && !first.restricted && tryAction('restrict', () => g.restrictService(first.id))) return;
     const assets = [...g.assets.values()].filter(a => a.discovered).sort((a, b) => b.crit - a.crit || b.revenue - a.revenue);
     for (const t of g.humanThreatStatus?.() || []) {
       if (t.detectedAt == null || ['resolved', 'prevented'].includes(t.state)) continue;

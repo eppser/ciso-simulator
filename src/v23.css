@@ -1,0 +1,36 @@
+/* One action surface on the left; one status feed on the right. */
+@media(min-width:901px){
+ #inspect{left:14px;right:auto;top:210px;width:294px;max-height:calc(100dvh - 325px);z-index:12;padding:18px}
+ body:has(#inspect:not([hidden])) .command-panel{visibility:hidden}
+ body:has(#inspect:not([hidden])) #activity-log{display:block}
+}
+body #inspect[data-kind="asset"] .asset-actions{display:flex;flex-direction:column;gap:8px}
+body #inspect[data-kind="asset"] .asset-actions>button{flex:none;height:auto;min-height:40px}
+#panel .track-tabs{position:sticky;top:-12px;z-index:2;background:#12171c;padding-top:10px;box-shadow:0 4px 8px #0003}
+.response-order{display:block}
+.response-order>small,.action-reason{display:block;font-size:10px;line-height:1.5;color:#c2cbd3;margin:6px 0 10px}
+.action-reason{color:#f2bc85;border-left:2px solid #d9aa70;padding-left:8px}
+.action-card .action-icon{display:grid;place-items:center;flex:0 0 28px;height:32px;color:#dec09a;background:#ffffff07;border-radius:4px}
+.action-icon svg{width:19px;height:19px}
+.program-card.action-card>div.action-live-detail{display:block}
+.action-card .action-category{font:8px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:#a2b2c1;margin:7px 0}
+.action-card strong{font-size:9px;max-width:80px;white-space:normal;text-align:right}
+.action-card .ops-task-heading,.action-card .active-threats-heading{display:none}
+.action-card .active-threat>div:first-child,.action-card .active-threat>small{display:none}
+.action-card .active-threats,.action-card .active-threat,.action-card .ops-task{padding:0;margin:0;border:0;background:none}
+.action-card .incident-actions{display:grid;gap:6px}
+.action-card button{min-height:36px;margin:4px 0;border-color:#ffffff25}
+.action-card:focus-within{background:#ffffff06;outline:1px solid #ffffff25;outline-offset:4px}
+.action-card .action-live-detail>small{display:block;font-size:10px;line-height:1.5;color:#a9b8c7;margin:4px 0 10px}
+.ops-card-copy .ops-kind{font:7px var(--mono);letter-spacing:.1em;color:var(--ops-accent);margin:0 0 4px}
+#activity-log:not([hidden]){display:flex;flex-direction:column}
+#activity-log .ops-scroll{max-height:calc(100dvh - 390px);flex:1 1 auto;min-height:0}
+#activity-log .ops-heading,#activity-log .ops-tabs,#activity-log .ops-footer{flex:none}
+@media(min-width:901px){body:has(#inspect:not([hidden])) #activity-log:not([hidden]){display:flex}}
+.ops-footer span:first-child{color:#a8b7c5}
+@media(max-width:900px){
+ #inspect{left:12px;right:auto;width:min(320px,calc(100vw - 24px));z-index:20}
+ body:has(#inspect:not([hidden])) .command-panel{visibility:hidden}
+ body:has(#inspect:not([hidden])) #activity-log{display:none}
+ #activity-log .ops-scroll{max-height:175px}
+}

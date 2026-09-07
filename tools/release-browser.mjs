@@ -15,7 +15,7 @@ try{
    for(let step=0;step<120000&&!['won','lost'].includes(g.phase);step++){
     if(g.pendingDilemma){const d=g.pendingDilemma,preferred={crown:'file',review:'concede',vendor:'reset',fatigue:'rest',ransom:'rebuild'}[d.family];d.choices.filter(c=>c.enabled).sort((a,b)=>(b.id===preferred)-(a.id===preferred)).some(c=>g.choose(d.id,c.id).ok);}
     if(step%150===0){
-     if(g.firstAssetId&&g.time<3){g.isolate(g.firstAssetId);g.patch(g.firstAssetId,g.firstVulnId);}
+     if(g.firstAssetId&&g.time<30&&g.asset(g.firstAssetId).knownVulns?.size&&!g.asset(g.firstAssetId).restricted)g.restrictService(g.firstAssetId);
      for(const a of [...g.assets.values()].filter(a=>a.discovered&&!a.job).sort((a,b)=>b.crit-a.crit)){
       if(g.activeJobs()>=g.concurrency())break;
       if(a.leak?.detected&&a.leak.active){if(!a.quarantined)g.quarantine(a.id);g.cleanLeak(a.id);continue;}

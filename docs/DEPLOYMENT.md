@@ -19,7 +19,7 @@ Use your own Supabase project. Apply `server/migrations/001_scoreboard.sql` once
 
 ```sh
 npm run build:api
-supabase functions deploy ciso-scoreboard --project-ref YOUR_STAGING_PROJECT --use-api --no-verify-jwt
+supabase functions deploy ciso-scoreboard-v23 --project-ref YOUR_STAGING_PROJECT --use-api --no-verify-jwt
 ```
 
 JWT gateway verification is disabled **only because** the function independently requires `GAME_GATEWAY_SECRET` on every request. Generate a strong random secret and set the same value as a Supabase function secret and a Cloudflare encrypted runtime variable. Never put it in Vite variables or the repository. Supabase provides its service key only to the Edge Function runtime.
@@ -35,6 +35,8 @@ Production for the original project is `game.zerodayclock.com`; its dedicated sc
 ## Ruleset upgrades
 
 The frontend and verifier must use the same `RULESET`, fixed timestep and scenario. Test and deploy the verifier to staging before releasing matching frontend changes. History retains old runs; top rankings compare only the current scenario/rules and selected organization.
+
+Deploy changed simulation rules to a **versioned function**, not over the previous verifier. v23 uses `ciso-scoreboard-v23`; the original `ciso-scoreboard` remains the frozen v22 verifier. The gateway uses `GAME_PREVIOUS_EDGE_URL` only for the explicit v22 ruleset so already-open games can finish without losing score submission. Both use the same protected tables; rankings remain separated by ruleset. Never route to a URL supplied by a player. Forks can omit the previous URL if they have no older runs.
 
 ## Security validation
 

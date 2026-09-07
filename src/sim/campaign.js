@@ -50,7 +50,8 @@ export class Campaign extends BaseGame {
     const first = all.find(a => a.discovered && a.exposed && a.threats.some(v => v.patchable));
     if (first) {
       const v = first.threats.find(v => v.patchable);
-      first.vulns.add(v.id); first.knownVulns = new Set(first.vulns); first.scannedAt = 0;
+      // A real exposure is not player knowledge until a scanner inspects it.
+      first.vulns.add(v.id);
       this.fixAt.set(v.id, org.id==='startup'?2:3); this.firstAssetId = first.id; this.firstVulnId = v.id;
     }
     this.zeroDays = all.filter(a => a.exposed && a.threats.some(v => v.patchable)).slice(1, 3).map((a, i) => ({ assetId: a.id, vulnId: a.threats.find(v => v.patchable).id, hour: i ? 15 : 9, landed: false, fixed: false }));
@@ -123,16 +124,30 @@ export class Campaign extends BaseGame {
     if(result.ok) { job.startedAt=this.time; this.stats.spendPeople+=job.cost; if(job.kind==='patch')this.say('patch'); if(job.kind==='ir')this.say('restore'); }
     return result;
   }
+  programHost(){
+    const healthy=a=>a?.discovered&&a.state==='ok'&&!a.locked&&!a.quarantined&&!a.job;
+    const identity=this.asset(this.identityId);
+    return healthy(identity)?identity:[...this.assets.values()].find(healthy);
+  }
+  programEligibility(id){
+    const p=PROGRAMS[id];if(!p)return 'Unknown programme.';
+    if(this.jobs.some(j=>j.programme===id))return 'This program already has an engineer assigned.';
+    if(this.bought(id)&&id!=='briefing')return 'Already funded.';
+    if(id==='briefing'&&this.briefed.has(this.act))return 'You have briefed the board this act.';
+    if(p.requires&&!this.has(p.requires))return `Needs ${PROGRAMS[p.requires].name} active first.`;
+    if(this.budget<this.programCost(id))return `Needs $${this.programCost(id)}k.`;
+    if(['outside','drill','briefing'].includes(id)){
+      if(this.activeJobs()>=this.concurrency())return 'All engineers busy. Wait or fund another shift.';
+      if(!this.programHost())return 'Restore a healthy system to run this program.';
+    }
+    return '';
+  }
   buy(id) {
     const p=PROGRAMS[id]; if(!p)return fail('Unknown programme.');
-    
-    if(this.bought(id)&&id!=='briefing')return fail('Already funded.');
-    if(id==='briefing'&&this.briefed.has(this.act))return fail('You have briefed the board this act.');
-    if(p.requires&&!this.has(p.requires))return fail(`Needs ${PROGRAMS[p.requires].name} active first.`);
-    if(this.budget<this.programCost(id))return fail(`Needs $${this.programCost(id)}k.`);
+    const reason=this.programEligibility(id);if(reason)return fail(reason);
     if(['outside','drill','briefing'].includes(id)) {
-      const host=this.asset(this.identityId)||[...this.assets.values()][0];
-      const result=this.startJob(host,{ kind:'programme', programme:id, seconds:p.seconds, cost:p.cost });
+      const host=this.programHost();
+      const result=this.startJob(host,{ kind:'programme', programme:id, seconds:p.seconds, cost:p.cost,act:this.act });
       if(!result.ok)return result;
       if(id==='briefing')this.briefed.add(this.act);
     } else {
@@ -213,8 +228,20 @@ export class Campaign extends BaseGame {
     return {seconds:seconds+(patchVulns.length?ACTIONS.patchSeconds(a)*.6:0),cost:ACTIONS.irCost(a)*f+(patchVulns.length?ACTIONS.patchCost(a):0),patchVulns};
   }
   respond(id,withPatch=false) {
-    const a=this.asset(id);if(a?.locked&&!this.has('backups'))return fail('Encrypted systems require Tested backups before rebuilding.');
+    const reason=this.responseEligibility(id,withPatch);if(reason)return fail(reason);
+    const a=this.asset(id);
     const result=super.respond(id,withPatch);if(result.ok&&a.edr)a.alertCleanedAt=this.time;return result;
+  }
+  responseEligibility(id,withPatch=true) {
+    const a=this.asset(id);
+    if(!a?.discovered)return 'Select an inventoried system.';
+    if(a.job)return `Work already in progress · ${Math.ceil(a.job.remaining)} simulation seconds left.`;
+    if(a.state!=='compromised')return 'No intruder to remove on this system.';
+    if(a.locked&&!this.has('backups'))return 'Activate Tested backups in Recover before restoring encrypted files.';
+    const cost=this.price(this.irPlan(a,withPatch).cost);
+    if(this.budget<cost)return `Needs $${cost}k · available $${Math.floor(this.budget)}k.`;
+    if(this.activeJobs()>=this.concurrency())return 'All engineers busy. Wait for a free engineer or fund another shift in Team.';
+    return '';
   }
   startHourEarly(){if(this.phase!=='prep')return fail('The hour is already running.');this.earlyCalls++;if(this.hour>=16)this.flags.lateEarly=true;this.beginWave();return{ok:true,bonus:0};}
   beginWave(){
@@ -327,6 +354,12 @@ export class Campaign extends BaseGame {
     this.tickInternalWaves();
   }
   tickJobs(dt){
+    // Losing a work host must not leave an engineer-led program stuck at Infinity.
+    for(const id of ['outside','drill','briefing'])if(this.bought(id)&&this.programReady.get(id)===Infinity&&!this.jobs.some(j=>j.programme===id)){
+      this.programmes.delete(id);this.programReady.delete(id);
+      if(id==='briefing')this.briefed.delete(this.act);
+      this.log(`${PROGRAMS[id].name} interrupted. Reassign from Programs when a healthy system is available.`,'warn');
+    }
     const rate=(1-this.noise*(this.has('awareness')?.5:1))*(this.has('awareness')?.95:1)/(1+[...this.assets.values()].filter(a=>a.edr).length*.02);
     for(const job of this.jobs.slice())if(['unplug','programme'].includes(job.kind)){
       job.remaining-=dt*rate;if(job.remaining>0)continue;const a=this.asset(job.assetId);a.job=null;this.jobs.splice(this.jobs.indexOf(job),1);
@@ -461,11 +494,11 @@ export class Campaign extends BaseGame {
     if(immediate||this.has('comms')){this.regulator.filed=true;this.regulator.filedAt=this.time;return ok();}
     if(this.jobs.some(j=>j.programme==='report'))return ok();
     if(this.activeJobs()>=this.concurrency()){this.flags.pendingReport=true;this.log('Incident report queued for the next available engineer.','warn');return ok();}
-    const free=[...this.assets.values()].find(a=>a.discovered&&!a.job);
-    if(!free)return fail('No system available for incident reporting.');
+    const free=[...this.assets.values()].find(a=>a.discovered&&a.state==='ok'&&!a.locked&&!a.quarantined&&!a.job);
+    if(!free)return fail('Restore a healthy system for incident reporting.');
     return this.startJob(free,{kind:'programme',programme:'report',seconds:this.evidenceReady()?10:20,cost:0});
   }
-  freezeChanges(){this.flags.freezeRequested=true;this.log('Change freeze requested: takes effect next hour for 120 seconds.','info');return ok();}
+  freezeChanges(){if(this.flags.freezeRequested||this.flags.freezeUntil>this.time)return fail('A change freeze is already queued or active.');this.flags.freezeRequested=true;this.log('Change freeze requested: takes effect next hour for 120 seconds.','info');return ok();}
   countdowns(){const out=[];if(this.regulator&&!this.regulator.filed)out.push({id:'regulator',kind:'regulator',remaining:this.regulator.deadline-this.time,visible:true});for(const r of this.ransomware)if(!r.triggered&&!r.cancelled)out.push({...r,kind:'ransomware',visible:this.covered(this.asset(r.assetId))});for(const a of this.assets.values())if(a.state==='isolated')out.push({id:`reconnect-${a.id}`,kind:'reconnect',assetId:a.id,remaining:Math.max(0,80-a.isolatedFor),visible:true});return out;}
   objectives(){return[
     {id:'contain',text:'Unplug or fix the exposed system',done:!!this.flags.contained},

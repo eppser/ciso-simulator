@@ -9,7 +9,7 @@ try{
  await p.evaluate(()=>{const app=__app;app.start('midcap','full');app.paused=true;app.audio.enabled=false;app.ui.closeCall();app.ui.callQueue=[];const a=[...app.game.assets.values()].find(a=>a.discovered&&a.knownVulns===null);app.select({kind:'asset',id:a.id});});
  assert.match(await p.$eval('#inspect',e=>e.textContent),/UNSCANNED/);assert.doesNotMatch(await p.$eval('#inspect',e=>e.textContent),/CVE-2022-40684/);
  await p.evaluate(()=>{const g=__app.game;g.budget=1000;const r=g.buy('scanner');if(!r.ok)throw Error(r.reason);g.time=g.programReady.get('scanner');for(let i=0;i<g.assets.size;i++)g.tickScanner(5);const a=[...g.assets.values()].find(a=>a.discovered&&[...a.knownVulns].some(id=>g.vuln(id).vendor==='Fortinet'));__app.select({kind:'asset',id:a.id});});
- await p.waitForFunction(()=>[...__app.exposureMarkers.entries.values()].some(e=>e.sprite.visible&&e.text.includes('CVE-2022-40684')));
+ await p.waitForFunction(()=>[...__app.exposureMarkers.entries.values()].some(e=>e.sprite.visible&&e.text.includes(__app.game.asset(__app.game.firstAssetId).name)));
  await p.screenshot({path:out+'/scanned-desktop.png'});await (await p.$('#inspect')).screenshot({path:out+'/fortinet-details.png'});
  const inspector=await p.$eval('#inspect',e=>e.textContent);assert.match(inspector,/Fortinet/);assert.match(inspector,/CVE-2022-40684/);assert.match(inspector,/CVSS 9.8/);
  await p.evaluate(()=>{__app.select(null);});await p.screenshot({path:out+'/scanned-campus.png'});

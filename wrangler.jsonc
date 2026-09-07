@@ -4,6 +4,7 @@
   "pages_build_output_dir": "dist",
   "compatibility_date": "2026-09-06",
   "vars": {
-    "GAME_EDGE_URL": "https://ewlsvqspmivodvolawzv.supabase.co/functions/v1/ciso-scoreboard"
+    "GAME_EDGE_URL": "https://ewlsvqspmivodvolawzv.supabase.co/functions/v1/ciso-scoreboard-v23",
+    "GAME_PREVIOUS_EDGE_URL": "https://ewlsvqspmivodvolawzv.supabase.co/functions/v1/ciso-scoreboard"
   }
 }

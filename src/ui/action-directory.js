@@ -1,3 +1,4 @@
+import {ICON} from './icons.js';
 import {operationCards} from './operations-center.js';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Every management mutation has a discoverable Programs route. Targeted actions
@@ -11,8 +12,18 @@ export const ACTION_DIRECTORY=[
  {id:'human',title:'Workforce investigations',actions:['human-contain','human-investigate'],route:'threats',detail:'Once verified: revoke account access and hold payments for free, then pay for an engineer to investigate and close the case. Training and hiring checks prevent future cases.'},
  {id:'decisions',title:'Incident decisions & offers',actions:['choose','vendor-buy'],route:'requests',detail:'Contextual choices include ransomware recovery/payment/negotiation, vendor access, board reviews and team fatigue. Emergency vendor offers use the normal program rollout with a higher quoted price.'},
 ];
-export function renderActionDirectory(g,speed=1){
- const rows=operationCards(g,speed),offer=g.offerDetails();
- const active=rows.map(r=>`<article class="action-live"><b>${esc(r.title)}</b><small>${esc(r.meta)} · ${esc(r.state)}</small><div class="action-live-detail">${r.detail.replace(/ id="([^"]+)"/g,' id="program-$1"')}</div></article>`).join('');
- return `<div class="panel-heading"><span>Actions & work</span><small>SHARED WITH OPERATIONS</small></div><p class="panel-note">Same actions, costs and engineers. No second purchase is needed.</p>${active||'<p class="panel-note">No live response tasks. Prepare your controls and programs.</p>'}${offer&&!rows.some(r=>r.id==='vendor-offer')?`<article class="action-live"><b>Emergency offer · ${esc(offer.name)}</b><small>$${Math.round(offer.price)}k · expires in ${Math.ceil((offer.expires-g.time)/(.75*speed))}s</small><button data-action="vendor-buy">Accept quoted offer</button><button data-action="vendor-regular">Find regular program</button></article>`:''}<div class="action-common"><button data-action="file" ${!g.regulator||g.regulator.filed?'disabled':''}>File incident report</button><button data-action="freeze" ${g.flags.freezeRequested||g.flags.freezeUntil>g.time?'disabled':''}>${g.flags.freezeRequested?'Change freeze queued':g.flags.freezeUntil>g.time?'Change freeze active':'Request change freeze'}</button></div><h3 class="action-heading">ALL CAPABILITIES</h3>${ACTION_DIRECTORY.map(a=>`<article class="action-reference"><b>${esc(a.title)}</b><p>${esc(a.detail)}</p><button data-action="action-route" data-id="${a.route}">${a.route==='assets'?'Choose a system':a.route==='build'?'Open build controls':a.route==='team'?'Open Team':'Open '+a.route} ↗</button></article>`).join('')}`;
+export function renderActionDirectory(g,speed=1,track='Actions'){
+ const all=operationCards(g,speed),rows=all.filter(r=>(track==='Actions'?!r.archive:r.track===track)&&!['change-freeze','reg-report'].includes(r.id));
+ const card=(id,title,state,detail,icon='dashboard',category='Govern')=>'<article id="program-'+esc(id)+'" class="program-card action-card"><div><span class="action-icon">'+ICON[icon]+'</span><b>'+esc(title)+'</b><strong>'+esc(state)+'</strong></div><small class="action-category">'+esc(category)+'</small><div class="action-live-detail">'+detail.replace(/ id="([^"]+)"/g,' id="program-$1"')+'</div></article>';
+ let html=rows.map(r=>card(r.id,r.title,r.state,r.detail,r.icon,r.track||'Actions')).join('');
+ if(track==='Govern'||track==='Actions'&&g.regulator&&!g.regulator.filed){
+  const working=g.jobs.some(j=>j.programme==='report'),queued=g.flags.pendingReport;
+  const state=g.regulator?.filed?'Filed':working?'In progress':queued?'Queued':!g.regulator?'No incident':'$0k';
+  html+=card('reg-report','File incident report',state,'<p>Notify the regulator. '+(g.has('comms')?'Lawyers file immediately.':'One engineer · '+(g.evidenceReady()?'10':'20')+'s. Queues if engineers are busy.')+' Separate from optional FBI sharing.</p><button data-action="file" '+(!g.regulator||g.regulator.filed||working||queued?'disabled':'')+'>'+(!g.regulator?'Available after a reportable incident':working?'Filing report':queued?'Waiting for an engineer':g.regulator.filed?'Report filed':'File incident report')+'</button>');
+ }
+ if(track==='Govern'||track==='Actions'&&(g.flags.freezeRequested||g.flags.freezeUntil>g.time)){
+  const state=g.flags.freezeRequested?'Queued':g.flags.freezeUntil>g.time?'Active':'$0k';
+  html+=card('change-freeze','Request change freeze',state,'<p>Starts next hour for 120s. Halves emergency-change failure risk but makes emergency patches 40% slower. No engineer needed.</p><button data-action="freeze" '+(state!=='$0k'?'disabled':'')+'>'+(state==='Queued'?'Change freeze queued':state==='Active'?'Change freeze active':'Request change freeze')+'</button>');
+ }
+ return html||(track==='Actions'?'<div class="panel-heading"><span>Actions</span><small>LIVE PRIORITIES</small></div><p class="panel-note">No response needed yet. Start with Find → Scanner. Incident actions appear here when needed; preparation programs stay in their categories.</p>':'');
 }

@@ -2,3 +2,7 @@ project_id = "ciso-simulator"
 [functions.ciso-scoreboard]
 verify_jwt = false
 entrypoint = "./functions/ciso-scoreboard/index.js"
+
+[functions.ciso-scoreboard-v23]
+verify_jwt = false
+entrypoint = "./functions/ciso-scoreboard/index.js"

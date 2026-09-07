@@ -18,7 +18,7 @@ it('every security mutation in the command router is in the action directory',()
  const listed=new Set(ACTION_DIRECTORY.flatMap(a=>a.actions));
  const all=[...fs.readFileSync(new URL('../src/ui/command.js',import.meta.url),'utf8').matchAll(/case '([^']+)'/g)].map(m=>m[1]);
  const interfaceActions=new Set('work-toggle grc-toggle ops-view ops-expand ops-history ops-decision work-close threat-program start begin-duty vendor-regular leak-help score-help help-page trust-help coach ransom-help incident-asset resume menu restart restart-confirm menu-organizations help tab select track team inspect-close pause speed early audio labels activity camera call-close decision-toggle results copy download action-route'.split(' '));
- interfaceActions.add('leaderboard');
+ interfaceActions.add('leaderboard');interfaceActions.add('operation-action');
  for(const id of all)expect(listed.has(id)||interfaceActions.has(id),id).toBe(true);
  for(const id of listed)expect(all,id).toContain(id);
 });

@@ -14,15 +14,15 @@ export class ExposureMarkers{
   const brackets=new THREE.LineSegments(geo,new THREE.LineBasicMaterial({color:0xffaf69,transparent:true,opacity:.9,depthWrite:false}));brackets.userData.noReflection=true;brackets.userData.noAO=true;brackets.visible=false;this.scene.add(brackets);
   const e={canvas,texture,sprite,brackets,text:'',id};this.entries.set(id,e);return e;
  }
- draw(e,a,r,full){
-  const signature=JSON.stringify([a.name,r,full]);if(signature===e.text)return;e.text=signature;
-  const c=e.canvas.getContext('2d'),h=full?228:130;e.texture.repeat.y=h/228;e.texture.offset.y=1-h/228;
-  c.clearRect(0,0,768,228);c.fillStyle='rgba(8,14,21,.96)';roundRect(c,1,1,766,h-2,18);c.fill();c.strokeStyle=r.color;c.lineWidth=3;c.stroke();c.fillStyle=r.color;c.fillRect(2,18,7,h-36);
-  const fit=(text,y,size,color)=>{c.font=`600 ${size}px Inter, sans-serif`;const min=full?36:54;while(c.measureText(text).width>718&&size>min){size--;c.font=`600 ${size}px Inter, sans-serif`;}if(c.measureText(text).width>718){while(text.length&&c.measureText(text+'…').width>718)text=text.slice(0,-1);text+='…';}c.fillStyle=color;c.fillText(text,25,y);};
-  fit(a.name,full?44:52,full?42:58,'#f0f3f6');
-  const glyph=r.incident?'!':r.state==='clear'?'✓':r.state==='unknown'?'?':r.state==='stale'?'↻':'!';
-  fit(`${glyph}  ${r.headline}`,full?92:110,full?42:54,r.color);
-  if(full){const v=r.findings[0];fit(v?`${v.vendor} · ${v.displayId}${r.count>1?`  +${r.count-1}`:''}`:r.state==='clear'?'Scan complete · no known flaws':'Scanner inspection required',144,40,'#e2e9f1');fit(r.state==='stale'?'Old findings · awaiting rescan':r.contained&&r.count?'Contained ≠ fixed':r.remedy||'Click the building for details',195,36,'#a9bacb');}
+ draw(e,a,r){
+  const text=a.name+' · '+(r.state==='stale'?'↻':r.count+' !');
+  if(text===e.text)return;e.text=text;
+  const c=e.canvas.getContext('2d');e.texture.repeat.y=90/228;e.texture.offset.y=1-90/228;
+  c.clearRect(0,0,768,228);c.fillStyle='rgba(8,14,21,.88)';roundRect(c,1,1,766,88,12);c.fill();
+  c.fillStyle=r.color;c.fillRect(2,14,5,62);c.font='600 46px Inter, sans-serif';
+  let name=a.name;while(name.length>5&&c.measureText(name).width>570)name=name.slice(0,-1);
+  c.fillStyle='#edf1f5';c.fillText(name+(name!==a.name?'…':''),20,61);
+  c.fillStyle=r.color;c.textAlign='right';c.fillText(r.state==='stale'?'↻':r.count+' !',746,61);c.textAlign='left';
   e.texture.needsUpdate=true;
  }
  update(game,camera,views,selected,time,labels){
@@ -31,23 +31,19 @@ export class ExposureMarkers{
   for(const e of this.entries.values()){e.sprite.visible=false;e.brackets.visible=false;}
   const occupied=[];
   const records=[...this.records].sort((x,y)=>Number(y.a.id===selected?.id)-Number(x.a.id===selected?.id)||y.r.priority-x.r.priority);
-  for(const {a,r}of records){const v=views.get(a.id);if(!v)continue;const active=r.state!=='unknown'||game.bought('scanner')||a.id===selected?.id;if(!active)continue;
+  for(const {a,r}of records){const v=views.get(a.id);if(!v)continue;const active=['vulnerable','stale'].includes(r.state);if(!active)continue;
    const e=this.entries.get(a.id)||this.make(a.id);e.brackets.position.set(a.x+.5,0,a.y+.5);e.brackets.material.color.set(r.color);
-   e.brackets.visible=r.state!=='unknown';e.brackets.material.opacity=r.state==='vulnerable'?.62+Math.sin(time*2.8)*.25:r.state==='clear'?.45:.72;
+   e.brackets.visible=true;e.brackets.material.opacity=.58+Math.sin(time*2.8)*.18;
    // A selection always shows details. Labels-off keeps the tactical footprint but hides text.
    if(!labels&&a.id!==selected?.id)continue;
    const height=v.height+.58;this.point.set(a.x+.5,height,a.y+.5).applyMatrix4(camera.matrixWorldInverse);const depth=-this.point.z;
    this.point.set(a.x+.5,height,a.y+.5).project(camera);if(depth<=0||Math.abs(this.point.x)>.98||Math.abs(this.point.y)>.93||this.point.z>1)continue;
    const px=(this.point.x+1)*innerWidth/2,py=(1-this.point.y)*innerHeight/2;
-   const width=innerWidth<760?190:210;
-   const overlaps=(w,h)=>occupied.some(([x,y,ow,oh])=>Math.abs(x-px)<(w+ow)/2+6&&Math.abs(y-py)<(h+oh)/2+6);
-   const space=!overlaps(width,width*228/768);
-   const full=(a.id===selected?.id||r.state==='vulnerable'&&space)&&!r.incident;
-   const w=full?width:144,h=full?w*228/768:w*130/768;
-   // Compact badges may be skipped in crowded views; every affected footprint remains marked.
-   if(!full&&overlaps(w,h))continue;
+   const w=150,h=w*90/768;
+   const overlaps=occupied.some(([x,y,ow,oh])=>Math.abs(x-px)<(w+ow)/2+6&&Math.abs(y-py)<(h+oh)/2+6);
+   if(overlaps)continue;
    occupied.push([px,py,w,h]);v.marker.visible=false;const perPixel=2*depth*Math.tan(camera.fov*Math.PI/360)/innerHeight;
-   e.sprite.position.set(a.x+.5,height,a.y+.5);e.sprite.scale.set(w*perPixel,h*perPixel,1);e.sprite.visible=true;this.draw(e,a,r,full);
+   e.sprite.position.set(a.x+.5,height,a.y+.5);e.sprite.scale.set(w*perPixel,h*perPixel,1);e.sprite.visible=true;this.draw(e,a,r);
   }
  }
  clear(){for(const e of this.entries.values()){this.scene.remove(e.sprite,e.brackets);e.texture.dispose();e.sprite.material.dispose();e.brackets.geometry.dispose();e.brackets.material.dispose();}this.entries.clear();this.records=[];this.lastRefresh=-Infinity;}

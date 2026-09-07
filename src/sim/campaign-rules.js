@@ -22,7 +22,7 @@ export const MODIFIERS = [
   { id: 'botnet', label: 'Botnet day', detail: 'More sources, less health, faster movement.' },
   { id: 'quiet', label: 'Quiet before the storm', detail: 'A gentler first shift. A harder final siege.' },
 ];
-export const TRACKS = ['Visibility', 'Identity', 'Protect', 'Detect', 'Recover', 'Govern', 'Actions'];
+export const TRACKS = ['Actions', 'Visibility', 'Identity', 'Protect', 'Detect', 'Recover', 'Govern'];
 const p = (id, name, track, cost, seconds, blurb, requires) => ({ id, name, track, cost, seconds, blurb, requires });
 export const PROGRAMS = {
   scanner: p('scanner', 'Scanner', 'Visibility', 35, 0, 'Find vulnerabilities, one system every 4 seconds.'),

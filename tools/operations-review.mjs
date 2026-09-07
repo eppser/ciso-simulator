@@ -11,10 +11,10 @@ try{
  await p.evaluate(()=>{__app.audio.enabled=false;__app.ui.closeCall();__app.ui.callQueue=[];__app.paused=true;});
  await p.screenshot({path:`${out}/overview.png`});
  await p.click('#activity-toggle');assert.equal(await p.$eval('#activity-log',e=>e.hidden),true);
- await p.click('#grc-toggle');assert.equal(await p.$eval('#activity-log',e=>e.hidden),false);assert.equal(await p.$eval('#work-tray',e=>e.hidden),true);
- await p.evaluate(()=>{const g=__app.game;g.asset('db').state='compromised';g.tickIncidents(0);__app.ui.update();});
+ await p.click('#activity-toggle');assert.equal(await p.$eval('#activity-log',e=>e.hidden),false);assert.equal(await p.$eval('#work-tray',e=>e.hidden),true);
+ await p.evaluate(()=>{const g=__app.game;g.asset('db').state='compromised';g.tickIncidents(0);g.requestEvidence();__app.ui.update();});
  assert.equal(await p.evaluate(()=>__app.game.offerDetails()),null);
- await p.click('[data-action="evidence-prepare"]');assert.equal(await p.evaluate(()=>__app.game.evidence.state),'working');
+ await p.click('#activity-log [data-action="operation-action"][data-id="fbi-evidence"]');await p.click('#panel [data-action="evidence-prepare"]');assert.equal(await p.evaluate(()=>__app.game.evidence.state),'working');
  await p.evaluate(()=>{const g=__app.game,j=g.jobs.find(j=>j.programme==='liaison-evidence');g.time+=j.remaining+1;g.tickJobs(j.remaining+1);g.trust=3;__app.ui.update();});
  await p.click('[data-action="evidence-retain"]');assert.equal(await p.evaluate(()=>__app.game.trust),3);
  await p.click('[data-action="evidence-share"]');assert.equal(await p.evaluate(()=>__app.game.trust),4);
