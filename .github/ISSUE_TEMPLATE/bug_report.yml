@@ -1,0 +1,28 @@
+name: Report a gameplay bug
+description: Something broke, a control felt wrong, or an incident had no clear response.
+title: "[Bug] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How can we reproduce it?
+      placeholder: "Organization/difficulty, game hour, control or program, then the clicks you made."
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and device
+      placeholder: "Chrome on Windows 11, 1920×1080"
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshot or short clip
+      description: Optional. Remove personal data, API keys and private telemetry before uploading.

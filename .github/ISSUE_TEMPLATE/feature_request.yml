@@ -1,0 +1,20 @@
+name: Suggest a feature or data adapter
+description: Propose a playable incident, a UX improvement, or an aggregate telemetry adapter.
+title: "[Idea] "
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What should the player be able to do?
+      description: Start with the experience or problem, not just a new button.
+    validations:
+      required: true
+  - type: textarea
+    id: tradeoff
+    attributes:
+      label: What is the decision or trade-off?
+      description: For gameplay, suggest a cost and a response. For adapters, describe the aggregate fields without including private logs.
+  - type: textarea
+    id: help
+    attributes:
+      label: Can you help test or build it?
