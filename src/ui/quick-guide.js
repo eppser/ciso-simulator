@@ -18,7 +18,7 @@ export function quickGuide(page = 0) {
     ${card('3 · Fix, then recover', flow(node('engineer', 'Assign'), node('patched', 'Restore', 'good')), 'Patch exposed systems. Clean up infected ones. <b>Engineers at the top</b> opens the work ledger; Team adds capacity.')}
    </div>
    <div class="guide-zones"><span><b>DMZ</b>Public services</span>${arrow}<span><b>Internal</b>Business systems</span>${arrow}<span><b>Core</b>Critical infrastructure</span></div>
-   <p class="guide-note">Protect crown jewels in every zone. Report incidents and meet deadlines in Operations → Tasks to build board trust. Score rewards resilience, effective defense and fast response—not just purchases.</p>`,
+   <p class="guide-note">Protect crown jewels in every zone. Report incidents and meet deadlines in Programs → Govern to build board trust. Score rewards resilience, effective defense and fast response—not just purchases.</p>`,
   `<p class="guide-intro">A creature is an attack attempt—not proof of infection. Its payload matters more than its shape.</p>
    <div class="guide-cards">
     ${card('Web attack', flow(node('web', 'Web exploit', 'danger'), node('waf', 'WAF'), node('systems', 'Website')), '<b>WAF slows and damages web attacks.</b> Place it in range before they reach the website.')}
@@ -36,7 +36,7 @@ export function quickGuide(page = 0) {
   `<p class="guide-intro">Some threats arrive with a résumé or an employee account—not through the perimeter.</p>
    <div class="guide-cards">
     ${card('1 · Prevent fraudulent hires', flow(node('awareness', 'Train'), node('check', 'Verify')), '<b>Programs → Protect → Staff training → Hiring verification.</b> Training can flag fraud; completed hiring checks stop new fraudulent onboarding.')}
-    ${card('2 · Stop the loss', flow(node('ciso', 'Account abuse', 'danger'), node('blocked', 'Revoke', 'good')), '<b>Operations → Open threats.</b> Once the account is identified, revoke access for free. Fraud payments and insider misuse stop immediately.')}
+    ${card('2 · Stop the loss', flow(node('ciso', 'Account abuse', 'danger'), node('blocked', 'Revoke', 'good')), '<b>Programs → Actions.</b> Once the account is identified, revoke access for free. Fraud payments and insider misuse stop immediately.')}
     ${card('3 · Close the case', flow(node('engineer', 'Investigate'), node('patched', 'Closed', 'good')), '<b>Verify & close</b> assigns an engineer to review credentials and preserve evidence. Contained is not resolved. The fee and time are shown before ordering.')}
    </div>
    <p class="guide-note">SIEM and training speed detection; Admin lock reduces insider harm. Unconfirmed sources have no map pin. Map tags appear after detection and disappear after resolution.</p>`,

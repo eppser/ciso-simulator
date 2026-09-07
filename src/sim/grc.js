@@ -23,7 +23,7 @@ export const grcMethods={
  tickGrc(){
   this.grc??=[];
   for(const def of GRC_TASKS)if(this.hour>=def.hour&&!this.grc.some(t=>t.id===def.id)){
-   this.grc.push({...def,state:'pending',deadline:this.time+({startup:240,midcap:200,enterprise:160}[this.org.id]),missed:false});this.say('grc_'+def.id);this.log(`Regulator requests ${def.name}. Open Operations → Tasks.`,'warn');
+   this.grc.push({...def,state:'pending',deadline:this.time+({startup:240,midcap:200,enterprise:160}[this.org.id]),missed:false});this.say('grc_'+def.id);this.log(`Regulator requests ${def.name}. Open Programs → Govern, or follow the request in Operations.`,'warn');
   }
   for(const t of this.grc){
    if(t.state==='done')continue;
