@@ -5,7 +5,7 @@ const out='artifacts/storm-v21/performance';fs.mkdirSync(out,{recursive:true});
 const browser=await puppeteer.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
 try{
  const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
- await page.setViewport({width:1600,height:1000});await page.goto('http://127.0.0.1:5178/',{waitUntil:'networkidle0'});await page.click('[data-action=start][data-id=midcap]');
+ await page.setViewport({width:1600,height:1000});await page.setRequestInterception(true);page.on('request',r=>r.url().includes('/api/')?r.respond({status:200,contentType:'application/json',body:JSON.stringify({error:'Performance fixture: practice only'})}):r.continue());await page.goto(process.env.GAME_TEST_URL||'http://127.0.0.1:5178/',{waitUntil:'networkidle0'});await page.click('[data-action=start][data-id=midcap]');
  await page.evaluate(()=>{__app.audio.enabled=false;__app.ui.closeCall();__app.ui.callQueue=[];__app.paused=true;});
  const measure=async name=>({name,...await page.evaluate(async()=>{
   const a=__app,frames=[],start=a.game.time,startCount=a.game.attackers.length;let prev=performance.now();

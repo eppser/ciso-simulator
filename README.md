@@ -48,7 +48,7 @@ Your reward: ransomware, supply-chain compromise, a suspicious remote contractor
 
 [Open the scoreboard →](https://game.zerodayclock.com/scoreboard)
 
-At the end of a run, choose **Compare & submit score**. Add a callsign and superskill, consent to publication, and submit. Top scores combine all three difficulties on the current scenario and rules, using a [published difficulty allowance](docs/scoring-v24.md). Run history preserves earlier scores.
+At the end of a run, choose **Compare & submit score**. Add a username and life motto, then click **Add my score** to publish them. The compact scoreboard combines all three difficulties on the current scenario and rules, using a [published difficulty allowance](docs/scoring-v24.md). Empty boards display clearly labeled seeded scores; these are not stored as player runs.
 
 Scores are **recomputed server-side from the command journal**. Invented totals and duplicate tickets are rejected. No fake seed players or made-up rankings. Callsigns are pseudonyms, not verified identities; this is not a bot-proof competition.
 

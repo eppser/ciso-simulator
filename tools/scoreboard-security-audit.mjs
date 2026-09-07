@@ -1,3 +1,4 @@
+import {RULESET,SCENARIO} from '../src/scoreboard-config.js';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -7,7 +8,7 @@ const ref='ewlsvqspmivodvolawzv',checks=[],created=[],tokens=[];
 async function sql(query){const r=await fetch('https://api.supabase.com/v1/projects/'+ref+'/database/query',{method:'POST',headers:{Authorization:'Bearer '+process.env.SUPABASE_ACCESS_TOKEN,'content-type':'application/json'},body:JSON.stringify({query})});const d=await r.json();if(!r.ok)throw Error('Staging fixture query failed');return d;}
 async function request(path,body,extra={}){const r=await fetch(base+path,{method:body?'POST':'GET',headers:{'content-type':'application/json',Origin:base,...extra},body:body?JSON.stringify(body):undefined});return {status:r.status,body:await r.json()};}
 try{
- let r=await request('/api/run',{org:'startup',ruleset:'ciso-2026-09-v24',scenario:'2026-09-02'},{Origin:'https://untrusted.example'});assert.equal(r.status,403);checks.push('Cross-origin submission blocked');
+ let r=await request('/api/run',{org:'startup',ruleset:RULESET,scenario:SCENARIO},{Origin:'https://untrusted.example'});assert.equal(r.status,403);checks.push('Cross-origin submission blocked');
  r=await request('/api/scores?org=startup&page=-1');assert.equal(r.status,400);checks.push('Invalid pagination rejected');
  r=await request('/api/submit',{token:'a'.repeat(64),name:'<script>',superskill:'testing',score:10000,run:{}});assert.equal(r.status,400);checks.push('HTML and malformed run rejected');
  r=await request('/api/run',{padding:'x'.repeat(310000)});assert.equal(r.status,413);checks.push('Oversized body blocked');

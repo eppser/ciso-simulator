@@ -38,7 +38,7 @@ export const TOWERS = {
   },
   wall: {
     id: 'wall', name: 'Firewall segment', short: 'SEG', hotkey: '5', cost: 4, sell: 0.5,
-    blurb: 'A segmentation rule. Blocks one network cell, including campus edges. Forces a detour; if every route is sealed, attackers breach its 180 integrity. Stolen credentials can bypass it.',
+    blurb: 'Fixed price, no escalation. Blocks one cell to shape routes. Remove instantly for up to half back, based on integrity. Sealed routes can be breached; stolen credentials bypass walls.',
     levels: [{ upgrade: 0, note: 'Blocks a cell' }],
   },
 };

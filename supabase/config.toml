@@ -10,3 +10,6 @@ entrypoint = "./functions/ciso-scoreboard/index.js"
 [functions.ciso-scoreboard-v24]
 verify_jwt = false
 entrypoint = "./functions/ciso-scoreboard/index.js"
+[functions.ciso-scoreboard-v25]
+verify_jwt = false
+entrypoint = "./functions/ciso-scoreboard/index.js"

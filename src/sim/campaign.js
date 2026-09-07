@@ -103,7 +103,7 @@ export class Campaign extends BaseGame {
   say(id) { this.messageSeq=(this.messageSeq||0)+1;this.messages.push({ id, t:this.time, seq:this.messageSeq }); if(this.messages.length>80)this.messages.shift(); }
   has(id) { return this.programmes.has(id) && (this.programReady?.get(id) ?? 0)<=this.time; }
   price(n) { return scaled(n,this.org); }
-  buildCost(type) { return this.price(TOWERS[type].cost + (type==='wall'?2*this.walls.size:0)); }
+  buildCost(type) { return this.price(TOWERS[type].cost); }
   programCost(id) { return this.price(id==='insurance' && this.has('mfa') && this.has('backups') && [...this.assets.values()].filter(a=>a.crit===3&&!a.exposed).every(a=>a.edr||a.appliance&&!a.vulns.size) ? 40 : PROGRAMS[id].cost); }
   concurrency() { return Math.max(0,(this.org.id==='midcap'?1:2)+(this.has('soc1')?1:0)+(this.has('soc2')?1:0)-(this.flags?.restUntil>this.time?1:0)); }
   jobSpeed() { return (1-(this.has('soc1')?.15:0)-(this.has('soc2')?.15:0))*(this.fatigue?.active?1.2:1)*(this.flags?.freshUntil>this.time?.9:1); }
@@ -189,10 +189,13 @@ export class Campaign extends BaseGame {
     const refund=Math.round((t.paid||0)*(this.time-t.placedAt<=40?.5:.4));
     this.towers.splice(this.towers.indexOf(t),1);this.map.free(t.x,t.y);this.budget+=refund;this.stats.refunded+=refund;this.lastSale=this.time;return{ok:true,refund};
   }
+  wallRefund(item) {
+    const integrity=Math.max(0,Math.min(1,(item.hp??180)/(item.maxHp??180)));
+    return Math.floor((item.paid||0)*.5*integrity);
+  }
   removeWall(x,y) {
-    if(this.time-this.lastSale<40)return fail('One sale every 40 seconds.');
     const item=this.walls.get(key(x,y));if(!item)return fail('No firewall there.');
-    const refund=Math.round((item.paid||0)*(this.time-item.placedAt<=40?.5:.4));this.walls.delete(key(x,y));this.map.free(x,y);this.budget+=refund;this.stats.refunded+=refund;this.lastSale=this.time;return{ok:true,refund};
+    const refund=this.wallRefund(item);this.walls.delete(key(x,y));this.map.free(x,y);this.budget+=refund;this.stats.refunded+=refund;return{ok:true,refund};
   }
   isolate(id,on=true) {
     const a=this.asset(id);if(!a||!a.discovered)return fail('Select an inventoried system.');

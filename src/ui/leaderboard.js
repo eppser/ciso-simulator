@@ -1,8 +1,13 @@
-import {DIFFICULTY} from '../sim/score-normalization.js';
+import {scoreboardHero} from './scoreboard-hero.js';
+import {renderDemoScores,renderScoreRows,showDemoScores} from './scoreboard-demo.js';
 import {RULESET,SCENARIO} from '../scoreboard-config.js';
 import '../leaderboard.css';
+import '../scoreboard-polish.css';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-async function api(path,body){const r=await fetch(path,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json'}:undefined,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(25000)});let data;try{data=await r.json();}catch{throw Error('Leaderboard unavailable. Your game is still playable.');}if(!r.ok)throw Error(data.error||'Leaderboard unavailable.');return data;}
+async function api(path,body){
+ const r=await fetch(path,{method:body?'POST':'GET',headers:body?{'Content-Type':'application/json'}:undefined,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(25000)});
+ let data;try{data=await r.json();}catch{throw Error('Live scores unavailable.');}if(!r.ok)throw Error(data.error||'Live scores unavailable.');return data;
+}
 export const beginRankedRun=org=>import.meta.env.DEV&&import.meta.env.VITE_GAME_RANKED!=='1'?Promise.resolve({error:'Local practice run. Play the hosted game to enter the public rankings.'}):api('/api/run',{org,ruleset:RULESET,scenario:SCENARIO}).catch(error=>({error:error.message}));
 export function openLeaderboard(ui){
  ui.modal('<div id="leaderboard"></div><button data-action="resume" class="leaderboard-back">Back to game</button>','leaderboard-modal');
@@ -10,15 +15,33 @@ export function openLeaderboard(ui){
 }
 export function mountLeaderboard(root,{game,run,ticket}={}){
  const ended=game&&['won','lost'].includes(game.phase),eligible=ended&&run?.eligible;
- let view='top',page=0,serial=0;
- root.innerHTML=`<div class="eyebrow">THE BOARD IS WATCHING</div><h2>THE SCOREBOARD<span class="lb-cap"> / 10,000</span></h2><p class="lb-intro">One board. Every difficulty. Keep the company alive.</p>${eligible?`<form class="lb-submit"><div><b>YOUR DAY · ${game.score().toLocaleString()} POINTS</b><small>Publish your callsign and signature superskill.</small></div><label>Callsign<input name="name" minlength="2" maxlength="28" placeholder="The Patch Whisperer" required autocomplete="off"></label><label>Superskill<input name="superskill" minlength="2" maxlength="40" placeholder="Explaining DNS to the board" required autocomplete="off"></label><label class="lb-consent"><input name="consent" type="checkbox" required>Publish this score, callsign and superskill publicly. Use a nickname, not personal information.</label><button type="submit">Submit my score ↗</button><p class="lb-status" role="status"></p></form>`:ended?'<p class="lb-note">Practice run: imported scenarios, offline starts and modified simulations do not enter the public rankings.</p>':''}<div class="lb-filters"><div class="lb-switch"><button data-view="top" aria-pressed="true">Top scores</button><button data-view="history" aria-pressed="false">Run history</button></div></div><p class="lb-scenario">Scenario ${SCENARIO} · current rules · server-verified simulation</p><details class="lb-method"><summary>How scores compare</summary><p>Business resilience 4,000 · Defense effectiveness 3,000 · Response & leadership 3,000. Outcomes, response time and effective spend matter—not how many items you buy.</p><p>Each category’s quality receives a difficulty allowance: Easy q, Medium q⁰·⁸⁵, Hard q⁰·⁷⁵. All are multiplied by the fraction of the day completed. Zero stays zero; perfect stays 10,000. This is a published game-design handicap, not a percentile ranking.</p></details><div class="lb-rows" aria-live="polite"></div><div class="lb-pagination"><button class="lb-prev">← Previous</button><span></span><button class="lb-next">Next →</button></div><p class="lb-note">Top scores combine all difficulties on the current scenario and rules. History preserves older runs. Callsigns are unverified; automated play is not ruled out. <a href="/scoreboard" target="_blank" rel="noopener">Open public scoreboard ↗</a></p>`;
- const load=async()=>{const request=++serial,rows=root.querySelector('.lb-rows');root.querySelector('.lb-scenario').textContent=view==='top'?`Scenario ${SCENARIO} · current rules · server-verified simulation`:'Run history · all published scenarios and rules · newest first';rows.innerHTML='<p class="lb-empty">Checking the boardroom…</p>';root.querySelector('.lb-prev').disabled=true;root.querySelector('.lb-next').disabled=true;
-  try{const data=await api('/api/scores?'+new URLSearchParams({view,page}));if(request!==serial||!root.isConnected)return;rows.innerHTML=data.rows.length?data.rows.map((r,i)=>`<article class="lb-row"><span class="lb-rank">${view==='top'?String(page*25+i+1).padStart(2,'0'):'↗'}</span><div><b>${esc(r.name)}</b><p>${esc(r.superskill)}</p><small><span class="lb-level">${esc(DIFFICULTY[r.org]?.label||r.org)}</span> ${esc(new Date(r.created_at).toLocaleDateString())} · ${r.outcome==='won'?'Survived midnight':'Board debrief'}${view==='history'?` · ${esc(r.scenario)} · ${r.ruleset===RULESET?'Current rules':'Legacy score · unadjusted'}`:''}</small></div><strong>${Number(r.score).toLocaleString()}<span class="lb-meter" aria-hidden="true"><i style="width:${Math.max(0,Math.min(100,Number(r.score)/100))}%"></i></span></strong></article>`).join(''):'<p class="lb-empty">No scores yet. The first seat is yours.</p>';root.querySelector('.lb-prev').disabled=page===0;root.querySelector('.lb-next').disabled=!data.more;root.querySelector('.lb-pagination span').textContent='Page '+(page+1);}
-  catch(e){if(request===serial&&root.isConnected)rows.innerHTML=`<p class="lb-empty">${esc(e.message)}<br><button class="lb-retry">Try again</button></p>`;}
+ let page=0,serial=0;
+ root.innerHTML=`${scoreboardHero()}${eligible?`<form class="lb-submit"><div><b>YOUR SCORE · ${game.score().toLocaleString()}</b></div><label>Username<input name="name" minlength="2" maxlength="28" placeholder="The Patch Whisperer" required autocomplete="off"></label><label>Life motto<input name="superskill" minlength="2" maxlength="40" placeholder="Keep calm and check the backups." required autocomplete="off"></label><p class="lb-publish-note">Adding your score publishes your username and motto. Use a pseudonym.</p><button type="submit">Add my score ↗</button><p class="lb-status" role="status"></p></form>`:ended?'<p class="lb-note">Practice run · play online to submit a verified score.</p>':''}<p class="lb-live-status" role="status"></p><div class="lb-column-head" aria-hidden="true"><span>USERNAME</span><span>SCORE</span><span>LIFE MOTTO</span></div><div class="lb-rows" aria-live="polite"></div><div class="lb-pagination" hidden><button class="lb-prev">← Previous</button><span></span><button class="lb-next">Next →</button></div>`;
+ const load=async()=>{
+  const request=++serial,rows=root.querySelector('.lb-rows'),status=root.querySelector('.lb-live-status'),pagination=root.querySelector('.lb-pagination');
+  pagination.hidden=true;status.textContent='';rows.innerHTML='<p class="lb-empty">Loading scores…</p>';
+  root.querySelector('.lb-prev').disabled=true;root.querySelector('.lb-next').disabled=true;
+  try{
+   const data=await api('/api/scores?'+new URLSearchParams({view:'top',page}));if(request!==serial||!root.isConnected)return;
+   rows.innerHTML=showDemoScores('top',page,data.rows)?renderDemoScores():data.rows.length?renderScoreRows(data.rows,page*25):'<p class="lb-empty">No scores on this page.</p>';
+   root.querySelector('.lb-prev').disabled=page===0;root.querySelector('.lb-next').disabled=!data.more;
+   root.querySelector('.lb-pagination span').textContent='Page '+(page+1);pagination.hidden=page===0&&!data.more;
+  }catch(e){
+   if(request!==serial||!root.isConnected)return;
+   status.innerHTML=`${esc(e.message)} <button class="lb-retry">Retry</button>`;
+   rows.innerHTML=page===0?renderDemoScores():'<p class="lb-empty">Could not load this page.</p>';
+   pagination.hidden=page===0;root.querySelector('.lb-prev').disabled=page===0;
+  }
  };
- root.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.disabled)return;if(b.dataset.view){view=b.dataset.view;page=0;root.querySelectorAll('[data-view]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));load();}else if(b.classList.contains('lb-prev')){page--;load();}else if(b.classList.contains('lb-next')){page++;load();}else if(b.classList.contains('lb-retry'))load();});
- root.querySelector('form')?.addEventListener('submit',async e=>{e.preventDefault();const form=e.target,status=form.querySelector('.lb-status'),button=form.querySelector('button');if(!form.reportValidity()||!form.elements.consent.checked)return;button.disabled=true;status.textContent='Replaying your decisions and verifying the score…';
-  try{const session=await ticket;if(!session?.token)throw Error(session?.error||'This run started offline. Start a new game online to rank.');if(run.submitted)throw Error('This run has already been submitted.');const r=await api('/api/submit',{token:session.token,name:form.elements.name.value,superskill:form.elements.superskill.value,score:game.score(),run});run.submitted=true;status.textContent=`Published · ${r.score.toLocaleString()} verified points. Welcome to the board.`;button.textContent='Score published ✓';page=0;load();}
-  catch(error){status.textContent=error.message;button.disabled=false;}
- });load();
+ root.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.disabled)return;if(b.classList.contains('lb-prev')){page--;load();}else if(b.classList.contains('lb-next')){page++;load();}else if(b.classList.contains('lb-retry'))load();});
+ root.querySelector('form')?.addEventListener('submit',async e=>{
+  e.preventDefault();const form=e.target,status=form.querySelector('.lb-status'),button=form.querySelector('button');if(button.disabled||!form.reportValidity())return;
+  button.disabled=true;status.textContent='Verifying your score…';
+  try{
+   const session=await ticket;if(!session?.token)throw Error(session?.error||'This run started offline. Start a new game online to rank.');if(run.submitted)throw Error('This run has already been submitted.');
+   const r=await api('/api/submit',{token:session.token,name:form.elements.name.value,superskill:form.elements.superskill.value,score:game.score(),run});
+   run.submitted=true;status.textContent=`Published · ${r.score.toLocaleString()} verified points.`;button.textContent='Score published ✓';page=0;load();
+  }catch(error){status.textContent=error.message;button.disabled=false;}
+ });
+ load();
 }

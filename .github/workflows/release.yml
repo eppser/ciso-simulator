@@ -23,6 +23,7 @@ jobs:
       - run: npm test
       - run: node tools/super-audit.mjs
       - run: node tools/pacing-audit.mjs
+      - run: node tools/firewall-economy-audit.mjs
       - run: npm run build:release
       - run: node tools/check-public-release.mjs
       - uses: actions/upload-artifact@v4

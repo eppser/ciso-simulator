@@ -33,7 +33,7 @@ try{
    app.ui.results();return{org,phase:g.phase,score:g.score(),budget:g.budget,steps:app.journal.steps,commands:app.journal.commands.length,eligible:app.journal.eligible,run:app.journal};
   },org);
   assert.ok(['won','lost'].includes(result.phase));assert.ok(result.eligible);reports.push({...result,run:undefined});fs.writeFileSync(out+'/'+org+'-replay.json',JSON.stringify(result));await page.screenshot({path:out+'/'+org+'-results.png'});
-  await page.click('[data-action=leaderboard]');await page.waitForSelector('.lb-submit');assert.match(await page.$eval('#leaderboard',e=>e.textContent),/YOUR DAY/);await page.screenshot({path:out+'/'+org+'-scoreboard.png'});
+  await page.click('[data-action=leaderboard]');await page.waitForSelector('.lb-submit');assert.match(await page.$eval('#leaderboard',e=>e.textContent),/YOUR SCORE/);await page.screenshot({path:out+'/'+org+'-scoreboard.png'});
  }
  await page.goto(base+'/scoreboard',{waitUntil:'networkidle0'});await page.waitForFunction(()=>document.querySelector('.lb-row')||document.querySelector('.lb-empty')?.textContent.includes('No scores yet'));assert.equal(await page.$('.lb-org'),null);
  await page.setViewport({width:390,height:844});await page.screenshot({path:out+'/scoreboard-mobile.png'});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
