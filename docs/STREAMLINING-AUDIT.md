@@ -14,6 +14,7 @@
 - Interrupted outside scans, drills and briefings can be reassigned instead of remaining permanently Assigned. A new act cannot create overlapping briefings.
 - Response and program purchases share their eligibility checks with the UI. Capacity, funds, prerequisites and existing jobs are enforced by the simulation, not just button styling.
 - Repeated freeze requests cannot spam duplicate orders.
+- Budget, engineer counts and the work ledger refresh immediately after an order, including while manually paused.
 
 ## Verification
 
@@ -21,6 +22,7 @@
 - 54 full campaigns: 3 organizations × 6 pressure modifiers × 3 policies. No cash-ledger, invalid-state or termination warnings. Competent policy won 17/18; the midcap campaign-pressure run lost at 23:00. Recovery policy won 16/18; neglect lost all 18. Easy won all 12 active-policy runs. These are automated strategies, not a guarantee for every human playthrough.
 - 108 pacing plans checked for increasing late-game pressure, including alternative observation counts.
 - Real browser clicks on cleanup and FBI preparation across all three organizations; scanner secrecy, compact labels, categorized report/freeze cards, right-to-left links and mobile overflow checked. No JavaScript errors observed.
+- Existing menu, evidence retain/share and exposure browser checks also pass. The local desktop exposure run averaged 60.3 FPS; performance on other hardware is not guaranteed.
 - Three complete browser-played staging games won: startup 7,867; midcap 6,251; enterprise 7,422. Server replay and submission tests verify the score, reject invented scores, duplicates, impossible completion times and cross-origin requests. Temporary QA rows are removed; existing player data is untouched.
 
 ## Deployment compatibility

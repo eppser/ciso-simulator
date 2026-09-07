@@ -107,7 +107,7 @@ export class CommandUI {
  case 'file':r=g.fileIncident();break;case 'freeze':r=g.freezeChanges();break;case 'results':this.results();return;
  case 'copy':navigator.clipboard.writeText(JSON.stringify(g.shareCard(),null,2)).then(()=>this.toast('Daily summary copied.'),()=>this.toast('Clipboard unavailable. Use Download report.'));return;
  case 'download':{const url=URL.createObjectURL(new Blob([JSON.stringify({summary:g.shareCard(),scores:g.scoreBreakdown(),evidence:g.scoreEvidence(),incidentTimings:g.performance.incidents,events:g.events,decisions:g.dilemmaHistory},null,2)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download=`a-day-as-ciso-${g.model.day}.json`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);return;}}
- if(r){this.toast(r.ok?'Order confirmed.':r.reason,!r.ok);if(r.ok)a.audio.effect('build');this.signature='';this.inspectSignature='';this.renderPanel();this.renderInspect();this.updateExperience();}}
+ if(r){this.toast(r.ok?'Order confirmed.':r.reason,!r.ok);if(r.ok)a.audio.effect('build');this.signature='';this.inspectSignature='';this.update();}}
  openOperation(id){
   const row=operationCards(this.app.game,this.app.speed).find(r=>r.id===id);if(!row){this.toast('This item is resolved.');return;}
   this.activityVisible=true;this.opsHistory=false;this.decisionExpanded=false;this.closeCall();
