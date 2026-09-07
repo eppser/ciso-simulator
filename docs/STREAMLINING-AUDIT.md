@@ -28,3 +28,5 @@
 ## Deployment compatibility
 
 v23 is a new simulation ruleset. Its versioned verifier uses the dedicated game tables in staging. The old v22 verifier is left unchanged; the gateway explicitly routes older open-game submissions there. Top rankings compare current rules; History retains earlier rules. No schema or RLS policy was weakened.
+
+The live release check caught the deploy action's Wrangler 3 default ignoring the JSONC bindings and leaving production on the old verifier. The workflow now pins the same Wrangler 4 version validated in staging and rejects a release whose score API reports a different ruleset or scenario. Compatibility checks confirm both v22 and v23 reach their own verifier; unfinished games are rejected by both.

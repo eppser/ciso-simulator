@@ -45,18 +45,23 @@ jobs:
           path: dist
       - uses: cloudflare/wrangler-action@v3
         with:
+          # Match staging; the action's old default ignores wrangler.jsonc bindings.
+          wranglerVersion: '4.127.1'
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=ciso-simulator --branch=main
       - name: Production route checks
         run: |
           node --input-type=module <<'JS'
+          import {RULESET,SCENARIO} from './src/scoreboard-config.js';
           const base='https://ciso-simulator.pages.dev';
           for(const route of ['/', '/scoreboard', '/api/scores?org=startup']){
             let good=false;
             for(let attempt=0;attempt<12;attempt++){
               const r=await fetch(base+route);
-              if(r.ok){if(route.startsWith('/api/')){const data=await r.json();if(!Array.isArray(data.rows))throw Error('Invalid scoreboard');}good=true;break;}
+              let valid=r.ok;
+              if(valid&&route.startsWith('/api/')){const data=await r.json();valid=Array.isArray(data.rows)&&data.ruleset===RULESET&&data.scenario===SCENARIO;}
+              if(valid){good=true;break;}
               await new Promise(resolve=>setTimeout(resolve,5000));
             }
             if(!good)throw Error('Production route failed: '+route);
