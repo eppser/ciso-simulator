@@ -36,7 +36,7 @@ Your reward: ransomware, supply-chain compromise, a suspicious remote contractor
 
 You start with full board trust. What happens next depends on your decisions.
 
-[![Choose your company: CISO Simulator executive start screen with live top-player score](docs/media/start-screen.png)](https://game.zerodayclock.com)
+[![Choose your company: CISO Simulator executive start screen with live top-player score](docs/media/start-screen.jpg)](https://game.zerodayclock.com)
 
 The opening screen shows the live score to beat. Choose your difficulty, read the quick guide, or load your own normalized SIEM report before taking the chair.
 

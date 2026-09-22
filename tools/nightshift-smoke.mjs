@@ -35,7 +35,7 @@ try{
  await new Promise(r=>setTimeout(r,1200));metrics.push(await measure('enterprise-200-sources'));await page.screenshot({path:`${out}/05-enterprise-pressure.png`});
  await page.evaluate(()=>{const g=__app.game;g.flags.ransomPrice=144;g.queueDilemma('ransom','core',true);});await page.waitForSelector('#decision-tray:not([hidden])');await page.screenshot({path:`${out}/06-ransom-decision.png`});await page.click('[data-action=choose][data-id=contain]');assert.equal(await page.evaluate(()=>__app.game.paused),false);
  await page.evaluate(()=>{__app.game.phase='won';__app.game.hour=24;__app.ui.ended=false;});await page.waitForSelector('.result-modal');assert.equal(await page.$$eval('.scores>div',e=>e.length),3);await page.screenshot({path:`${out}/07-report.png`});
- await page.click('[data-action=menu]');await page.click('[data-action=menu-organizations]');const input=await page.$('.ciso-start input[type=file]');await input.uploadFile('data/day-2026-09-02.json');await page.waitForFunction(()=>document.querySelector('.cs-import-status').textContent.includes('loaded'));
+ await page.click('.result-modal [data-action=menu-organizations]');const input=await page.$('.ciso-start input[type=file]');await input.uploadFile('data/day-2026-09-02.json');await page.waitForFunction(()=>document.querySelector('.cs-import-status').textContent.includes('loaded'));
  await page.setViewport({width:390,height:844});await page.screenshot({path:`${out}/08-mobile-start.png`});
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
  await page.click('input[name=company][value=startup]');await page.click('.cs-start-button');await new Promise(r=>setTimeout(r,1000));await page.screenshot({path:`${out}/09-mobile-game.png`});
