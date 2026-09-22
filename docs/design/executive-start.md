@@ -2,7 +2,7 @@
 
 The production opening screen uses the shared component in `src/ui/start-screen.js` and its scoped stylesheet. `src/start-main.js` mounts it immediately; the 3D runtime loads after the player chooses a company and takes the chair. `start-preview.html` shares the same implementation.
 
-Cyan identifies the game title and primary action. Warm amber emphasizes board pressure; blue-gray supporting copy stays secondary. The backdrop is generated artwork inspired by actual gameplay. The Shadowserver SVG and ZeroDayClock wordmark render independently of that artwork.
+Coral identifies the game title and interactive accents; the primary action uses scarlet with warm white text. Charcoal and muted burgundy panels replace navy, with warm gray supporting copy and restrained amber for board pressure. The background alone is desaturated and receives a subtle red light wash; logos retain their original colors. The backdrop is generated artwork inspired by actual gameplay. The Shadowserver SVG and ZeroDayClock wordmark render independently of that artwork.
 
 The score card reads the real public scoreboard, excludes seeded entries, and handles loading, empty, and unavailable responses. Imported reports use the existing scenario validator and stay local and practice-only. The in-game company screen includes an explicit resume action and clarifies that starting a new shift replaces the current run. Keyboard focus, native radios, the help dialog, mobile guidance, and reduced-motion preferences are supported.
 
