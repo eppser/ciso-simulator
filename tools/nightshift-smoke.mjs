@@ -10,9 +10,9 @@ try{
  browser=await puppeteer.launch({executablePath:process.env.CHROME||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,args:['--window-size=1600,1000']});
  const page=await browser.newPage();await page.setViewport({width:1600,height:1000});
  const errors=[],requests=[];page.on('pageerror',e=>errors.push(e.stack));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});page.on('response',r=>{if(r.status()>=400)requests.push(`${r.status()} ${r.url()}`);});
- await page.goto('http://127.0.0.1:5181/',{waitUntil:'networkidle0'});await page.waitForSelector('[data-action=start]');
+ await page.goto('http://127.0.0.1:5181/',{waitUntil:'networkidle0'});await page.waitForSelector('.cs-start-button');
  await page.screenshot({path:`${out}/01-start.png`});
- await page.click('[data-action=start][data-id=startup]');await page.waitForFunction(()=>__app.running);
+ await page.click('input[name=company][value=startup]');await page.click('.cs-start-button');await page.waitForFunction(()=>__app.running);
  assert.equal(await page.evaluate(()=>__app.game.org.id),'startup');assert.equal(await page.evaluate(()=>__app.game.endHour),24);
  await page.click('[data-action=tab][data-id=assets]');await page.click('[data-action=select][data-id=web]');await page.waitForSelector('[data-action=isolate]');await page.click('[data-action=isolate]');
  assert.equal(await page.evaluate(()=>__app.game.asset('web').state),'isolated');
@@ -35,9 +35,9 @@ try{
  await new Promise(r=>setTimeout(r,1200));metrics.push(await measure('enterprise-200-sources'));await page.screenshot({path:`${out}/05-enterprise-pressure.png`});
  await page.evaluate(()=>{const g=__app.game;g.flags.ransomPrice=144;g.queueDilemma('ransom','core',true);});await page.waitForSelector('#decision-tray:not([hidden])');await page.screenshot({path:`${out}/06-ransom-decision.png`});await page.click('[data-action=choose][data-id=contain]');assert.equal(await page.evaluate(()=>__app.game.paused),false);
  await page.evaluate(()=>{__app.game.phase='won';__app.game.hour=24;__app.ui.ended=false;});await page.waitForSelector('.result-modal');assert.equal(await page.$$eval('.scores>div',e=>e.length),3);await page.screenshot({path:`${out}/07-report.png`});
- await page.click('.result-modal [data-action=menu]');await page.click('.source-note summary');const input=await page.$('#scenario-file');await input.uploadFile('data/day-2026-09-02.json');await page.waitForFunction(()=>document.querySelector('#toast').textContent.includes('Report loaded'));
+ await page.click('[data-action=menu]');await page.click('[data-action=menu-organizations]');const input=await page.$('.ciso-start input[type=file]');await input.uploadFile('data/day-2026-09-02.json');await page.waitForFunction(()=>document.querySelector('.cs-import-status').textContent.includes('loaded'));
  await page.setViewport({width:390,height:844});await page.screenshot({path:`${out}/08-mobile-start.png`});
  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
- await page.click('[data-action=start][data-id=startup]');await new Promise(r=>setTimeout(r,1000));await page.screenshot({path:`${out}/09-mobile-game.png`});
+ await page.click('input[name=company][value=startup]');await page.click('.cs-start-button');await new Promise(r=>setTimeout(r,1000));await page.screenshot({path:`${out}/09-mobile-game.png`});
  const report={at:new Date().toISOString(),errors,failedRequests:requests,metrics,checks:['real UI start','isolate + queued fix','scanner purchase','map build click','camera presets','full estate stress','ransom choice exit','three category report','dynamic JSON import','390px layout']};fs.writeFileSync(`${out}/report.json`,JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));assert.equal(errors.length,0);assert.equal(requests.length,0);
 }finally{await browser?.close();try{process.kill(-server.pid,'SIGTERM');}catch{server.kill();}}

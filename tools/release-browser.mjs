@@ -6,7 +6,7 @@ const out='artifacts/release';fs.mkdirSync(out,{recursive:true});
 const browser=await puppeteer.launch({executablePath:process.env.CHROME||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
 try{
  const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.setViewport({width:1600,height:1000});
- await page.goto(base,{waitUntil:'networkidle0'});await page.waitForSelector('[data-action=start]');await page.screenshot({path:out+'/opening.png'});
+ await page.goto(base,{waitUntil:'networkidle0'});await page.waitForSelector('.cs-start-button');await page.screenshot({path:out+'/opening.png'});await page.click('.cs-start-button');await page.waitForFunction(()=>window.__app?.running);
  const reports=[];
  for(const org of ['startup','midcap','enterprise']){
   const result=await page.evaluate(async org=>{

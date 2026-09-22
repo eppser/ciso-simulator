@@ -2,7 +2,7 @@
 
 The game reads one normalized daily report. You can write an adapter for **Elastic/ELK, Splunk, Microsoft Sentinel, a SIEM export, honeypot telemetry or another authorized source**. No vendor-specific live connector is bundled or implied.
 
-On the opening screen, expand **Use another day or dataset** and choose a JSON file:
+On the opening screen, click **Load JSON** beside **Play with your own SIEM data** and choose a normalized JSON file. Select a company, then click **Take the chair** to start the practice scenario:
 
 ```json
 {

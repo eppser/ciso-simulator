@@ -32,9 +32,13 @@ Your reward: ransomware, supply-chain compromise, a suspicious remote contractor
 | ![Actual placement of firewall segments, IPS, WAF and threat intelligence](docs/media/build-defense.png) | ![Actual incoming malware and control fire on the security campus](docs/media/campus-live.png) |
 | Cheap firewall segments let you shape paths. Deploy controls where their range matters. | IPS handles device exploits. WAF slows web attacks. Walls can be breached; credentials can bypass them. |
 
-**Your first minute:** pick a company → buy a Scanner in **Programs → Identify** → build defenses across the three uplinks → follow threats and requests in **Operations**.
+**Your first minute:** pick a company → **Take the chair** → buy a Scanner in **Programs → Identify** → build defenses across the three uplinks → follow threats and requests in **Operations**.
 
 You start with full board trust. What happens next depends on your decisions.
+
+[![Choose your company: CISO Simulator executive start screen with live top-player score](docs/media/start-screen.png)](https://game.zerodayclock.com)
+
+The opening screen shows the live score to beat. Choose your difficulty, read the quick guide, or load your own normalized SIEM report before taking the chair.
 
 **[Take the chair →](https://game.zerodayclock.com)**
 
