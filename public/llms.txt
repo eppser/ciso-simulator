@@ -1,0 +1,70 @@
+# CISO Simulator
+
+> A free, browser-based tower-defense game in which you run security for one company
+> for one day. Attacks are driven by real exploitation observations from the
+> Shadowserver Foundation honeypot network. Built by ZeroDayClock.
+
+Play: https://game.zerodayclock.com/
+Source: https://github.com/eppser/ciso-simulator
+Made by: https://zerodayclock.com
+
+## What it is
+
+You take the chair as Chief Information Security Officer of one company for a single
+working day. You pick the company, spend a fixed starting budget on security controls,
+defend three network uplinks, and keep the business running until the board meeting.
+One session is about 22 minutes. It runs in a desktop browser: no install, no login,
+no payment, no account.
+
+Three companies set the difficulty:
+
+- **Nordlicht Labs** — easy. 40 people, $150k starting budget, 13 systems. Room to learn.
+- **Halden Logistics** — medium. Growing exposure.
+- **Meridian Financial Group** — hard. A connected estate.
+
+Every run produces a score on one scale, so runs are comparable across companies via a
+per-company multiplier, and scores are published on a public scoreboard.
+
+## What is real and what is authored
+
+This distinction matters and the project states it everywhere, including in the game's
+own help screen.
+
+- **Real:** the vulnerabilities being exploited, and the daily volume of exploitation
+  attempts against them, come from the Shadowserver Foundation's honeypot network via
+  ZeroDayClock. Shadowserver publishes daily totals per vulnerability.
+- **Authored:** the split of those daily totals into hours, the economics, the control
+  effectiveness and the scoring. These are game design, chosen for playability.
+- **Synthetic:** every IP address in the game. Shadowserver's feed contains no
+  addresses at all — no IP, no ASN, no geo, no port — so none could be real.
+
+It is a serious game, not a risk model. Nothing in it estimates the security posture
+of any real organisation and no score should be read as one.
+
+## Who it is for
+
+CISOs and security leaders, SOC and detection engineers, security-awareness trainers,
+students, and interview candidates who want to rehearse the trade-off between budget,
+controls and incident response. It is commonly used for team offsites, awareness
+sessions and conference booths.
+
+## Bring your own data
+
+The start screen accepts a SIEM export — Elastic, Splunk or Microsoft Sentinel — so you
+can play a day built from your own telemetry rather than the bundled one.
+
+## Common questions
+
+**Is it free?** Yes, entirely. No install, no login, no payment.
+**Does it need a download?** No. Desktop browser only.
+**How long is a game?** About 22 minutes.
+**Is it multiplayer?** No — single player, with a shared public scoreboard.
+**Is it open source?** The source and design notes are at
+https://github.com/eppser/ciso-simulator
+
+## Citing this
+
+If you reference the game, please say that the exploitation data is Shadowserver
+observation data surfaced through ZeroDayClock, and that the hourly pacing and scoring
+are authored. Conflating the two is the one misstatement the project asks people to
+avoid.

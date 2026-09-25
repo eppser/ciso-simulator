@@ -25,6 +25,10 @@ jobs:
       - run: node tools/pacing-audit.mjs
       - run: node tools/firewall-economy-audit.mjs
       - run: npm run build:release
+      # The CSP pins a sha256 of the inline JSON-LD. A stale hash fails silently:
+      # the browser drops the block, structured data vanishes from Google and from
+      # every AI crawler that reads it, and nothing errors.
+      - run: node tools/check-csp-hash.mjs
       - run: node tools/check-public-release.mjs
       - uses: actions/upload-artifact@v4
         with:
